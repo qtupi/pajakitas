@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>paJAK-Kita — Pusat Transparansi & Verifikasi Pajak Daerah Jakarta</title>
+  <meta name="description" content="Pusat transparansi publik mandiri. Pantau alokasi, realisasi APBD, progres pembangunan kota, dan verifikasi setiap kontribusi pajak daerah Jakarta.">
+  
+  <!-- Favicon / Vector Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284C7'><rect width='24' height='24' rx='6' fill='%23111111'/><circle cx='12' cy='12' r='5' fill='%230284C7'/></svg>">
+
+  <!-- Lucide Icons (Web/SVG) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       HERO SECTION (Exact Replica of Modern Architectural Editorial Mockup)
+       ========================================================================= -->
+  <header class="hero-container" id="hero-section">
+    <!-- Clean Architectural Transit Hub Background -->
+    <img src="assets/hero_mrt.jpg" alt="Infrastruktur Transportasi Publik Jakarta" class="hero-background-image" id="hero-bg-img" />
+    
+    <!-- Dot Grid & Gradient Overlay -->
+    <div class="hero-gradient-overlay dot-grid-overlay"></div>
+
+    <!-- Architectural Badge on Building -->
+    <div style="position: absolute; right: 5%; top: 48%; z-index: 10; max-width: 220px; text-align: right; pointer-events: none;" class="hidden md:block">
+      <div style="font-size: 0.85rem; font-weight: 600; line-height: 1.35; color: rgba(255, 255, 255, 0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.7);">
+        Transportasi Publik untuk Kota yang Lebih Baik
+      </div>
+      <div style="width: 40px; height: 2px; background: rgba(255, 255, 255, 0.7); margin-left: auto; margin-top: 6px;"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="hero-nav">
+      <!-- Logo: paJAK-Kita -->
+      <a href="#hero-section" class="brand-logo" id="brand-logo-link">
+        pa<span class="bold-jak">JAK</span>-Kita
+        <span style="display: inline-block; width: 6px; height: 6px; background-color: #38BDF8; border-radius: 50%; margin-left: 2px;"></span>
+      </a>
+
+      <!-- Menu Navigation -->
+      <ul class="nav-links">
+        <li><a href="#dashboard-penerimaan">Aliran Pajak</a></li>
+        <li><a href="#dashboard-belanja">Transparansi Anggaran</a></li>
+        <li><a href="#verifikasi-proyek">Verifikasi Proyek</a></li>
+        <li><a href="#peta-daerah">Peta Daerah</a></li>
+        <li><a href="#kamus-pajak">Kamus Pajak</a></li>
+        <li><a href="#pembuat-kartu">Buat Kartu</a></li>
+      </ul>
+
+      <!-- CTA Button: Periksa Daerahmu -->
+      <a href="#dashboard-penerimaan" class="btn-pill-outline" id="nav-btn-periksa">
+        Periksa Daerahmu
+        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+      </a>
+    </nav>
+
+    <!-- Hero Content Left-Centered -->
+    <div class="hero-content">
+      <div class="hero-badge-tag">
+        <i data-lucide="shield-check" style="width: 14px; height: 14px; color: #38BDF8;"></i>
+        <span>Platform Civic Tech Independen • WIA MIA 2026</span>
+      </div>
+
+      <h1 class="hero-title tracking-editorial">
+        Lihat dan verifikasi<br />
+        ke mana pajak daerahmu<br />
+        mengalir.
+      </h1>
+
+      <p class="hero-subtitle">
+        Pusat transparansi publik mandiri. Pantau alokasi, progres pembangunan kota, dan pastikan setiap kontribusi tercatat nyata.
+      </p>
+
+      <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+        <a href="#dashboard-penerimaan" class="btn-pill-solid-white" id="hero-btn-mulai">
+          Mulai Verifikasi
+          <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+        </a>
+        <a href="#pembuat-kartu" class="btn-pill-outline" style="border-color: rgba(255,255,255,0.25);">
+          Buat Kartu Insight Warga
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Floating Search Bar & Hero Metrics -->
+    <div class="hero-bottom-bar-wrapper">
+      <!-- Capsule Frosted Glass Search Bar -->
+      <div class="floating-search-bar" id="hero-search-bar-container">
+        <i data-lucide="search" style="width: 18px; height: 18px; color: rgba(255, 255, 255, 0.7); flex-shrink: 0;"></i>
+        <input type="text" id="hero-search-input" placeholder="Cari alokasi pajak di kotamu..." autocomplete="off" />
+        <div class="search-results-dropdown" id="search-dropdown"></div>
+      </div>
+
+      <!-- Right Metrics Group -->
+      <div class="hero-metrics-group">
+        <div class="hero-metric-item">
+          <span class="hero-metric-value">100%</span>
+          <span class="hero-metric-label">Data Terbuka</span>
+        </div>
+        <div class="hero-metric-item">
+          <span class="hero-metric-value">38 Provinsi</span>
+          <span class="hero-metric-label">Cakupan Daerah</span>
+        </div>
+        <div class="hero-metric-item">
+          <span class="hero-metric-value">Real-time</span>
+          <span class="hero-metric-label">Pembaruan Aliran Dana</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- =========================================================================
+       TRUST LAYER & FRESHNESS TICKER (PRD R4)
+       ========================================================================= -->
+  <section style="background: #EFEFEA; border-bottom: 1px solid var(--border-light); padding: 0.85rem 3rem;">
+    <div style="max-width: 1380px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: #475569;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <span class="badge-trust">
+          <i data-lucide="database" style="width: 12px; height: 12px;"></i>
+          Sumber: satudatajakarta.go.id
+        </span>
+        <span>• Tahun Data Terakhir: <strong>2023 (Final Audited)</strong> & <strong>2024 (Triwulan III)</strong></span>
+        <span>• Build: <span class="font-mono" id="meta-build-id">paJAK-Kita-v1.0</span></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1.5rem;">
+        <a href="https://satudatajakarta.go.id" target="_blank" rel="noopener noreferrer" style="color: #0284C7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+          Portal Data Resmi <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+        </a>
+        <button onclick="window.infoPanelInstance.open('trust_layer')" style="background: none; border: none; color: #111111; cursor: pointer; text-decoration: underline; font-size: 0.8rem; font-weight: 500;">
+          Pelajari Metodologi
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       BAGIAN A: DASHBOARD PENERIMAAN PAJAK DAERAH (PRD R1)
+       ========================================================================= -->
+  <section class="editorial-container" id="dashboard-penerimaan">
+    <div class="editorial-header">
+      <div class="tracking-widest-tag" style="color: #0284C7; margin-bottom: 0.5rem;">Bagian A • Pendapatan Asli Daerah</div>
+      <h2 class="editorial-section-title">Realisasi Penerimaan Pajak Daerah</h2>
+      <p class="editorial-section-desc">
+        Telusuri setiap rupiah pajak daerah yang dihimpun di 6 wilayah kota dan kabupaten administrasi DKI Jakarta. Data diolah secara transparan dari sistem penerimaan resmi Bapenda.
+      </p>
+    </div>
+
+    <!-- Filter Bar (R1 Requirements) -->
+    <div class="filter-bar-editorial">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <i data-lucide="sliders-horizontal" style="width: 16px; height: 16px; color: #64748B;"></i>
+        <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #111111;">Filter:</span>
+      </div>
+
+      <!-- Filter Tahun -->
+      <div>
+        <label for="filter-penerimaan-tahun" style="display: none;">Tahun Anggaran</label>
+        <select id="filter-penerimaan-tahun" class="filter-select">
+          <option value="2023" selected>Tahun 2023 (Final Audited)</option>
+          <option value="2024">Tahun 2024 (Sementara Triwulan III)</option>
+          <option value="2022">Tahun 2022 (Final)</option>
+          <option value="2021">Tahun 2021 (Final)</option>
+        </select>
+      </div>
+
+      <!-- Filter Wilayah (Jakarta Pusat, Jakarta Barat, dll. - No standalone 'PUSAT') -->
+      <div>
+        <label for="filter-penerimaan-wilayah" style="display: none;">Wilayah Administrasi</label>
+        <select id="filter-penerimaan-wilayah" class="filter-select">
+          <option value="semua" selected>Semua Wilayah DKI Jakarta</option>
+          <option value="Jakarta Pusat">Jakarta Pusat</option>
+          <option value="Jakarta Barat">Jakarta Barat</option>
+          <option value="Jakarta Selatan">Jakarta Selatan</option>
+          <option value="Jakarta Timur">Jakarta Timur</option>
+          <option value="Jakarta Utara">Jakarta Utara</option>
+          <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+        </select>
+      </div>
+
+      <!-- Filter Jenis Pajak -->
+      <div>
+        <label for="filter-penerimaan-jenis" style="display: none;">Jenis Pajak Daerah</label>
+        <select id="filter-penerimaan-jenis" class="filter-select">
+          <option value="semua" selected>Semua Jenis Pajak (12 Jenis)</option>
+          <option value="PKB">Pajak Kendaraan Bermotor (PKB)</option>
+          <option value="BBNKB">Bea Balik Nama Kendaraan Bermotor (BBNKB)</option>
+          <option value="PBB-P2">Pajak Bumi dan Bangunan (PBB-P2)</option>
+          <option value="BPHTB">Bea Perolehan Hak Tanah & Bangunan (BPHTB)</option>
+          <option value="PBJT-RESTO">PBJT Restoran / Makanan Minuman</option>
+          <option value="PBJT-HOTEL">PBJT Jasa Perhotelan</option>
+          <option value="PBJT-HIBURAN">PBJT Jasa Hiburan & Kesenian</option>
+          <option value="PBJT-PARKIR">PBJT Parkir Gedung</option>
+          <option value="REKLAME">Pajak Reklame / Billboard</option>
+          <option value="PBBKB">Pajak Bahan Bakar Kendaraan (PBBKB)</option>
+          <option value="PAT">Pajak Air Tanah (PAT)</option>
+          <option value="ROKOK">Pajak Rokok</option>
+        </select>
+      </div>
+
+      <button id="btn-reset-filter" class="btn-pill-outline" style="color: #111111; border-color: #CBD5E1; padding: 0.5rem 1rem; font-size: 0.8rem; background: transparent;">
+        Reset Filter
+      </button>
+    </div>
+
+    <!-- Dashboard Main Grid (12-Column Asymmetric) -->
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; align-items: start;">
+      
+      <!-- Left Column (4 cols): Big Highlight Card & Info Trigger -->
+      <div style="grid-column: span 4;" class="col-span-12 lg:col-span-4">
+        <div class="arch-card" style="background: #FFFFFF; border-left: 4px solid #0284C7;">
+          <div class="tracking-widest-tag" style="color: #64748B; margin-bottom: 0.5rem;">Total Realisasi Penerimaan</div>
+          
+          <div style="font-size: clamp(2.2rem, 3.2vw, 3.2rem); font-weight: 800; letter-spacing: -0.04em; color: #111111; line-height: 1.1; margin-bottom: 0.5rem;" id="penerimaan-total-val">
+            Rp 52,41 Triliun
+          </div>
+          
+          <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;" id="penerimaan-total-subtitle">
+            Tahun Anggaran 2023 • Seluruh Wilayah DKI Jakarta
+          </div>
+
+          <div style="border-top: 1px solid var(--border-light); padding-top: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.5rem;">
+              <span style="color: #52525B;">Pertumbuhan Tahunan (YoY)</span>
+              <span style="font-family: var(--font-mono); font-weight: 700; color: #059669;">+9.52% ↑</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.5rem;">
+              <span style="color: #52525B;">Kontribusi terhadap PAD</span>
+              <span style="font-family: var(--font-mono); font-weight: 700; color: #111111;">~72.8%</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem;">
+              <span style="color: #52525B;">Status Verifikasi</span>
+              <span class="badge-trust" style="font-size: 0.68rem;">Audited BPK</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <button class="btn-pill-dark" style="width: 100%; justify-content: center; font-size: 0.84rem;" onclick="window.infoPanelInstance.open('total_pajak_daerah')">
+              <i data-lucide="info" style="width: 16px; height: 16px;"></i>
+              Lihat Cara Hitung & Sumber Data
+            </button>
+          </div>
+        </div>
+
+        <!-- Note Card -->
+        <div class="arch-card" style="margin-top: 1.5rem; background: #FAF9F6; border: 1px solid #E5E5E0; font-size: 0.82rem; color: #52525B; line-height: 1.5;">
+          <strong style="color: #111111;">Prinsip Kepatuhan Data:</strong>
+          Pajak dicatat berdasarkan unit pemungutan (UPPPD/Samsat) di masing-masing wilayah administrasi. Penerimaan tidak pernah diklaim membiayai program wilayah tertentu secara spesifik.
+        </div>
+      </div>
+
+      <!-- Right Column (8 cols): Visual Charts & Breakdown -->
+      <div style="grid-column: span 8;" class="col-span-12 lg:col-span-8">
+        <!-- Empty State Container (R1 Requirement) -->
+        <div id="penerimaan-empty-state" class="arch-card" style="display: none; text-align: center; padding: 3rem 2rem; background: #FFFBEB; border-color: #FDE68A;">
+          <i data-lucide="alert-triangle" style="width: 32px; height: 32px; color: #D97706; margin-bottom: 0.75rem;"></i>
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #92400E; margin-bottom: 0.35rem;">Data Tidak Tersedia untuk Kombinasi Ini</h4>
+          <p style="font-size: 0.88rem; color: #B45309; max-width: 480px; margin: 0 auto;">
+            Sesuai standar kejujuran data paJAK-Kita, kami tidak menampilkan angka 0 jika data memang tidak dihimpun (misalnya pajak reklame komersial atau parkir gedung di Kepulauan Seribu).
+          </p>
+        </div>
+
+        <!-- Distribution Chart Bars -->
+        <div class="arch-card" style="margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #111111;">Distribusi Realisasi Penerimaan</h3>
+              <div style="font-size: 0.78rem; color: #71717A;">Urutan kontribusi tertinggi ke terendah</div>
+            </div>
+            <span class="badge-trust">Satuan Rupiah</span>
+          </div>
+
+          <div id="penerimaan-chart-bars">
+            <!-- Dynamically populated by dashboard.js -->
+          </div>
+        </div>
+
+        <!-- Breakdown List -->
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 700; color: #111111; margin-bottom: 0.75rem;">
+            Rincian Penerimaan Terverifikasi
+          </h3>
+          <div id="penerimaan-breakdown-list">
+            <!-- Dynamically populated by dashboard.js -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       BAGIAN METHODOLOGY BRIDGE (PRD R3: PEMISAHAN METODOLOGIS TEGAS)
+       ========================================================================= -->
+  <section class="methodology-bridge" id="pemisahan-metodologis">
+    <div class="methodology-bridge-inner">
+      <div>
+        <div class="tracking-widest-tag" style="color: #38BDF8; margin-bottom: 0.5rem;">Pondasi Metodologi Transparansi (R3)</div>
+        <h3 style="font-size: clamp(1.8rem, 2.5vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2;">
+          Penerimaan & Belanja:<br />
+          Satu Rekening Kas Umum Daerah
+        </h3>
+      </div>
+      <div>
+        <p style="font-size: 1.05rem; line-height: 1.65; color: rgba(255, 255, 255, 0.88); margin-bottom: 1rem;">
+          <strong>Catatan Transparansi Publik:</strong> Penerimaan pajak daerah adalah salah satu komponen Pendapatan Asli Daerah (PAD). Seluruh penerimaan bermuara ke Rekening Kas Umum Daerah (single pool fund) dan tidak pernah dikaitkan 1:1 secara langsung dengan program proyek tertentu.
+        </p>
+        <p style="font-size: 0.92rem; line-height: 1.6; color: rgba(255, 255, 255, 0.7);">
+          Informasi belanja pada Bagian B disajikan sebagai konteks pemanfaatan APBD secara utuh oleh Pemerintah Provinsi DKI Jakarta untuk melayani warga, bukan untuk menyatakan bahwa pajak dari jenis tertentu membiayai proyek tertentu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       BAGIAN B: DASHBOARD BELANJA APBD JAKARTA (PRD R2)
+       ========================================================================= -->
+  <section class="editorial-container" id="dashboard-belanja">
+    <div class="editorial-header">
+      <div class="tracking-widest-tag" style="color: #0284C7; margin-bottom: 0.5rem;">Bagian B • Alokasi dan Serapan Anggaran</div>
+      <h2 class="editorial-section-title">Belanja APBD Jakarta (Se-DKI Jakarta)</h2>
+      <p class="editorial-section-desc">
+        Pantau alokasi pagu anggaran dan realisasi serapan belanja per dinas teknis (SKPD/OPD). Belanja dicatat secara terpusat untuk program pembangunan dan pelayanan publik seluruh warga Jakarta.
+      </p>
+    </div>
+
+    <!-- Belanja Content Container (Rendered by dashboard.js) -->
+    <div id="belanja-opd-container">
+      <!-- Dynamically generated from data/belanja.json -->
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       VERIFIKASI PROYEK INFRASTRUKTUR & RUPIAH TRACKER (PRD P1)
+       ========================================================================= -->
+  <section class="editorial-container" id="verifikasi-proyek" style="border-top: 1px solid var(--border-light); padding-top: 5rem;">
+    <div class="editorial-header">
+      <div class="tracking-widest-tag" style="color: #C2410C; margin-bottom: 0.5rem;">Verifikasi Fisik Proyek • Portofolio Infrastruktur</div>
+      <h2 class="editorial-section-title">Wujud Nyata Pembangunan Kota</h2>
+      <p class="editorial-section-desc">
+        Fasilitas publik yang dapat dilihat, digunakan, dan dirasakan langsung oleh masyarakat Jakarta. Dilengkapi data dinas pelaksana dan nilai anggaran pembangunan.
+      </p>
+    </div>
+
+    <!-- Staggered Architectural Portfolio Layout -->
+    <div class="staggered-grid">
+      <!-- Project 1: MRT Jakarta Fase 2A -->
+      <div class="staggered-col-7 arch-card" style="padding: 0; overflow: hidden;">
+        <div class="infra-image-wrapper">
+          <img src="assets/hero_mrt.jpg" alt="MRT Jakarta Elevated Station and Skybridge" />
+        </div>
+        <div style="padding: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+            <span class="tracking-widest-tag" style="color: #0284C7;">Transportasi Modern • Dishub DKI</span>
+            <span class="badge-trust">Dalam Konstruksi (78%)</span>
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">MRT Jakarta Fase 2A (Bundaran HI - Kota)</h3>
+          <p style="font-size: 0.92rem; color: #52525B; line-height: 1.55; margin-bottom: 1.25rem;">
+            Pembangunan jalur kereta subway bawah tanah 5,8 km menghubungkan Bundaran HI menuju Stasiun Kota dengan 7 stasiun bawah tanah modern untuk mobilitas massal bebas macet.
+          </p>
+          <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-light); padding-top: 1rem; font-size: 0.85rem;">
+            <span style="color: #64748B;">Alokasi Anggaran:</span>
+            <span style="font-family: var(--font-mono); font-weight: 700; color: #111111;">Rp 22,50 Triliun</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: JPO Phinisi Sudirman -->
+      <div class="staggered-col-5 arch-card" style="padding: 0; overflow: hidden;">
+        <div class="infra-image-wrapper">
+          <img src="assets/jpo_phinisi.jpg" alt="JPO Phinisi Karet Sudirman" />
+        </div>
+        <div style="padding: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+            <span class="tracking-widest-tag" style="color: #C2410C;">Fasilitas Pejalan Kaki • Dinas Bina Marga</span>
+            <span class="badge-trust">Operasional Penuh</span>
+          </div>
+          <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem;">JPO Phinisi Karet Sudirman</h3>
+          <p style="font-size: 0.88rem; color: #52525B; line-height: 1.5; margin-bottom: 1rem;">
+            Jembatan penyeberangan berkonsep kapal phinisi dengan fasilitas ramah sepeda, lift kapasitas 3000 kg, dan anjungan pandang Sudirman.
+          </p>
+          <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-light); padding-top: 0.85rem; font-size: 0.82rem;">
+            <span style="color: #64748B;">Nilai Proyek:</span>
+            <span style="font-family: var(--font-mono); font-weight: 700; color: #111111;">Rp 29,00 Miliar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Tebet Eco Park -->
+      <div class="staggered-col-12 arch-card" style="padding: 0; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+        <div class="infra-image-wrapper" style="aspect-ratio: auto; height: 100%;">
+          <img src="assets/urban_eco_park.jpg" alt="Tebet Eco Park Infinity Link Bridge" />
+        </div>
+        <div style="padding: 2.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem;">
+              <span class="tracking-widest-tag" style="color: #059669;">Ruang Terbuka Hijau & Ekologi • Dinas Pertamanan</span>
+              <span class="badge-trust">Penghargaan Internasional</span>
+            </div>
+            <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.75rem; line-height: 1.2;">
+              Tebet Eco Park & Infinity Link Bridge
+            </h3>
+            <p style="font-size: 0.95rem; color: #52525B; line-height: 1.6; margin-bottom: 1.5rem;">
+              Revitalisasi ruang terbuka hijau 7,3 hektar yang menggabungkan mitigasi banjir alami melalui rawa basah (wetland) dan jembatan kanopi oranye ikonik ramah keluarga.
+            </p>
+            <div style="background: #FAFAF9; padding: 1rem; border: 1px solid #E7E5E4; border-radius: 2px;">
+              <div style="font-size: 0.8rem; color: #78716C; margin-bottom: 0.25rem;">Dinas Penanggung Jawab:</div>
+              <div style="font-size: 0.92rem; font-weight: 700; color: #111111;">Dinas Pertamanan dan Hutan Kota DKI Jakarta</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 1.25rem; margin-top: 1.5rem;">
+            <div>
+              <span style="font-size: 0.82rem; color: #64748B;">Realisasi Anggaran:</span>
+              <span style="font-family: var(--font-mono); font-weight: 700; font-size: 1.15rem; color: #111111; margin-left: 0.5rem;">Rp 48,50 Miliar</span>
+            </div>
+            <a href="#peta-daerah" class="btn-pill-dark" style="font-size: 0.82rem; padding: 0.55rem 1.25rem;">
+              Lihat di Peta →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       PETA DAERAH JAKARTA INTERAKTIF (PRD P1)
+       ========================================================================= -->
+  <section class="editorial-container" id="peta-daerah" style="border-top: 1px solid var(--border-light); padding-top: 5rem;">
+    <div class="editorial-header" style="text-align: center; max-width: 750px; margin: 0 auto 3.5rem auto;">
+      <div class="tracking-widest-tag" style="color: #0284C7; margin-bottom: 0.5rem;">Visualisasi Geografis (P1)</div>
+      <h2 class="editorial-section-title">Peta Wilayah Administrasi Jakarta</h2>
+      <p class="editorial-section-desc">
+        Arahkan kursor atau ketuk wilayah untuk melihat perolehan pajak yang terkumpul di masing-masing kota administrasi dan kabupaten.
+      </p>
+    </div>
+
+    <div class="arch-card" style="padding: 2.5rem; background: #FFFFFF;">
+      <!-- Interactive Region Status Tooltip -->
+      <div id="map-region-info" style="text-align: center; font-size: 0.95rem; margin-bottom: 1.5rem; min-height: 28px; color: #334155;">
+        Arahkan kursor atau ketuk salah satu wilayah pada peta di bawah ini.
+      </div>
+
+      <!-- Vector SVG Map of DKI Jakarta (6 Administrative Regions) -->
+      <div class="jakarta-map-container">
+        <svg viewBox="0 0 600 450" style="width: 100%; height: auto;">
+          <!-- Kepulauan Seribu (North Island Archipelago) -->
+          <g class="map-region-group">
+            <path class="map-region-path" data-region="Kepulauan Seribu" d="M 280,20 Q 300,10 320,25 Q 315,45 285,40 Z M 250,55 Q 265,50 260,65 Q 245,65 250,55 Z M 330,60 Q 345,55 340,70 Q 325,70 330,60 Z" />
+            <text x="345" y="45" font-size="11" font-weight="600" fill="#64748B">Kep. Seribu</text>
+          </g>
+
+          <!-- Jakarta Utara (Coastline) -->
+          <path class="map-region-path" data-region="Jakarta Utara" d="M 120,110 L 480,105 L 500,175 L 350,185 L 230,175 L 110,165 Z" />
+          <text x="310" y="145" font-size="14" font-weight="700" fill="#1E293B" text-anchor="middle">Jakarta Utara</text>
+
+          <!-- Jakarta Barat -->
+          <path class="map-region-path" data-region="Jakarta Barat" d="M 110,165 L 230,175 L 245,280 L 140,290 L 95,210 Z" />
+          <text x="170" y="235" font-size="14" font-weight="700" fill="#1E293B" text-anchor="middle">Jakarta Barat</text>
+
+          <!-- Jakarta Pusat (Core) -->
+          <path class="map-region-path" data-region="Jakarta Pusat" d="M 230,175 L 350,185 L 340,275 L 245,280 Z" />
+          <text x="290" y="235" font-size="14" font-weight="700" fill="#1E293B" text-anchor="middle">Jakarta Pusat</text>
+
+          <!-- Jakarta Timur -->
+          <path class="map-region-path" data-region="Jakarta Timur" d="M 350,185 L 500,175 L 515,360 L 370,370 L 340,275 Z" />
+          <text x="420" y="275" font-size="14" font-weight="700" fill="#1E293B" text-anchor="middle">Jakarta Timur</text>
+
+          <!-- Jakarta Selatan -->
+          <path class="map-region-path" data-region="Jakarta Selatan" d="M 245,280 L 340,275 L 370,370 L 290,410 L 180,380 L 140,290 Z" />
+          <text x="265" y="340" font-size="14" font-weight="700" fill="#1E293B" text-anchor="middle">Jakarta Selatan</text>
+        </svg>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; font-size: 0.78rem; color: #64748B; flex-wrap: wrap;">
+        <span style="display: inline-flex; align-items: center; gap: 0.35rem;">
+          <span style="width: 12px; height: 12px; background: #E2E8F0; display: inline-block;"></span> Normal
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: 0.35rem;">
+          <span style="width: 12px; height: 12px; background: #0284C7; display: inline-block;"></span> Aktif / Terpilih
+        </span>
+        <span>• Klik wilayah untuk menerapkan filter otomatis ke Dashboard & Kartu Insight.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       PEMBUAT KARTU INSIGHT WARGA (PRD R6 & R8: CLIENT-SIDE GENERATOR 3:4)
+       ========================================================================= -->
+  <section class="editorial-container" id="pembuat-kartu" style="border-top: 1px solid var(--border-light); padding-top: 5rem;">
+    <div class="editorial-header">
+      <div class="tracking-widest-tag" style="color: #059669; margin-bottom: 0.5rem;">Corong Transparansi Warga (R6, R8)</div>
+      <h2 class="editorial-section-title">Pembuat Kartu Insight paJAK-Kita</h2>
+      <p class="editorial-section-desc">
+        Buat dan bagikan kartu fakta pajak daerah Jakarta dengan nama dan wilayah tempat tinggalmu. Didesain vertikal 3:4 khusus untuk status sosial media, diproses 100% di browser tanpa merekam privasimu.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 3rem; align-items: start;">
+      
+      <!-- Left Column (5 cols): Form Configuration -->
+      <div style="grid-column: span 5;" class="col-span-12 lg:col-span-5 arch-card">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: #111111;">
+          Konfigurasi Kartu
+        </h3>
+
+        <!-- Form: Nama Warga -->
+        <div style="margin-bottom: 1.25rem;">
+          <label for="card-input-name" style="display: block; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #52525B; margin-bottom: 0.35rem;">
+            Nama Lengkap / Panggilan
+          </label>
+          <input type="text" id="card-input-name" class="filter-select" style="width: 100%;" value="Raihan" placeholder="Masukkan namamu..." maxlength="30" />
+        </div>
+
+        <!-- Form: Wilayah Domisili -->
+        <div style="margin-bottom: 1.5rem;">
+          <label for="card-input-region" style="display: block; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #52525B; margin-bottom: 0.35rem;">
+            Wilayah Domisili (Kota Administrasi)
+          </label>
+          <select id="card-input-region" class="filter-select" style="width: 100%;">
+            <option value="Jakarta Selatan" selected>Jakarta Selatan</option>
+            <option value="Jakarta Pusat">Jakarta Pusat</option>
+            <option value="Jakarta Barat">Jakarta Barat</option>
+            <option value="Jakarta Timur">Jakarta Timur</option>
+            <option value="Jakarta Utara">Jakarta Utara</option>
+            <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+          </select>
+        </div>
+
+        <!-- Form: 3 Template Visual -->
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #52525B; margin-bottom: 0.5rem;">
+            Pilihan Template Desain (Rasio 3:4)
+          </label>
+          <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+            <label style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.88rem; cursor: pointer;">
+              <input type="radio" name="card-template" value="editorial" checked />
+              <span><strong>Minimalist Editorial</strong> (Warm Off-white & Deep Black)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.88rem; cursor: pointer;">
+              <input type="radio" name="card-template" value="blueprint" />
+              <span><strong>Jakarta Blueprint Modern</strong> (Navy & Electric Cyan Grid)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.88rem; cursor: pointer;">
+              <input type="radio" name="card-template" value="terracotta" />
+              <span><strong>Batik Terakota Kontemporer</strong> (Warm Rust & Betawi Motif)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; flex-direction: column; gap: 0.75rem; border-top: 1px solid var(--border-light); padding-top: 1.25rem;">
+          <button id="card-btn-randomize" class="btn-pill-outline" style="color: #111111; border-color: #D4D4D8; width: 100%; justify-content: center;">
+            <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i>
+            Acak Ulang Fakta Insight
+          </button>
+          
+          <button id="card-btn-download" class="btn-pill-dark" style="width: 100%; justify-content: center;">
+            <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+            Unduh Kartu Gambar (PNG 3:4)
+          </button>
+
+          <button id="card-btn-share" class="btn-pill-outline" style="color: #0284C7; border-color: #0284C7; width: 100%; justify-content: center;">
+            <i data-lucide="share-2" style="width: 16px; height: 16px;"></i>
+            Bagikan ke Media Sosial
+          </button>
+        </div>
+
+        <!-- Privacy Assurance (PRD R8) -->
+        <div style="margin-top: 1.25rem; font-size: 0.72rem; color: #64748B; background: #F1F5F9; padding: 0.65rem 0.85rem; border-radius: 2px;">
+          <i data-lucide="lock" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
+          <strong>Privasi Terjamin (R8):</strong> Nama dan wilayah Anda diproses 100% di peramban browser perangkat Anda. Tidak ada data pribadi yang dikirim atau disimpan di server mana pun.
+        </div>
+      </div>
+
+      <!-- Right Column (7 cols): Live 3:4 Card Preview -->
+      <div style="grid-column: span 7; display: flex; flex-direction: column; align-items: center;" class="col-span-12 lg:col-span-7">
+        <div style="margin-bottom: 0.75rem; font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: #64748B; letter-spacing: 0.08em;">
+          Pratinjau Langsung Kartu (Rasio 3:4 Vertikal)
+        </div>
+
+        <!-- Card Element (Target for Live Render) -->
+        <div id="card-preview" class="card-preview-container card-theme-editorial">
+          <!-- Dynamically populated by cardGenerator.js -->
+        </div>
+
+        <div style="margin-top: 1rem; font-size: 0.75rem; color: #71717A; text-align: center; max-width: 420px;">
+          Format siap dibagikan ke Instagram Story, WhatsApp Status, X (Twitter), dan LinkedIn.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       KAMUS PAJAK AWAM (PRD R5: TERJEMAHAN BAHASA AWAM)
+       ========================================================================= -->
+  <section class="editorial-container" id="kamus-pajak" style="border-top: 1px solid var(--border-light); padding-top: 5rem;">
+    <div class="editorial-header">
+      <div class="tracking-widest-tag" style="color: #0284C7; margin-bottom: 0.5rem;">Kamus Pajak Awam (R5)</div>
+      <h2 class="editorial-section-title">Pahami Setiap Jenis Pajak Daerah</h2>
+      <p class="editorial-section-desc">
+        Pajak daerah sering kali menggunakan istilah teknis perundang-undangan yang membingungkan. Berikut terjemahan resmi ke dalam bahasa warga awam berdasarkan UU HKPD dan Perda DKI Jakarta No. 1 Tahun 2024.
+      </p>
+
+      <div style="margin-top: 1.5rem; max-width: 480px;">
+        <input type="text" id="kamus-search-input" class="filter-select" style="width: 100%; padding: 0.75rem 1rem;" placeholder="Cari nama pajak: misal 'makan', 'bensin', 'tanah'..." />
+      </div>
+    </div>
+
+    <!-- Glossary Grid -->
+    <div id="kamus-pajak-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem;">
+      <!-- Populated by dashboard.js from data/referensi_pajak.json -->
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       FOOTER & TENTANG KAMI
+       ========================================================================= -->
+  <footer style="background: #111111; color: #FFFFFF; padding: 5rem 3.5rem 3rem 3.5rem; border-top: 1px solid rgba(255,255,255,0.1);" id="tentang-kami">
+    <div style="max-width: 1380px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3.5rem; margin-bottom: 4rem;" class="grid-cols-1 md:grid-cols-3">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          pa<span class="bold-jak">JAK</span>-Kita
+          <span style="display: inline-block; width: 6px; height: 6px; background-color: #38BDF8; border-radius: 50%; margin-left: 2px;"></span>
+        </div>
+        <p style="font-size: 0.9rem; line-height: 1.6; color: #94A3B8; max-width: 420px; margin-bottom: 1.5rem;">
+          Platform transparansi dan verifikasi publik mandiri untuk pajak daerah DKI Jakarta. Dibangun untuk kompetisi WIA MIA 2026 subtema Open Government Data & Public Service Tracking.
+        </p>
+        <div style="font-size: 0.78rem; color: #64748B;">
+          Data publik bersumber dari portal resmi <strong>satudatajakarta.go.id</strong> dan BPKAD Provinsi DKI Jakarta.
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #FFFFFF; margin-bottom: 1.25rem;">
+          Navigasi Cepat
+        </h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.88rem;">
+          <li><a href="#dashboard-penerimaan" style="color: #94A3B8; text-decoration: none;">Dashboard Penerimaan Pajak</a></li>
+          <li><a href="#dashboard-belanja" style="color: #94A3B8; text-decoration: none;">Dashboard Belanja APBD</a></li>
+          <li><a href="#verifikasi-proyek" style="color: #94A3B8; text-decoration: none;">Verifikasi Proyek Infrastruktur</a></li>
+          <li><a href="#peta-daerah" style="color: #94A3B8; text-decoration: none;">Peta Daerah Jakarta</a></li>
+          <li><a href="#kamus-pajak" style="color: #94A3B8; text-decoration: none;">Kamus Pajak Awam</a></li>
+          <li><a href="#pembuat-kartu" style="color: #94A3B8; text-decoration: none;">Pembuat Kartu Insight 3:4</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #FFFFFF; margin-bottom: 1.25rem;">
+          Integritas & Privasi
+        </h4>
+        <p style="font-size: 0.84rem; color: #94A3B8; line-height: 1.5; margin-bottom: 1rem;">
+          paJAK-Kita tidak menyimpan data identitas atau pembayaran pribadi Anda. Seluruh pemrosesan kartu insight dilakukan 100% di browser pengguna.
+        </p>
+        <button class="badge-trust" style="cursor: pointer; background: rgba(56, 189, 248, 0.15); color: #38BDF8; border-color: rgba(56, 189, 248, 0.4);" onclick="window.infoPanelInstance.open('trust_layer')">
+          Periksa Dokumen Trust Layer
+        </button>
+      </div>
+    </div>
+
+    <div style="max-width: 1380px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.78rem; color: #64748B;">
+      <div>© 2026 paJAK-Kita • Inisiatif Transparansi Publik Mandiri</div>
+      <div style="font-family: var(--font-mono);">Modern Editorial Minimalist Architecture System</div>
+    </div>
+  </footer>
+
+
+  <!-- =========================================================================
+       FIXED FLOATING ACTION PILL (BOTTOM OF VIEWPORT WHEN SCROLLED)
+       ========================================================================= -->
+  <div class="fixed-floating-bar" id="fixed-floating-bar">
+    <a href="#hero-section" class="brand-logo" style="font-size: 1.05rem;">
+      pa<span class="bold-jak">JAK</span>-Kita
+    </a>
+    <div style="height: 16px; width: 1px; background: rgba(255,255,255,0.2);"></div>
+    <a href="#dashboard-penerimaan" style="color: #E2E8F0; text-decoration: none; font-size: 0.82rem; font-weight: 500;">Penerimaan</a>
+    <a href="#dashboard-belanja" style="color: #E2E8F0; text-decoration: none; font-size: 0.82rem; font-weight: 500;">Belanja APBD</a>
+    <a href="#pembuat-kartu" class="btn-pill-solid-white" style="padding: 0.45rem 1.15rem; font-size: 0.8rem;">
+      Buat Kartu 3:4 →
+    </a>
+  </div>
+
+
+  <!-- =========================================================================
+       INFOPANEL MODAL & DRAWER (PRD R10)
+       ========================================================================= -->
+  <div class="infopanel-backdrop" id="infopanel-backdrop"></div>
+  <aside class="infopanel-drawer" id="infopanel-drawer" role="dialog" aria-modal="true" aria-labelledby="infopanel-title">
+    <div style="padding: 2rem; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <div class="tracking-widest-tag" style="color: #0284C7; margin-bottom: 0.35rem;">Informasi Kontekstual & Trust Layer (R10)</div>
+        <h3 id="infopanel-title" style="font-size: 1.45rem; font-weight: 700; color: #111111; line-height: 1.2;">
+          Judul Metrik
+        </h3>
+      </div>
+      <button id="infopanel-close" style="background: none; border: none; font-size: 1.5rem; color: #71717A; cursor: pointer; padding: 0.25rem;">
+        ✕
+      </button>
+    </div>
+
+    <div style="padding: 2rem; flex: 1; overflow-y: auto;">
+      <div style="margin-bottom: 1.75rem;">
+        <h4 style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748B; margin-bottom: 0.5rem;">
+          Penjelasan Bahasa Awam
+        </h4>
+        <p id="infopanel-desc" style="font-size: 0.95rem; line-height: 1.6; color: #1E293B;">
+          Deskripsi detail...
+        </p>
+      </div>
+
+      <div style="margin-bottom: 1.75rem; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 2px;">
+        <h4 style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0284C7; margin-bottom: 0.4rem;">
+          Rumus & Cara Hitung
+        </h4>
+        <p id="infopanel-formula" style="font-family: var(--font-mono); font-size: 0.86rem; color: #0F172A; line-height: 1.5;">
+          Formula...
+        </p>
+      </div>
+
+      <div style="margin-bottom: 1.75rem;">
+        <h4 style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748B; margin-bottom: 0.4rem;">
+          Dataset Asal
+        </h4>
+        <div id="infopanel-source" class="badge-trust">
+          satudatajakarta.go.id
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748B; margin-bottom: 0.4rem;">
+          Catatan & Batasan
+        </h4>
+        <p id="infopanel-notes" style="font-size: 0.85rem; color: #64748B; line-height: 1.5;">
+          Catatan keterbatasan data...
+        </p>
+      </div>
+    </div>
+
+    <div style="padding: 1.25rem 2rem; border-top: 1px solid var(--border-light); background: #FAF9F6; text-align: right;">
+      <button class="btn-pill-dark" onclick="window.infoPanelInstance.close()" style="padding: 0.5rem 1.25rem; font-size: 0.82rem;">
+        Tutup Panel
+      </button>
+    </div>
+  </aside>
+
+  <!-- Lucide Icons Trigger Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+
+  <!-- Main Modular Application Scripts -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
