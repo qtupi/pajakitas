@@ -1,0 +1,1482 @@
+{
+  "meta": {
+    "judul": "Data realisasi APBD Provinsi DKI Jakarta TA 2026 untuk paJAK-Kita",
+    "jenis_data": "realisasi kumulatif tahun berjalan (bukan angka akhir tahun)",
+    "tahun_anggaran": 2026,
+    "tanggal_data": "2026-10-25",
+    "tanggal_data_catatan": "Dari judul halaman: 'Sampai dengan 25/10/2026'. Halaman memiliki pemilih tanggal, jadi angka berubah per tanggal.",
+    "tanggal_pengambilan": null,
+    "tanggal_pengambilan_catatan": "ISI dengan tanggal saat data disalin (kemungkinan sama dengan tanggal_data).",
+    "sumber": {
+      "nama": "Dashboard Keuangan Daerah BPKD Provinsi DKI Jakarta",
+      "url": "https://dashboard-bpkd.jakarta.go.id",
+      "halaman": [
+        "Realisasi > Realisasi Per-Akun",
+        "Realisasi > Realisasi Per-SKPD"
+      ]
+    },
+    "cara_pengambilan": "Disalin dari tampilan dashboard oleh pengguna, bukan unduhan berkas resmi.",
+    "satuan": "rupiah penuh (bilangan bulat)",
+    "basis_anggaran": "APBD 2026 (sama dengan APBDP karena belum ada perubahan saat data diambil)",
+    "peringatan": [
+      "Realisasi ini kumulatif sampai tanggal_data. Jangan dibandingkan langsung dengan angka setahun penuh tahun-tahun sebelumnya dan jangan diproyeksikan ke akhir tahun.",
+      "Belanja modal hanya tersedia sebagai satu angka agregat pada halaman realisasi ini.",
+      "Kolom pembiayaan pada Per-SKPD adalah penerimaan dan pengeluaran pembiayaan yang digabung, bukan pembiayaan netto.",
+      "Pendapatan per SKPD tidak sama dengan pajak daerah. Badan Pendapatan Daerah memuat pendapatan lain di luar akun Pajak Daerah.",
+      "Baris Kota Administrasi adalah anggaran SKPD milik pemerintah kota administrasi itu, bukan seluruh belanja yang jatuh di wilayah tersebut."
+    ]
+  },
+  "realisasi_per_akun": {
+    "pendapatan": [
+      {
+        "kode": "4.1.01",
+        "nama": "Pajak Daerah",
+        "anggaran": 49898218773411,
+        "realisasi": 37138893774592,
+        "persen_dashboard": 74.43,
+        "persen_hitung": 74.43
+      },
+      {
+        "kode": "4.1.02",
+        "nama": "Retribusi Daerah",
+        "anggaran": 2214853656242,
+        "realisasi": 986592038016,
+        "persen_dashboard": 44.54,
+        "persen_hitung": 44.54
+      },
+      {
+        "kode": "4.1.03",
+        "nama": "Hasil Pengelolaan Kekayaan Daerah yang Dipisahkan",
+        "anggaran": 876020190232,
+        "realisasi": 764116054190,
+        "persen_dashboard": 87.23,
+        "persen_hitung": 87.23
+      },
+      {
+        "kode": "4.1.04",
+        "nama": "Lain-lain PAD yang Sah",
+        "anggaran": 4681555092812,
+        "realisasi": 3512279513069,
+        "persen_dashboard": 75.02,
+        "persen_hitung": 75.02
+      },
+      {
+        "kode": "4.2.01",
+        "nama": "Pendapatan Transfer Pemerintah Pusat",
+        "anggaran": 11159480293000,
+        "realisasi": 6165146257473,
+        "persen_dashboard": 55.25,
+        "persen_hitung": 55.25
+      },
+      {
+        "kode": "4.3.01",
+        "nama": "Pendapatan Hibah",
+        "anggaran": 2620545060000,
+        "realisasi": 34272574558,
+        "persen_dashboard": 1.31,
+        "persen_hitung": 1.31
+      }
+    ],
+    "belanja": [
+      {
+        "kode": "5.1.01",
+        "nama": "Belanja Pegawai",
+        "anggaran": 21431736563104,
+        "realisasi": 15951511192191,
+        "persen_dashboard": 74.43,
+        "persen_hitung": 74.43
+      },
+      {
+        "kode": "5.1.02",
+        "nama": "Belanja Barang dan Jasa",
+        "anggaran": 29000142954078,
+        "realisasi": 17999035606559,
+        "persen_dashboard": 62.07,
+        "persen_hitung": 62.07
+      },
+      {
+        "kode": "5.1.03",
+        "nama": "Belanja Bunga",
+        "anggaran": 120400000000,
+        "realisasi": 77758224997,
+        "persen_dashboard": 64.58,
+        "persen_hitung": 64.58
+      },
+      {
+        "kode": "5.1.04",
+        "nama": "Belanja Subsidi",
+        "anggaran": 5277927322600,
+        "realisasi": 2407819442134,
+        "persen_dashboard": 45.62,
+        "persen_hitung": 45.62
+      },
+      {
+        "kode": "5.1.05",
+        "nama": "Belanja Hibah",
+        "anggaran": 2801230357390,
+        "realisasi": 2118045908038,
+        "persen_dashboard": 75.61,
+        "persen_hitung": 75.61
+      },
+      {
+        "kode": "5.1.06",
+        "nama": "Belanja Bantuan Sosial",
+        "anggaran": 4581666540583,
+        "realisasi": 3001135926676,
+        "persen_dashboard": 65.5,
+        "persen_hitung": 65.5
+      },
+      {
+        "kode": "5.2",
+        "nama": "Belanja Modal (agregat; rincian per akun tidak tampil di halaman realisasi ini)",
+        "anggaran": 10167542194352,
+        "realisasi": 2722289556073,
+        "persen_dashboard": 26.77,
+        "persen_hitung": 26.77
+      },
+      {
+        "kode": "5.3.01",
+        "nama": "Belanja Tidak Terduga",
+        "anggaran": 709370820233,
+        "realisasi": 0,
+        "persen_dashboard": 0.0,
+        "persen_hitung": 0.0
+      },
+      {
+        "kode": "5.4.02",
+        "nama": "Belanja Bantuan Keuangan",
+        "anggaran": 195283179400,
+        "realisasi": 189878341000,
+        "persen_dashboard": 97.23,
+        "persen_hitung": 97.23
+      }
+    ],
+    "pembiayaan_penerimaan": [
+      {
+        "kode": "6.1.01",
+        "nama": "Sisa Lebih Perhitungan Anggaran Tahun Sebelumnya",
+        "anggaran": 5052674866043,
+        "realisasi": 5818568598877,
+        "persen_dashboard": 115.16,
+        "persen_hitung": 115.16
+      },
+      {
+        "kode": "6.1.05",
+        "nama": "Penerimaan Kembali Pemberian Pinjaman Daerah",
+        "anggaran": 0,
+        "realisasi": 40500000,
+        "persen_dashboard": 0.0,
+        "persen_hitung": 0.0
+      },
+      {
+        "kode": "6.1.08",
+        "nama": "Penerimaan Pembiayaan Utang Daerah",
+        "anggaran": 4822949000000,
+        "realisasi": 643378571005,
+        "persen_dashboard": 13.34,
+        "persen_hitung": 13.34
+      }
+    ],
+    "pembiayaan_pengeluaran": [
+      {
+        "kode": "6.2.02",
+        "nama": "Penyertaan Modal Daerah",
+        "anggaran": 5230567000000,
+        "realisasi": 673143926026,
+        "persen_dashboard": 12.87,
+        "persen_hitung": 12.87
+      },
+      {
+        "kode": "6.2.03",
+        "nama": "Pembayaran Cicilan Pokok Utang yang Jatuh Tempo",
+        "anggaran": 1810430000000,
+        "realisasi": 1350704142353,
+        "persen_dashboard": 74.61,
+        "persen_hitung": 74.61
+      }
+    ],
+    "total_halaman": {
+      "jumlah_pad": {
+        "anggaran": 57670647712697,
+        "realisasi": 42401881379868
+      },
+      "jumlah_pendapatan": {
+        "anggaran": 71450673065697,
+        "realisasi": 48601300211899
+      },
+      "jumlah_belanja_operasi": {
+        "anggaran": 63213103737755,
+        "realisasi": 41555306300595
+      },
+      "jumlah_belanja": {
+        "anggaran": 74285299931740,
+        "realisasi": 44467474197668
+      },
+      "jumlah_penerimaan_pembiayaan": {
+        "anggaran": 9875623866043,
+        "realisasi": 6461987669882
+      },
+      "jumlah_pengeluaran_pembiayaan": {
+        "anggaran": 7040997000000,
+        "realisasi": 2023848068379
+      },
+      "pembiayaan_netto": {
+        "anggaran": 2834626866043,
+        "realisasi": 4438139601503
+      },
+      "total_apbd_belanja_plus_pengeluaran_pembiayaan": 81326296931740,
+      "total_realisasi_penerimaan": 55063287881781,
+      "total_realisasi_pengeluaran": 46491322266047,
+      "sisa_lebih_pembiayaan_anggaran": 8571965615733
+    }
+  },
+  "realisasi_per_skpd": {
+    "jumlah": {
+      "pendapatan_anggaran": 71450673065697,
+      "pendapatan_realisasi": 48601300211899,
+      "belanja_anggaran": 74285299931740,
+      "belanja_realisasi": 44467474197668,
+      "pembiayaan_anggaran": 16916620866043,
+      "pembiayaan_realisasi": 8485835738261
+    },
+    "data": [
+      {
+        "no": 1,
+        "nama": "DINAS PENDIDIKAN",
+        "nama_pendek": "Dinas Pendidikan",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 5984811600,
+          "realisasi": 1898956968178
+        },
+        "belanja": {
+          "anggaran": 18174020856357,
+          "realisasi": 11565279866539,
+          "serapan_persen": 63.64
+        },
+        "pembiayaan": {
+          "anggaran": 729200000,
+          "realisasi": 1405823888
+        }
+      },
+      {
+        "no": 2,
+        "nama": "DINAS KESEHATAN",
+        "nama_pendek": "Dinas Kesehatan",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 3580217325105,
+          "realisasi": 2776460253202
+        },
+        "belanja": {
+          "anggaran": 10419304238106,
+          "realisasi": 6727829712501,
+          "serapan_persen": 64.57
+        },
+        "pembiayaan": {
+          "anggaran": 197139218832,
+          "realisasi": 328572891789
+        }
+      },
+      {
+        "no": 3,
+        "nama": "DINAS BINA MARGA",
+        "nama_pendek": "Dinas Bina Marga",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 4324217350,
+          "realisasi": 2619961800
+        },
+        "belanja": {
+          "anggaran": 2858978165409,
+          "realisasi": 1078884380172,
+          "serapan_persen": 37.74
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 4,
+        "nama": "DINAS SUMBER DAYA AIR",
+        "nama_pendek": "Dinas Sumber Daya Air",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 2639595000,
+          "realisasi": 2170567200
+        },
+        "belanja": {
+          "anggaran": 5670187356125,
+          "realisasi": 2049931585418,
+          "serapan_persen": 36.15
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 5,
+        "nama": "DINAS CIPTA KARYA TATA RUANG DAN PERTANAHAN",
+        "nama_pendek": "Dinas Cipta Karya Tata Ruang dan Pertanahan",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 689734362468,
+          "realisasi": 379607933262,
+          "serapan_persen": 55.04
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 6,
+        "nama": "DINAS PERUMAHAN RAKYAT DAN KAWASAN PERMUKIMAN",
+        "nama_pendek": "Dinas Perumahan Rakyat dan Kawasan Permukiman",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 145420866902,
+          "realisasi": 152781765033
+        },
+        "belanja": {
+          "anggaran": 1653649315989,
+          "realisasi": 781413029247,
+          "serapan_persen": 47.25
+        },
+        "pembiayaan": {
+          "anggaran": 25875057432,
+          "realisasi": 35799495647
+        }
+      },
+      {
+        "no": 7,
+        "nama": "SATUAN POLISI PAMONG PRAJA",
+        "nama_pendek": "Satuan Polisi Pamong Praja",
+        "jenis_unit": "satuan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 1292461435025,
+          "realisasi": 992507590301,
+          "serapan_persen": 76.79
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 8,
+        "nama": "DINAS PENANGGULANGAN KEBAKARAN DAN PENYELAMATAN",
+        "nama_pendek": "Dinas Penanggulangan Kebakaran dan Penyelamatan",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 557865000,
+          "realisasi": 359138000
+        },
+        "belanja": {
+          "anggaran": 1334606012541,
+          "realisasi": 996116288549,
+          "serapan_persen": 74.64
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 9,
+        "nama": "BADAN PENANGGULANGAN BENCANA DAERAH",
+        "nama_pendek": "Badan Penanggulangan Bencana Daerah",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 106648472840,
+          "realisasi": 58700410257,
+          "serapan_persen": 55.04
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 10,
+        "nama": "DINAS SOSIAL",
+        "nama_pendek": "Dinas Sosial",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 413300000,
+          "realisasi": 293550000
+        },
+        "belanja": {
+          "anggaran": 1526869280273,
+          "realisasi": 1118190475465,
+          "serapan_persen": 73.23
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 11,
+        "nama": "DINAS TENAGA KERJA, TRANSMIGRASI, DAN ENERGI",
+        "nama_pendek": "Dinas Tenaga Kerja, Transmigrasi, dan Energi",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 16408350000,
+          "realisasi": 15653317989
+        },
+        "belanja": {
+          "anggaran": 401105433299,
+          "realisasi": 291636406288,
+          "serapan_persen": 72.71
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 12,
+        "nama": "DINAS PEMBERDAYAAN, PERLINDUNGAN ANAK DAN PENGENDALIAN PENDUDUK",
+        "nama_pendek": "Dinas Pemberdayaan, Perlindungan Anak dan Pengendalian Penduduk",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 923517011791,
+          "realisasi": 665989814208,
+          "serapan_persen": 72.11
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 13,
+        "nama": "DINAS KETAHANAN PANGAN, KELAUTAN DAN PERTANIAN",
+        "nama_pendek": "Dinas Ketahanan Pangan, Kelautan dan Pertanian",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 45204919750,
+          "realisasi": 35356369118
+        },
+        "belanja": {
+          "anggaran": 1013720374176,
+          "realisasi": 857233521270,
+          "serapan_persen": 84.56
+        },
+        "pembiayaan": {
+          "anggaran": 2000000000,
+          "realisasi": 1977417270
+        }
+      },
+      {
+        "no": 14,
+        "nama": "DINAS LINGKUNGAN HIDUP",
+        "nama_pendek": "Dinas Lingkungan Hidup",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 241899811348,
+          "realisasi": 98725637420
+        },
+        "belanja": {
+          "anggaran": 3092508977191,
+          "realisasi": 1767753316686,
+          "serapan_persen": 57.16
+        },
+        "pembiayaan": {
+          "anggaran": 8998688528,
+          "realisasi": 1293523675
+        }
+      },
+      {
+        "no": 15,
+        "nama": "DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL",
+        "nama_pendek": "Dinas Kependudukan dan Pencatatan Sipil",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 304048651550,
+          "realisasi": 217835524542,
+          "serapan_persen": 71.64
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 16,
+        "nama": "DINAS PERHUBUNGAN",
+        "nama_pendek": "Dinas Perhubungan",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 177096177540,
+          "realisasi": 71939683782
+        },
+        "belanja": {
+          "anggaran": 6781855951196,
+          "realisasi": 2853831146991,
+          "serapan_persen": 42.08
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 4500823166
+        }
+      },
+      {
+        "no": 17,
+        "nama": "DINAS KOMUNIKASI, INFORMATIKA DAN STATISTIK",
+        "nama_pendek": "Dinas Komunikasi, Informatika dan Statistik",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 5003000000,
+          "realisasi": 223435138
+        },
+        "belanja": {
+          "anggaran": 995413409375,
+          "realisasi": 541801993805,
+          "serapan_persen": 54.43
+        },
+        "pembiayaan": {
+          "anggaran": 500000000,
+          "realisasi": 2173824995
+        }
+      },
+      {
+        "no": 18,
+        "nama": "DINAS PERINDUSTRIAN, PERDAGANGAN, KOPERASI, USAHA KECIL DAN MENENGAH",
+        "nama_pendek": "Dinas Perindustrian, Perdagangan, Koperasi, Usaha Kecil dan Menengah",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 39971735600,
+          "realisasi": 21595988052
+        },
+        "belanja": {
+          "anggaran": 315111429323,
+          "realisasi": 190523697332,
+          "serapan_persen": 60.46
+        },
+        "pembiayaan": {
+          "anggaran": 862941050,
+          "realisasi": 998407295
+        }
+      },
+      {
+        "no": 19,
+        "nama": "DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU",
+        "nama_pendek": "Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 351804440749,
+          "realisasi": 246902378251
+        },
+        "belanja": {
+          "anggaran": 754049528473,
+          "realisasi": 581132463571,
+          "serapan_persen": 77.07
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 20,
+        "nama": "DINAS PEMUDA DAN OLAHRAGA",
+        "nama_pendek": "Dinas Pemuda dan Olahraga",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 18428549785,
+          "realisasi": 15012758636
+        },
+        "belanja": {
+          "anggaran": 714357130044,
+          "realisasi": 525229236057,
+          "serapan_persen": 73.52
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 21,
+        "nama": "DINAS KEBUDAYAAN",
+        "nama_pendek": "Dinas Kebudayaan",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 15823922250,
+          "realisasi": 14150308076
+        },
+        "belanja": {
+          "anggaran": 464374995858,
+          "realisasi": 241783702747,
+          "serapan_persen": 52.07
+        },
+        "pembiayaan": {
+          "anggaran": 305696901,
+          "realisasi": 2442504532
+        }
+      },
+      {
+        "no": 22,
+        "nama": "DINAS PERPUSTAKAAN DAN KEARSIPAN",
+        "nama_pendek": "Dinas Perpustakaan dan Kearsipan",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 281014626738,
+          "realisasi": 160958864317,
+          "serapan_persen": 57.28
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 23,
+        "nama": "DINAS PARIWISATA DAN EKONOMI KREATIF",
+        "nama_pendek": "Dinas Pariwisata dan Ekonomi Kreatif",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 17402100000,
+          "realisasi": 10672974650
+        },
+        "belanja": {
+          "anggaran": 574198655378,
+          "realisasi": 270284377269,
+          "serapan_persen": 47.07
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 24,
+        "nama": "DINAS PERTAMANAN DAN HUTAN KOTA",
+        "nama_pendek": "Dinas Pertamanan dan Hutan Kota",
+        "jenis_unit": "dinas",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 106964000000,
+          "realisasi": 34347195096
+        },
+        "belanja": {
+          "anggaran": 1506797413476,
+          "realisasi": 896274618210,
+          "serapan_persen": 59.48
+        },
+        "pembiayaan": {
+          "anggaran": 5000000000,
+          "realisasi": 2079603435
+        }
+      },
+      {
+        "no": 25,
+        "nama": "BADAN PERENCANAAN PEMBANGUNAN DAERAH",
+        "nama_pendek": "Badan Perencanaan Pembangunan Daerah",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 198089841286,
+          "realisasi": 121308265413,
+          "serapan_persen": 61.24
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 26,
+        "nama": "BADAN PENGELOLAAN KEUANGAN DAERAH",
+        "nama_pendek": "Badan Pengelolaan Keuangan Daerah",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 15058116543232,
+          "realisasi": 5786950019627
+        },
+        "belanja": {
+          "anggaran": 882823254684,
+          "realisasi": 104521543153,
+          "serapan_persen": 11.84
+        },
+        "pembiayaan": {
+          "anggaran": 15798159550133,
+          "realisasi": 7074147559784
+        }
+      },
+      {
+        "no": 27,
+        "nama": "BPKD sebagai PPKD",
+        "nama_pendek": "BPKD sebagai PPKD",
+        "jenis_unit": "lainnya",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 315683179400,
+          "realisasi": 267636565997,
+          "serapan_persen": 84.78
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 28,
+        "nama": "BADAN PENGELOLAAN ASET DAERAH",
+        "nama_pendek": "Badan Pengelolaan Aset Daerah",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 812618561075,
+          "realisasi": 139648589843
+        },
+        "belanja": {
+          "anggaran": 339992328634,
+          "realisasi": 181329144472,
+          "serapan_persen": 53.33
+        },
+        "pembiayaan": {
+          "anggaran": 875857287329,
+          "realisasi": 1028669049224
+        }
+      },
+      {
+        "no": 29,
+        "nama": "BADAN PENDAPATAN DAERAH",
+        "nama_pendek": "Badan Pendapatan Daerah",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 50803218773411,
+          "realisasi": 37275408891915
+        },
+        "belanja": {
+          "anggaran": 1297670707563,
+          "realisasi": 884624435039,
+          "serapan_persen": 68.17
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 30,
+        "nama": "BADAN KEPEGAWAIAN DAERAH",
+        "nama_pendek": "Badan Kepegawaian Daerah",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 191038894359,
+          "realisasi": 122411414145,
+          "serapan_persen": 64.08
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 31,
+        "nama": "BADAN PENGEMBANGAN SUMBER DAYA MANUSIA",
+        "nama_pendek": "Badan Pengembangan Sumber Daya Manusia",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 1154200000,
+          "realisasi": 1070460892
+        },
+        "belanja": {
+          "anggaran": 124281374471,
+          "realisasi": 90168000949,
+          "serapan_persen": 72.55
+        },
+        "pembiayaan": {
+          "anggaran": 1193225838,
+          "realisasi": 1774813561
+        }
+      },
+      {
+        "no": 32,
+        "nama": "BADAN KESATUAN BANGSA DAN POLITIK",
+        "nama_pendek": "Badan Kesatuan Bangsa dan Politik",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 579731909734,
+          "realisasi": 553395444559,
+          "serapan_persen": 95.46
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 33,
+        "nama": "BIRO UMUM DAN ADMINISTRASI SEKRETARIAT DAERAH",
+        "nama_pendek": "Biro Umum dan Administrasi Sekretariat Daerah",
+        "jenis_unit": "biro",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 1395480361705,
+          "realisasi": 1086469810259,
+          "serapan_persen": 77.86
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 34,
+        "nama": "SEKRETARIAT DPRD",
+        "nama_pendek": "Sekretariat DPRD",
+        "jenis_unit": "sekretariat",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 935343674964,
+          "realisasi": 735633653935,
+          "serapan_persen": 78.65
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 35,
+        "nama": "INSPEKTORAT",
+        "nama_pendek": "Inspektorat",
+        "jenis_unit": "inspektorat",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 229096183933,
+          "realisasi": 137632324391,
+          "serapan_persen": 60.08
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 36,
+        "nama": "BADAN PELAYANAN PENGADAAN BARANG/JASA",
+        "nama_pendek": "Badan Pelayanan Pengadaan Barang/Jasa",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 96321053048,
+          "realisasi": 71888653230,
+          "serapan_persen": 74.63
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 37,
+        "nama": "BADAN PEMBINAAN BADAN USAHA MILIK DAERAH",
+        "nama_pendek": "Badan Pembinaan Badan Usaha Milik Daerah",
+        "jenis_unit": "badan",
+        "wilayah": null,
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 80437511288,
+          "realisasi": 30713144297,
+          "serapan_persen": 38.18
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 38,
+        "nama": "KOTA ADMINISTRASI JAKARTA PUSAT",
+        "nama_pendek": "Kota Administrasi Jakarta Pusat",
+        "jenis_unit": "wilayah_administrasi",
+        "wilayah": "Jakarta Pusat",
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 854348496329,
+          "realisasi": 632627628132,
+          "serapan_persen": 74.05
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 39,
+        "nama": "KOTA ADMINISTRASI JAKARTA UTARA",
+        "nama_pendek": "Kota Administrasi Jakarta Utara",
+        "jenis_unit": "wilayah_administrasi",
+        "wilayah": "Jakarta Utara",
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 865925043439,
+          "realisasi": 645468365389,
+          "serapan_persen": 74.54
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 40,
+        "nama": "KOTA ADMINISTRASI JAKARTA BARAT",
+        "nama_pendek": "Kota Administrasi Jakarta Barat",
+        "jenis_unit": "wilayah_administrasi",
+        "wilayah": "Jakarta Barat",
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 1093649673381,
+          "realisasi": 822153372935,
+          "serapan_persen": 75.18
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 41,
+        "nama": "KOTA ADMINISTRASI JAKARTA SELATAN",
+        "nama_pendek": "Kota Administrasi Jakarta Selatan",
+        "jenis_unit": "wilayah_administrasi",
+        "wilayah": "Jakarta Selatan",
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 1323684900442,
+          "realisasi": 966705503358,
+          "serapan_persen": 73.03
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 42,
+        "nama": "KOTA ADMINISTRASI JAKARTA TIMUR",
+        "nama_pendek": "Kota Administrasi Jakarta Timur",
+        "jenis_unit": "wilayah_administrasi",
+        "wilayah": "Jakarta Timur",
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 1416751495336,
+          "realisasi": 1055161955212,
+          "serapan_persen": 74.48
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      },
+      {
+        "no": 43,
+        "nama": "KABUPATEN ADMINISTRASI KEPULAUAN SERIBU - KEP. SERIBU",
+        "nama_pendek": "Kabupaten Administrasi Kepulauan Seribu - Kep. Seribu",
+        "jenis_unit": "wilayah_administrasi",
+        "wilayah": "Kepulauan Seribu",
+        "pendapatan": {
+          "anggaran": 0,
+          "realisasi": 0
+        },
+        "belanja": {
+          "anggaran": 216416964743,
+          "realisasi": 146895017800,
+          "serapan_persen": 67.88
+        },
+        "pembiayaan": {
+          "anggaran": 0,
+          "realisasi": 0
+        }
+      }
+    ]
+  },
+  "turunan": {
+    "catatan": "Dihitung kode dari data di berkas ini. Realisasi bersifat kumulatif sampai tanggal_data pada tahun anggaran berjalan, bukan angka akhir tahun.",
+    "capaian_persen": {
+      "pendapatan": 68.02,
+      "pajak_daerah": 74.43,
+      "belanja": 59.86,
+      "belanja_modal": 26.77
+    },
+    "porsi_pajak_daerah_dari_realisasi_pendapatan_persen": 76.42,
+    "belanja_terbesar_menurut_anggaran": [
+      {
+        "nama_pendek": "Dinas Pendidikan",
+        "belanja_anggaran": 18174020856357,
+        "belanja_realisasi": 11565279866539,
+        "serapan_persen": 63.64
+      },
+      {
+        "nama_pendek": "Dinas Kesehatan",
+        "belanja_anggaran": 10419304238106,
+        "belanja_realisasi": 6727829712501,
+        "serapan_persen": 64.57
+      },
+      {
+        "nama_pendek": "Dinas Perhubungan",
+        "belanja_anggaran": 6781855951196,
+        "belanja_realisasi": 2853831146991,
+        "serapan_persen": 42.08
+      },
+      {
+        "nama_pendek": "Dinas Sumber Daya Air",
+        "belanja_anggaran": 5670187356125,
+        "belanja_realisasi": 2049931585418,
+        "serapan_persen": 36.15
+      },
+      {
+        "nama_pendek": "Dinas Lingkungan Hidup",
+        "belanja_anggaran": 3092508977191,
+        "belanja_realisasi": 1767753316686,
+        "serapan_persen": 57.16
+      }
+    ],
+    "serapan_belanja_terendah_unit_di_atas_100_miliar": [
+      {
+        "nama_pendek": "Badan Pengelolaan Keuangan Daerah",
+        "belanja_anggaran": 882823254684,
+        "belanja_realisasi": 104521543153,
+        "serapan_persen": 11.84
+      },
+      {
+        "nama_pendek": "Dinas Sumber Daya Air",
+        "belanja_anggaran": 5670187356125,
+        "belanja_realisasi": 2049931585418,
+        "serapan_persen": 36.15
+      },
+      {
+        "nama_pendek": "Dinas Bina Marga",
+        "belanja_anggaran": 2858978165409,
+        "belanja_realisasi": 1078884380172,
+        "serapan_persen": 37.74
+      },
+      {
+        "nama_pendek": "Dinas Perhubungan",
+        "belanja_anggaran": 6781855951196,
+        "belanja_realisasi": 2853831146991,
+        "serapan_persen": 42.08
+      },
+      {
+        "nama_pendek": "Dinas Pariwisata dan Ekonomi Kreatif",
+        "belanja_anggaran": 574198655378,
+        "belanja_realisasi": 270284377269,
+        "serapan_persen": 47.07
+      }
+    ],
+    "serapan_belanja_tertinggi_unit_di_atas_100_miliar": [
+      {
+        "nama_pendek": "Badan Kesatuan Bangsa dan Politik",
+        "belanja_anggaran": 579731909734,
+        "belanja_realisasi": 553395444559,
+        "serapan_persen": 95.46
+      },
+      {
+        "nama_pendek": "BPKD sebagai PPKD",
+        "belanja_anggaran": 315683179400,
+        "belanja_realisasi": 267636565997,
+        "serapan_persen": 84.78
+      },
+      {
+        "nama_pendek": "Dinas Ketahanan Pangan, Kelautan dan Pertanian",
+        "belanja_anggaran": 1013720374176,
+        "belanja_realisasi": 857233521270,
+        "serapan_persen": 84.56
+      },
+      {
+        "nama_pendek": "Sekretariat DPRD",
+        "belanja_anggaran": 935343674964,
+        "belanja_realisasi": 735633653935,
+        "serapan_persen": 78.65
+      },
+      {
+        "nama_pendek": "Biro Umum dan Administrasi Sekretariat Daerah",
+        "belanja_anggaran": 1395480361705,
+        "belanja_realisasi": 1086469810259,
+        "serapan_persen": 77.86
+      }
+    ],
+    "perbandingan_snapshot_23_vs_25_okt_2026": {
+      "keterangan": "Angka 23/10/2026 berasal dari tangkapan layar sebelumnya. Dipakai hanya untuk menunjukkan bahwa angka berubah per tanggal.",
+      "pajak_daerah_realisasi": {
+        "2026-10-23": 37036293202422,
+        "2026-10-25": 37138893774592,
+        "selisih": 102600572170
+      }
+    }
+  },
+  "pemeriksaan_konsistensi": [
+    {
+      "pemeriksaan": "PAD anggaran = jumlah halaman",
+      "hasil_hitung": 57670647712697,
+      "acuan": 57670647712697,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "PAD realisasi = jumlah halaman",
+      "hasil_hitung": 42401881379867,
+      "acuan": 42401881379868,
+      "selisih": -1,
+      "cocok": false,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Pendapatan anggaran = jumlah halaman",
+      "hasil_hitung": 71450673065697,
+      "acuan": 71450673065697,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Pendapatan realisasi = jumlah halaman",
+      "hasil_hitung": 48601300211898,
+      "acuan": 48601300211899,
+      "selisih": -1,
+      "cocok": false,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Belanja operasi anggaran = jumlah halaman",
+      "hasil_hitung": 63213103737755,
+      "acuan": 63213103737755,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Belanja operasi realisasi = jumlah halaman",
+      "hasil_hitung": 41555306300595,
+      "acuan": 41555306300595,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Belanja anggaran = jumlah halaman",
+      "hasil_hitung": 74285299931740,
+      "acuan": 74285299931740,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Belanja realisasi = jumlah halaman",
+      "hasil_hitung": 44467474197668,
+      "acuan": 44467474197668,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Penerimaan pembiayaan anggaran",
+      "hasil_hitung": 9875623866043,
+      "acuan": 9875623866043,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Penerimaan pembiayaan realisasi",
+      "hasil_hitung": 6461987669882,
+      "acuan": 6461987669882,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Pengeluaran pembiayaan anggaran",
+      "hasil_hitung": 7040997000000,
+      "acuan": 7040997000000,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Pengeluaran pembiayaan realisasi",
+      "hasil_hitung": 2023848068379,
+      "acuan": 2023848068379,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Pembiayaan netto anggaran = penerimaan - pengeluaran",
+      "hasil_hitung": 2834626866043,
+      "acuan": 2834626866043,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Pembiayaan netto realisasi = penerimaan - pengeluaran",
+      "hasil_hitung": 4438139601503,
+      "acuan": 4438139601503,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Total APBD = belanja + pengeluaran pembiayaan (anggaran)",
+      "hasil_hitung": 81326296931740,
+      "acuan": 81326296931740,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Total realisasi penerimaan = pendapatan + penerimaan pembiayaan",
+      "hasil_hitung": 55063287881781,
+      "acuan": 55063287881781,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Total realisasi pengeluaran = belanja + pengeluaran pembiayaan",
+      "hasil_hitung": 46491322266047,
+      "acuan": 46491322266047,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Sisa lebih = total penerimaan - total pengeluaran",
+      "hasil_hitung": 8571965615734,
+      "acuan": 8571965615733,
+      "selisih": 1,
+      "cocok": false,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": "selisih 1 rupiah kemungkinan pembulatan pada halaman sumber"
+    },
+    {
+      "pemeriksaan": "Per-SKPD: jumlah pendapatan anggaran = baris JUMLAH",
+      "hasil_hitung": 71450673065697,
+      "acuan": 71450673065697,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Per-SKPD: jumlah pendapatan realisasi = baris JUMLAH",
+      "hasil_hitung": 48601300211898,
+      "acuan": 48601300211899,
+      "selisih": -1,
+      "cocok": false,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Per-SKPD: jumlah belanja anggaran = baris JUMLAH",
+      "hasil_hitung": 74285299931740,
+      "acuan": 74285299931740,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Per-SKPD: jumlah belanja realisasi = baris JUMLAH",
+      "hasil_hitung": 44467474197669,
+      "acuan": 44467474197668,
+      "selisih": 1,
+      "cocok": false,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Per-SKPD: jumlah pembiayaan anggaran = baris JUMLAH",
+      "hasil_hitung": 16916620866043,
+      "acuan": 16916620866043,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Per-SKPD: jumlah pembiayaan realisasi = baris JUMLAH",
+      "hasil_hitung": 8485835738261,
+      "acuan": 8485835738261,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Per-SKPD pendapatan realisasi = Per-Akun pendapatan realisasi",
+      "hasil_hitung": 48601300211898,
+      "acuan": 48601300211899,
+      "selisih": -1,
+      "cocok": false,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": "kedua tampilan sama-sama tanggal 25/10/2026"
+    },
+    {
+      "pemeriksaan": "Per-SKPD belanja realisasi = Per-Akun belanja realisasi",
+      "hasil_hitung": 44467474197669,
+      "acuan": 44467474197668,
+      "selisih": 1,
+      "cocok": false,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": "pada tangkapan layar 23/10/2026 kedua tampilan masih berselisih; kini cocok"
+    },
+    {
+      "pemeriksaan": "Per-SKPD pembiayaan realisasi = penerimaan + pengeluaran pembiayaan Per-Akun",
+      "hasil_hitung": 8485835738261,
+      "acuan": 8485835738261,
+      "selisih": 0,
+      "cocok": true,
+      "cocok_hingga_pembulatan_1_rupiah": true,
+      "keterangan": "kolom pembiayaan per SKPD adalah penerimaan dan pengeluaran digabung, bukan netto"
+    }
+  ],
+  "pemeriksaan_lintas_berkas": [
+    {
+      "pemeriksaan": "Anggaran 2026 pada berkas realisasi = berkas anggaran (pendapatan per akun)",
+      "cocok": true
+    },
+    {
+      "pemeriksaan": "Anggaran 2026 pada berkas realisasi = berkas anggaran (belanja per akun, modal dijumlahkan)",
+      "cocok": true
+    },
+    {
+      "pemeriksaan": "Anggaran 2026 pada berkas realisasi = berkas anggaran (pembiayaan per akun)",
+      "cocok": true
+    }
+  ],
+  "pemeriksaan_persen_dashboard": {
+    "selisih_lebih_dari_0_01_poin": [],
+    "keterangan": "Persen yang dihitung ulang dibandingkan dengan persen yang tertera di halaman."
+  }
+}

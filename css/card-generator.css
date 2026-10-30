@@ -1,149 +1,165 @@
 /* =========================================================================
-   paJAK-Kita — Card Generator Styles (5 Desain Kartu Insight 3:4)
+   paJAK-Kita — Card Generator Styles (Compact Modern Redesign 3:4)
    ========================================================================= */
 
-/* Font Fraunces & Plus Jakarta Sans */
+/* Font Fraunces & Plus Jakarta Sans (Self-hosted offline) */
 @import url('card-fonts.css');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-/* --- Section Layout --- */
+/* --- 4. Header Section Ringkas --- */
 .card-section-wrapper {
-  background: #F0E7D8;
-  border-block: 1px solid #E7DCCB;
-  padding-top: 60px;
-  padding-bottom: 70px;
+  background: var(--color-surface-warm);
+  border-block: 1px solid var(--color-border);
+  padding-top: 36px;
+  padding-bottom: 46px;
 }
 
+.card-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 1.25rem;
+}
+
+.card-section-header .eyebrow {
+  margin-bottom: 4px;
+}
+
+.card-section-header h2 {
+  font-size: clamp(24px, 2.4vw, 32px);
+  margin-bottom: 0;
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.card-section-header .section-intro {
+  max-width: 440px;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+/* --- 2. Compact Grid Layout: 2-Kolom Seimbang Sejajar --- */
 .card-generator-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 36px;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   align-items: start;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .card-generator-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 1.5rem;
+  }
+  .card-section-header {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .card-section-header .section-intro {
+    margin-top: 8px;
   }
 }
 
-/* --- Left Column: Config Panel --- */
+/* --- Kolom Kiri: Form Konfigurasi Kartu (Compact) --- */
 .card-config-box {
-  background: #FFFFFF;
-  border: 1px solid #E5DDD0;
-  border-radius: 18px;
-  padding: 28px 26px;
-  box-shadow: 0 10px 30px rgba(33, 31, 29, 0.05);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 28px rgba(31, 26, 23, 0.05);
 }
 
 .card-config-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 800;
-  color: #211F1D;
-  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  margin-bottom: 0.85rem;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .card-config-group {
-  margin-bottom: 1.15rem;
+  margin-bottom: 0.85rem;
 }
 
 .card-config-label {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.6875rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #6B655D;
-  margin-bottom: 0.45rem;
+  color: var(--color-muted);
+  margin-bottom: 0.35rem;
+}
+
+/* --- 1. Dropdown Select Modern --- */
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B6159' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
 }
 
 .card-config-input,
 .card-config-select {
   width: 100%;
-  padding: 10px 14px;
-  font-size: 0.92rem;
+  padding: 8px 12px;
+  font-size: 0.875rem;
   font-family: inherit;
-  color: #211F1D;
-  background: #FAF8F4;
-  border: 1.5px solid #E5DDD0;
+  color: var(--color-ink);
+  background: var(--color-surface-warm);
+  border: 1.5px solid var(--color-border);
   border-radius: 10px;
   transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
   outline: none;
+  box-sizing: border-box;
+}
+
+.card-config-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 32px;
+  cursor: pointer;
 }
 
 .card-config-input:focus,
 .card-config-select:focus {
-  background: #FFFFFF;
-  border-color: #B82025;
-  box-shadow: 0 0 0 3px rgba(184, 32, 37, 0.12);
+  background: var(--color-surface);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
 }
 
-/* Radio Template Options */
-.card-templates-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.template-radio-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border: 1.5px solid #EAE2D4;
-  background: #FAF8F4;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.template-radio-label:hover {
-  background: #FFFFFF;
-  border-color: #C8201B;
-}
-
-.template-radio-label.active {
-  background: #FFF9F2;
-  border-color: #B82025;
-  box-shadow: 0 2px 8px rgba(184, 32, 37, 0.1);
-}
-
-.template-radio-label input[type="radio"] {
-  accent-color: #B82025;
-  width: 17px;
-  height: 17px;
-  margin: 0;
-  cursor: pointer;
-}
-
-.template-radio-text {
-  font-size: 0.88rem;
-  color: #38342E;
-  line-height: 1.35;
-}
-
-.template-radio-text strong {
-  color: #211F1D;
-}
-
-.template-radio-desc {
-  font-size: 0.76rem;
-  color: #7D756C;
-}
-
-/* Action Buttons */
+/* --- Tata Tombol Aksi: Baris 1 Utama, Baris 2 Grid 2-Kolom --- */
 .card-actions-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 1.35rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid #ECE3D4;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.card-actions-secondary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
 }
 
 .btn-card-action {
@@ -151,40 +167,32 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  min-height: 46px;
-  padding: 11px 20px;
-  border-radius: 999px;
-  font-size: 0.88rem;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  font-size: 0.825rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
   border: 1.5px solid transparent;
+  box-sizing: border-box;
 }
 
-.btn-card-random {
-  background: #FFFFFF;
-  border-color: #D6CCC0;
-  color: #332F2A;
-}
-
-.btn-card-random:hover {
-  background: #F8F3E9;
-  border-color: #B82025;
-  color: #B82025;
-}
-
+/* Baris 1: Tombol Utama Unduh (Solid Pill Button Tegas Marun) */
 .btn-card-download {
-  background: #231F20;
-  color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(35, 31, 32, 0.25);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  font-size: 0.875rem;
+  min-height: 44px;
+  box-shadow: 0 4px 14px rgba(185, 28, 28, 0.25);
 }
 
 .btn-card-download:hover {
-  background: #000000;
+  background: var(--color-primary-strong);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(35, 31, 32, 0.35);
+  box-shadow: 0 6px 18px rgba(185, 28, 28, 0.35);
 }
 
 .btn-card-download:disabled {
@@ -193,71 +201,100 @@
   transform: none;
 }
 
+/* Baris 2: Tombol Pendukung Acak & Bagikan */
+.btn-card-random {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-ink);
+}
+
+.btn-card-random:hover {
+  background: var(--color-cream);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 .btn-card-share {
-  background: #FFFFFF;
-  border-color: #1F7A57;
-  color: #1F7A57;
+  background: var(--color-surface);
+  border-color: var(--color-success);
+  color: var(--color-success);
 }
 
 .btn-card-share:hover {
-  background: #E8F5EF;
+  background: var(--color-cream);
+  border-color: var(--color-success);
+  color: var(--color-success);
   transform: translateY(-1px);
 }
 
-/* Privacy Assurance Badge */
+/* Ultra-Compact Privacy Assurance Badge */
 .card-privacy-badge {
-  margin-top: 1.25rem;
-  padding: 10px 14px;
+  margin-top: 0.75rem;
+  padding: 6px 10px;
   border-radius: 8px;
-  background: #FAF8F4;
-  border: 1px solid #EBE2D4;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: #6C665D;
+  background: var(--color-surface-warm);
+  border: 1px solid var(--color-border);
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .card-privacy-badge strong {
-  color: #2F2A25;
+  color: var(--color-ink);
+  font-weight: 700;
 }
 
-/* --- Right Column: Live 3:4 Preview --- */
+.privacy-lock-icon {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* --- 3. Scaling Pratinjau Kartu (Kolom Kanan) Max-Height 480px --- */
 .card-preview-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .card-preview-header {
-  margin-bottom: 0.75rem;
-  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #6B655D;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
   text-align: center;
 }
 
 .card-preview-viewport-frame {
   width: 100%;
-  max-width: 440px;
-  background: #FFFFFF;
-  border: 1.5px solid #E3D9C9;
-  border-radius: 20px;
-  padding: 16px;
-  box-shadow: 0 16px 40px rgba(33, 31, 29, 0.08);
+  max-width: 380px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 1.25rem;
+  padding: 12px;
+  box-shadow: 0 12px 30px rgba(31, 26, 23, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .card-preview-viewport {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 340px;
+  max-height: 480px;
+  aspect-ratio: 540 / 760;
+  margin: 0 auto;
   overflow: hidden;
-  border-radius: 26px;
-  background: #E8DFCF;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  background: var(--color-surface-warm);
+  box-shadow: 0 6px 18px rgba(31, 26, 23, 0.08);
 }
 
 .card-preview-scale-wrapper {
@@ -272,12 +309,12 @@
 }
 
 .card-preview-note {
-  margin-top: 0.85rem;
-  font-size: 0.75rem;
-  color: #7D756C;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--color-muted);
   text-align: center;
-  max-width: 380px;
-  line-height: 1.45;
+  max-width: 340px;
+  line-height: 1.35;
 }
 
 /* --- Card Styles from paJAK-Kita_Kartu_Insight_v2 --- */
@@ -287,7 +324,8 @@
   height: 760px;
   overflow: hidden;
   border-radius: 36px;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family-base, 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif);
+  font-variant-numeric: tabular-nums;
   flex: none;
   user-select: none;
   box-sizing: border-box;
@@ -310,7 +348,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   padding: 6px 14px;
-  border: 3px solid #231F20;
+  border: 3px solid var(--color-ink);
   border-radius: 22px;
 }
 
@@ -320,13 +358,13 @@
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(80px);
-  background: #231F20;
-  color: #FFFFFF;
+  background: var(--color-ink);
+  color: var(--color-surface);
   padding: 12px 24px;
   border-radius: 999px;
   font-size: 0.88rem;
   font-weight: 600;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(31, 26, 23, 0.3);
   z-index: 9999;
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -336,4 +374,13 @@
 .card-toast.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-card-action,
+  .card-preview-scale-wrapper,
+  .card-toast {
+    transition: none !important;
+    animation: none !important;
+  }
 }
