@@ -1,0 +1,1138 @@
+{
+  "meta": {
+    "judul": "Data anggaran APBD Provinsi DKI Jakarta untuk paJAK-Kita",
+    "jenis_data": "anggaran (bukan realisasi)",
+    "sumber": {
+      "nama": "Dashboard Keuangan Daerah BPKD Provinsi DKI Jakarta",
+      "url": "https://dashboard-bpkd.jakarta.go.id",
+      "halaman": [
+        "Anggaran > APBD",
+        "Anggaran > Pendapatan",
+        "Anggaran > Belanja (Operasi, Modal, Tidak Terduga, Transfer, Per-Urusan)",
+        "Anggaran > Pembiayaan (Penerimaan, Pengeluaran)"
+      ]
+    },
+    "cara_pengambilan": "Disalin dari tangkapan layar dashboard oleh pengguna, bukan unduhan berkas resmi.",
+    "tanggal_pengambilan": null,
+    "tanggal_pengambilan_catatan": "ISI dengan tanggal saat data diambil. Anggaran bisa berubah bila ada perubahan APBD.",
+    "satuan": "rupiah penuh (bilangan bulat). Seluruh nilai < 9 x 10^15 sehingga aman dipakai sebagai number di JavaScript.",
+    "istilah": {
+      "APBD": "anggaran penetapan awal tahun",
+      "APBDP": "APBD Perubahan (setelah perubahan anggaran). Untuk 2026 nilainya sama dengan APBD karena belum ada perubahan pada saat data diambil."
+    },
+    "basis_tahun_pada_data_per_akun_dan_per_urusan": {
+      "2026": "APBD (sama dengan APBDP)",
+      "2025": "APBDP"
+    },
+    "status": "Anggaran 2022-2026 untuk ringkasan; rincian per akun dan per urusan hanya 2026 dan 2025. Realisasi dan transparansi menyusul."
+  },
+  "ringkasan_apbd": {
+    "pendapatan": [
+      {
+        "tahun": 2026,
+        "apbd": 71450673065697,
+        "apbdp": 71450673065697
+      },
+      {
+        "tahun": 2025,
+        "apbd": 81734364760824,
+        "apbdp": 84454424378366
+      },
+      {
+        "tahun": 2024,
+        "apbd": 72446382571261,
+        "apbdp": 74946825859889
+      },
+      {
+        "tahun": 2023,
+        "apbd": 74380646088137,
+        "apbdp": 70662936135345
+      },
+      {
+        "tahun": 2022,
+        "apbd": 77448713889500,
+        "apbdp": 77796647728301
+      }
+    ],
+    "belanja": [
+      {
+        "tahun": 2026,
+        "apbd": 74285299931740,
+        "apbdp": 74285299931740
+      },
+      {
+        "tahun": 2025,
+        "apbd": 82663062617784,
+        "apbdp": 85979175838982
+      },
+      {
+        "tahun": 2024,
+        "apbd": 72600997362528,
+        "apbdp": 76023113210933
+      },
+      {
+        "tahun": 2023,
+        "apbd": 74613763379256,
+        "apbdp": 72144886612586
+      },
+      {
+        "tahun": 2022,
+        "apbd": 75757234798334,
+        "apbdp": 76972166396328
+      }
+    ],
+    "pembiayaan_penerimaan": [
+      {
+        "tahun": 2026,
+        "apbd": 9875623866043,
+        "apbdp": 9875623866043
+      },
+      {
+        "tahun": 2025,
+        "apbd": 9610526480390,
+        "apbdp": 7408465084046
+      },
+      {
+        "tahun": 2024,
+        "apbd": 9270190454798,
+        "apbdp": 10255502731787
+      },
+      {
+        "tahun": 2023,
+        "apbd": 9400439814055,
+        "apbdp": 8895317655192
+      },
+      {
+        "tahun": 2022,
+        "apbd": 5022420964799,
+        "apbdp": 5015108618305
+      }
+    ],
+    "pembiayaan_pengeluaran": [
+      {
+        "tahun": 2026,
+        "apbd": 7040997000000,
+        "apbdp": 7040997000000
+      },
+      {
+        "tahun": 2025,
+        "apbd": 8681828623430,
+        "apbdp": 5883713623430
+      },
+      {
+        "tahun": 2024,
+        "apbd": 9115575663531,
+        "apbdp": 9179215380743
+      },
+      {
+        "tahun": 2023,
+        "apbd": 9167322522936,
+        "apbdp": 7413367177951
+      },
+      {
+        "tahun": 2022,
+        "apbd": 6713900055965,
+        "apbdp": 5839589950278
+      }
+    ]
+  },
+  "pendapatan_per_akun": [
+    {
+      "kode": "4.1.01",
+      "nama": "Pajak Daerah",
+      "nilai": {
+        "2026": 49898218773411,
+        "2025": 48000000000000
+      }
+    },
+    {
+      "kode": "4.1.02",
+      "nama": "Retribusi Daerah",
+      "nilai": {
+        "2026": 2214853656242,
+        "2025": 1396295297541
+      }
+    },
+    {
+      "kode": "4.1.03",
+      "nama": "Hasil Pengelolaan Kekayaan Daerah yang Dipisahkan",
+      "nilai": {
+        "2026": 876020190232,
+        "2025": 774000000000
+      }
+    },
+    {
+      "kode": "4.1.04",
+      "nama": "Lain-lain PAD yang Sah",
+      "nilai": {
+        "2026": 4681555092812,
+        "2025": 4028903045464
+      }
+    },
+    {
+      "kode": "4.2.01",
+      "nama": "Pendapatan Transfer Pemerintah Pusat",
+      "nilai": {
+        "2026": 11159480293000,
+        "2025": 30082649167361
+      }
+    },
+    {
+      "kode": "4.3.01",
+      "nama": "Pendapatan Hibah",
+      "nilai": {
+        "2026": 2620545060000,
+        "2025": 172576868000
+      }
+    }
+  ],
+  "belanja_per_akun": {
+    "operasi": [
+      {
+        "kode": "5.1.01",
+        "nama": "Belanja Pegawai",
+        "nilai": {
+          "2026": 21431736563104,
+          "2025": 21494737417693
+        }
+      },
+      {
+        "kode": "5.1.02",
+        "nama": "Belanja Barang dan Jasa",
+        "nilai": {
+          "2026": 29000142954078,
+          "2025": 31382423238857
+        }
+      },
+      {
+        "kode": "5.1.03",
+        "nama": "Belanja Bunga",
+        "nilai": {
+          "2026": 120400000000,
+          "2025": 143000000000
+        }
+      },
+      {
+        "kode": "5.1.04",
+        "nama": "Belanja Subsidi",
+        "nilai": {
+          "2026": 5277927322600,
+          "2025": 7011138070237
+        }
+      },
+      {
+        "kode": "5.1.05",
+        "nama": "Belanja Hibah",
+        "nilai": {
+          "2026": 2801230357390,
+          "2025": 3014479982073
+        }
+      },
+      {
+        "kode": "5.1.06",
+        "nama": "Belanja Bantuan Sosial",
+        "nilai": {
+          "2026": 4581666540583,
+          "2025": 4355658226574
+        }
+      }
+    ],
+    "modal": [
+      {
+        "kode": "5.2.01",
+        "nama": "Belanja Modal Tanah",
+        "nilai": {
+          "2026": 745231989077,
+          "2025": 1160296526916
+        }
+      },
+      {
+        "kode": "5.2.02",
+        "nama": "Belanja Modal Peralatan dan Mesin",
+        "nilai": {
+          "2026": 1967569878710,
+          "2025": 3792579523139
+        }
+      },
+      {
+        "kode": "5.2.03",
+        "nama": "Belanja Modal Gedung dan Bangunan",
+        "nilai": {
+          "2026": 1899083568597,
+          "2025": 4322655246961
+        }
+      },
+      {
+        "kode": "5.2.04",
+        "nama": "Belanja Modal Jalan, Jaringan, dan Irigasi",
+        "nilai": {
+          "2026": 5357208391634,
+          "2025": 5652339335329
+        }
+      },
+      {
+        "kode": "5.2.05",
+        "nama": "Belanja Modal Aset Tetap Lainnya",
+        "nilai": {
+          "2026": 109190724044,
+          "2025": 169044104138
+        }
+      },
+      {
+        "kode": "5.2.06",
+        "nama": "Belanja Modal Aset Lainnya",
+        "nilai": {
+          "2026": 89257642290,
+          "2025": 156324877024
+        }
+      }
+    ],
+    "tidak_terduga": [
+      {
+        "kode": "5.3.01",
+        "nama": "Belanja Tidak Terduga",
+        "nilai": {
+          "2026": 709370820233,
+          "2025": 2947599618521
+        }
+      }
+    ],
+    "transfer": [
+      {
+        "kode": "5.4.02",
+        "nama": "Belanja Bantuan Keuangan",
+        "nilai": {
+          "2026": 195283179400,
+          "2025": 376899671520
+        }
+      }
+    ]
+  },
+  "belanja_per_urusan": {
+    "PERINGATAN": "JANGAN tampilkan 'nilai_dashboard' sebagai nominal rupiah. Jumlah semua urusan persis 2x total belanja (lihat pemeriksaan_konsistensi), sehingga nominalnya kemungkinan terhitung dobel. 'porsi_dari_jumlah_urusan_persen' aman dipakai sebagai proporsi, karena pengaliannya seragam. Verifikasi dulu ke BPKD atau dokumen APBD sebelum menampilkan nominal.",
+    "kelompok_catatan": "Field 'kelompok' diturunkan dari angka depan kode urusan (struktur klasifikasi urusan pemerintahan daerah). Belum diverifikasi ke dokumen resmi; tampilkan sebagai pengelompokan bantu, bukan istilah resmi.",
+    "data": [
+      {
+        "kode": "1.01",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PENDIDIKAN",
+        "nama_pendek": "Pendidikan",
+        "kelompok": "Urusan wajib pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 36348041712714,
+          "2025": 39207933547336
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 24.47,
+          "2025": 22.8
+        }
+      },
+      {
+        "kode": "1.02",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KESEHATAN",
+        "nama_pendek": "Kesehatan",
+        "kelompok": "Urusan wajib pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 20838608476212,
+          "2025": 22857646661226
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 14.03,
+          "2025": 13.29
+        }
+      },
+      {
+        "kode": "1.03",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PEKERJAAN UMUM DAN PENATAAN RUANG",
+        "nama_pendek": "Pekerjaan Umum dan Penataan Ruang",
+        "kelompok": "Urusan wajib pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 18415872389380,
+          "2025": 21104099960062
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 12.4,
+          "2025": 12.27
+        }
+      },
+      {
+        "kode": "1.04",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PERUMAHAN DAN KAWASAN PERMUKIMAN",
+        "nama_pendek": "Perumahan dan Kawasan Permukiman",
+        "kelompok": "Urusan wajib pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 3307298631978,
+          "2025": 3109600029882
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 2.23,
+          "2025": 1.81
+        }
+      },
+      {
+        "kode": "1.05",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KETENTERAMAN DAN KETERTIBAN UMUM SERTA PERLINDUNGAN MASYARAKAT",
+        "nama_pendek": "Ketenteraman dan Ketertiban Umum serta Perlindungan Masyarakat",
+        "kelompok": "Urusan wajib pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 5467431840812,
+          "2025": 6268366686362
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 3.68,
+          "2025": 3.65
+        }
+      },
+      {
+        "kode": "1.06",
+        "nama": "URUSAN PEMERINTAHAN BIDANG SOSIAL",
+        "nama_pendek": "Sosial",
+        "kelompok": "Urusan wajib pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 3053738560546,
+          "2025": 3056949446916
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 2.06,
+          "2025": 1.78
+        }
+      },
+      {
+        "kode": "2.07",
+        "nama": "URUSAN PEMERINTAHAN BIDANG TENAGA KERJA",
+        "nama_pendek": "Tenaga Kerja",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 764761643350,
+          "2025": 1332250300330
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.51,
+          "2025": 0.77
+        }
+      },
+      {
+        "kode": "2.08",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK",
+        "nama_pendek": "Pemberdayaan Perempuan dan Perlindungan Anak",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 62331420608,
+          "2025": 63486579020
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.04,
+          "2025": 0.04
+        }
+      },
+      {
+        "kode": "2.09",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PANGAN",
+        "nama_pendek": "Pangan",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 1783711556436,
+          "2025": 2533612094574
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 1.2,
+          "2025": 1.47
+        }
+      },
+      {
+        "kode": "2.10",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PERTANAHAN",
+        "nama_pendek": "Pertanahan",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 1927386224,
+          "2025": 2525967006
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.0,
+          "2025": 0.0
+        }
+      },
+      {
+        "kode": "2.11",
+        "nama": "URUSAN PEMERINTAHAN BIDANG LINGKUNGAN HIDUP",
+        "nama_pendek": "Lingkungan Hidup",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 8282323768214,
+          "2025": 9855919235478
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 5.57,
+          "2025": 5.73
+        }
+      },
+      {
+        "kode": "2.12",
+        "nama": "URUSAN PEMERINTAHAN BIDANG ADMINISTRASI KEPENDUDUKAN DAN PENCATATAN SIPIL",
+        "nama_pendek": "Administrasi Kependudukan dan Pencatatan Sipil",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 608097303100,
+          "2025": 753104219618
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.41,
+          "2025": 0.44
+        }
+      },
+      {
+        "kode": "2.13",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PEMBERDAYAAN MASYARAKAT DAN DESA",
+        "nama_pendek": "Pemberdayaan Masyarakat dan Desa",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 1404577165170,
+          "2025": 1109119387924
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.95,
+          "2025": 0.64
+        }
+      },
+      {
+        "kode": "2.14",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA",
+        "nama_pendek": "Pengendalian Penduduk dan Keluarga Berencana",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 380125437804,
+          "2025": 442492790460
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.26,
+          "2025": 0.26
+        }
+      },
+      {
+        "kode": "2.15",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PERHUBUNGAN",
+        "nama_pendek": "Perhubungan",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 13563711902392,
+          "2025": 16244920715956
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 9.13,
+          "2025": 9.45
+        }
+      },
+      {
+        "kode": "2.16",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KOMUNIKASI DAN INFORMATIKA",
+        "nama_pendek": "Komunikasi dan Informatika",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 1937819998786,
+          "2025": 2138532609038
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 1.3,
+          "2025": 1.24
+        }
+      },
+      {
+        "kode": "2.17",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KOPERASI, USAHA KECIL, DAN MENENGAH",
+        "nama_pendek": "Koperasi, Usaha Kecil, dan Menengah",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 464615357202,
+          "2025": 585056464356
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.31,
+          "2025": 0.34
+        }
+      },
+      {
+        "kode": "2.18",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PENANAMAN MODAL",
+        "nama_pendek": "Penanaman Modal",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 1508099056946,
+          "2025": 1754066344428
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 1.02,
+          "2025": 1.02
+        }
+      },
+      {
+        "kode": "2.19",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KEPEMUDAAN DAN OLAHRAGA",
+        "nama_pendek": "Kepemudaan dan Olahraga",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 1428714260088,
+          "2025": 2502861223248
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.96,
+          "2025": 1.46
+        }
+      },
+      {
+        "kode": "2.20",
+        "nama": "URUSAN PEMERINTAHAN BIDANG STATISTIK",
+        "nama_pendek": "Statistik",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 25141609348,
+          "2025": 18869240624
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.02,
+          "2025": 0.01
+        }
+      },
+      {
+        "kode": "2.21",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PERSANDIAN",
+        "nama_pendek": "Persandian",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 27865210616,
+          "2025": 103696358320
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.02,
+          "2025": 0.06
+        }
+      },
+      {
+        "kode": "2.22",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KEBUDAYAAN",
+        "nama_pendek": "Kebudayaan",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 928749991716,
+          "2025": 1158021359092
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.63,
+          "2025": 0.67
+        }
+      },
+      {
+        "kode": "2.23",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PERPUSTAKAAN",
+        "nama_pendek": "Perpustakaan",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 174990003154,
+          "2025": 192305856364
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.12,
+          "2025": 0.11
+        }
+      },
+      {
+        "kode": "2.24",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KEARSIPAN",
+        "nama_pendek": "Kearsipan",
+        "kelompok": "Urusan wajib non-pelayanan dasar",
+        "nilai_dashboard": {
+          "2026": 387039250322,
+          "2025": 461321441578
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.26,
+          "2025": 0.27
+        }
+      },
+      {
+        "kode": "3.25",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KELAUTAN DAN PERIKANAN",
+        "nama_pendek": "Kelautan dan Perikanan",
+        "kelompok": "Urusan pilihan",
+        "nilai_dashboard": {
+          "2026": 97416241244,
+          "2025": 119279614178
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.07,
+          "2025": 0.07
+        }
+      },
+      {
+        "kode": "3.26",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PARIWISATA",
+        "nama_pendek": "Pariwisata",
+        "kelompok": "Urusan pilihan",
+        "nilai_dashboard": {
+          "2026": 1148397310756,
+          "2025": 1402543278846
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.77,
+          "2025": 0.82
+        }
+      },
+      {
+        "kode": "3.27",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PERTANIAN",
+        "nama_pendek": "Pertanian",
+        "kelompok": "Urusan pilihan",
+        "nilai_dashboard": {
+          "2026": 146312950672,
+          "2025": 106705554742
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.1,
+          "2025": 0.06
+        }
+      },
+      {
+        "kode": "3.28",
+        "nama": "URUSAN PEMERINTAHAN BIDANG KEHUTANAN",
+        "nama_pendek": "Kehutanan",
+        "kelompok": "Urusan pilihan",
+        "nilai_dashboard": {
+          "2026": 916289013120,
+          "2025": 997280134710
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.62,
+          "2025": 0.58
+        }
+      },
+      {
+        "kode": "3.29",
+        "nama": "URUSAN PEMERINTAHAN BIDANG ENERGI DAN SUMBER DAYA MINERAL",
+        "nama_pendek": "Energi dan Sumber Daya Mineral",
+        "kelompok": "Urusan pilihan",
+        "nilai_dashboard": {
+          "2026": 57187852848,
+          "2025": 161028656500
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.04,
+          "2025": 0.09
+        }
+      },
+      {
+        "kode": "3.30",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PERDAGANGAN",
+        "nama_pendek": "Perdagangan",
+        "kelompok": "Urusan pilihan",
+        "nilai_dashboard": {
+          "2026": 81459698964,
+          "2025": 215290443784
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.05,
+          "2025": 0.13
+        }
+      },
+      {
+        "kode": "3.31",
+        "nama": "URUSAN PEMERINTAHAN BIDANG PERINDUSTRIAN",
+        "nama_pendek": "Perindustrian",
+        "kelompok": "Urusan pilihan",
+        "nilai_dashboard": {
+          "2026": 84147802480,
+          "2025": 165003692418
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.06,
+          "2025": 0.1
+        }
+      },
+      {
+        "kode": "3.32",
+        "nama": "URUSAN PEMERINTAHAN BIDANG TRANSMIGRASI",
+        "nama_pendek": "Transmigrasi",
+        "kelompok": "Urusan pilihan",
+        "nilai_dashboard": {
+          "2026": 261362800,
+          "2025": 0
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.0,
+          "2025": 0.0
+        }
+      },
+      {
+        "kode": "4.01",
+        "nama": "SEKRETARIAT DAERAH",
+        "nama_pendek": "Sekretariat Daerah",
+        "kelompok": "Unsur pendukung",
+        "nilai_dashboard": {
+          "2026": 3144477852082,
+          "2025": 3269601410828
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 2.12,
+          "2025": 1.9
+        }
+      },
+      {
+        "kode": "4.02",
+        "nama": "SEKRETARIAT DPRD",
+        "nama_pendek": "Sekretariat DPRD",
+        "kelompok": "Unsur pendukung",
+        "nilai_dashboard": {
+          "2026": 1870687349928,
+          "2025": 2241046338706
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 1.26,
+          "2025": 1.3
+        }
+      },
+      {
+        "kode": "5.01",
+        "nama": "PERENCANAAN",
+        "nama_pendek": "Perencanaan",
+        "kelompok": "Unsur penunjang",
+        "nilai_dashboard": {
+          "2026": 340091241312,
+          "2025": 400425467270
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.23,
+          "2025": 0.23
+        }
+      },
+      {
+        "kode": "5.02",
+        "nama": "KEUANGAN",
+        "nama_pendek": "Keuangan",
+        "kelompok": "Unsur penunjang",
+        "nilai_dashboard": {
+          "2026": 5672338940562,
+          "2025": 11385390932612
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 3.82,
+          "2025": 6.62
+        }
+      },
+      {
+        "kode": "5.03",
+        "nama": "KEPEGAWAIAN",
+        "nama_pendek": "Kepegawaian",
+        "kelompok": "Unsur penunjang",
+        "nilai_dashboard": {
+          "2026": 382077788718,
+          "2025": 461713791252
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.26,
+          "2025": 0.27
+        }
+      },
+      {
+        "kode": "5.04",
+        "nama": "PENDIDIKAN DAN PELATIHAN",
+        "nama_pendek": "Pendidikan dan Pelatihan",
+        "kelompok": "Unsur penunjang",
+        "nilai_dashboard": {
+          "2026": 248562748942,
+          "2025": 193191307850
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.17,
+          "2025": 0.11
+        }
+      },
+      {
+        "kode": "5.05",
+        "nama": "PENELITIAN DAN PENGEMBANGAN",
+        "nama_pendek": "Penelitian dan Pengembangan",
+        "kelompok": "Unsur penunjang",
+        "nilai_dashboard": {
+          "2026": 56088441260,
+          "2025": 71075807210
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.04,
+          "2025": 0.04
+        }
+      },
+      {
+        "kode": "6.01",
+        "nama": "INSPEKTORAT DAERAH",
+        "nama_pendek": "Inspektorat Daerah",
+        "kelompok": "Unsur pengawasan",
+        "nilai_dashboard": {
+          "2026": 458192367866,
+          "2025": 637267835098
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.31,
+          "2025": 0.37
+        }
+      },
+      {
+        "kode": "7.01",
+        "nama": "KECAMATAN ADMINISTRASI",
+        "nama_pendek": "Kecamatan Administrasi",
+        "kelompok": "Unsur kewilayahan",
+        "nilai_dashboard": {
+          "2026": 6811041530594,
+          "2025": 6367577720540
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 4.58,
+          "2025": 3.7
+        }
+      },
+      {
+        "kode": "7.02",
+        "nama": "KOTA ADMINISTRASI",
+        "nama_pendek": "Kota Administrasi",
+        "kelompok": "Unsur kewilayahan",
+        "nilai_dashboard": {
+          "2026": 4395340788828,
+          "2025": 4937606959724
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 2.96,
+          "2025": 2.87
+        }
+      },
+      {
+        "kode": "7.03",
+        "nama": "KABUPATEN ADMINISTRASI",
+        "nama_pendek": "Kabupaten Administrasi",
+        "kelompok": "Unsur kewilayahan",
+        "nilai_dashboard": {
+          "2026": 335170827918,
+          "2025": 297389629630
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.23,
+          "2025": 0.17
+        }
+      },
+      {
+        "kode": "8.01",
+        "nama": "KESATUAN BANGSA DAN POLITIK",
+        "nama_pendek": "Kesatuan Bangsa dan Politik",
+        "kelompok": "Unsur pemerintahan umum",
+        "nilai_dashboard": {
+          "2026": 1159463819468,
+          "2025": 1672174582868
+        },
+        "porsi_dari_jumlah_urusan_persen": {
+          "2026": 0.78,
+          "2025": 0.97
+        }
+      }
+    ]
+  },
+  "pembiayaan_per_akun": {
+    "penerimaan": [
+      {
+        "kode": "6.1.01",
+        "nama": "Sisa Lebih Perhitungan Anggaran Tahun Sebelumnya",
+        "nilai": {
+          "2026": 5052674866043,
+          "2025": 4433850834046
+        }
+      },
+      {
+        "kode": "6.1.04",
+        "nama": "Penerimaan Pinjaman Daerah",
+        "nilai": {
+          "2026": 0,
+          "2025": 2974586000000
+        }
+      },
+      {
+        "kode": "6.1.05",
+        "nama": "Penerimaan Kembali Pemberian Pinjaman Daerah",
+        "nilai": {
+          "2026": 0,
+          "2025": 28250000
+        }
+      },
+      {
+        "kode": "6.1.08",
+        "nama": "Penerimaan Pembiayaan Utang Daerah",
+        "nilai": {
+          "2026": 4822949000000,
+          "2025": 0
+        }
+      }
+    ],
+    "pengeluaran": [
+      {
+        "kode": "6.2.02",
+        "nama": "Penyertaan Modal Daerah",
+        "nilai": {
+          "2026": 5230567000000,
+          "2025": 3902043000000
+        }
+      },
+      {
+        "kode": "6.2.03",
+        "nama": "Pembayaran Cicilan Pokok Utang yang Jatuh Tempo",
+        "nilai": {
+          "2026": 1810430000000,
+          "2025": 1981670623430
+        }
+      }
+    ]
+  },
+  "turunan": {
+    "catatan": "Semua angka di blok ini dihitung oleh kode dari data di atas. Basis 2026 = APBD (sama dengan APBDP), basis 2025 = APBDP.",
+    "porsi_pendapatan_persen": {
+      "pajak_daerah": {
+        "2026": 69.84,
+        "2025": 56.84
+      },
+      "pad_total": {
+        "2026": 80.71,
+        "2025": 64.18
+      },
+      "transfer_pusat": {
+        "2026": 15.62,
+        "2025": 35.62
+      }
+    },
+    "perubahan_2025_ke_2026": {
+      "pajak_daerah": {
+        "selisih": 1898218773411,
+        "persen": 3.95
+      },
+      "transfer_pusat": {
+        "selisih": -18923168874361,
+        "persen": -62.9
+      },
+      "total_belanja": {
+        "selisih": -11693875907242,
+        "persen": -13.6
+      }
+    },
+    "porsi_belanja_per_jenis_persen_2026": {
+      "operasi": 85.1,
+      "modal": 13.69,
+      "tidak_terduga": 0.95,
+      "transfer": 0.26
+    },
+    "lima_urusan_terbesar_2026": [
+      {
+        "kode": "1.01",
+        "nama_pendek": "Pendidikan",
+        "nilai_dashboard": 36348041712714,
+        "porsi_dari_jumlah_urusan_persen": 24.47
+      },
+      {
+        "kode": "1.02",
+        "nama_pendek": "Kesehatan",
+        "nilai_dashboard": 20838608476212,
+        "porsi_dari_jumlah_urusan_persen": 14.03
+      },
+      {
+        "kode": "1.03",
+        "nama_pendek": "Pekerjaan Umum dan Penataan Ruang",
+        "nilai_dashboard": 18415872389380,
+        "porsi_dari_jumlah_urusan_persen": 12.4
+      },
+      {
+        "kode": "2.15",
+        "nama_pendek": "Perhubungan",
+        "nilai_dashboard": 13563711902392,
+        "porsi_dari_jumlah_urusan_persen": 9.13
+      },
+      {
+        "kode": "2.11",
+        "nama_pendek": "Lingkungan Hidup",
+        "nilai_dashboard": 8282323768214,
+        "porsi_dari_jumlah_urusan_persen": 5.57
+      }
+    ]
+  },
+  "pemeriksaan_konsistensi": [
+    {
+      "pemeriksaan": "Jumlah akun pendapatan 2026 = pendapatan APBD 2026",
+      "hasil_hitung": 71450673065697,
+      "acuan": 71450673065697,
+      "cocok": true,
+      "keterangan": "6 akun pendapatan"
+    },
+    {
+      "pemeriksaan": "Jumlah akun pendapatan 2025 = pendapatan APBDP 2025",
+      "hasil_hitung": 84454424378366,
+      "acuan": 84454424378366,
+      "cocok": true,
+      "keterangan": "angka 2025 pada grafik per akun ternyata basis APBDP (perubahan)"
+    },
+    {
+      "pemeriksaan": "Jumlah akun belanja 2026 = belanja APBD 2026",
+      "hasil_hitung": 74285299931740,
+      "acuan": 74285299931740,
+      "cocok": true,
+      "keterangan": "operasi + modal + tidak terduga + transfer"
+    },
+    {
+      "pemeriksaan": "Jumlah akun belanja 2025 = belanja APBDP 2025",
+      "hasil_hitung": 85979175838982,
+      "acuan": 85979175838982,
+      "cocok": true,
+      "keterangan": "angka 2025 basis APBDP"
+    },
+    {
+      "pemeriksaan": "Jumlah penerimaan pembiayaan 2026 = APBD 2026",
+      "hasil_hitung": 9875623866043,
+      "acuan": 9875623866043,
+      "cocok": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Jumlah penerimaan pembiayaan 2025 = APBDP 2025",
+      "hasil_hitung": 7408465084046,
+      "acuan": 7408465084046,
+      "cocok": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Jumlah pengeluaran pembiayaan 2026 = APBD 2026",
+      "hasil_hitung": 7040997000000,
+      "acuan": 7040997000000,
+      "cocok": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Jumlah pengeluaran pembiayaan 2025 = APBDP 2025",
+      "hasil_hitung": 5883713623430,
+      "acuan": 5883713623430,
+      "cocok": true,
+      "keterangan": ""
+    },
+    {
+      "pemeriksaan": "Jumlah PAD 2026 (4.1.01-4.1.04) = 57.670.647.712.697",
+      "hasil_hitung": 57670647712697,
+      "acuan": 57670647712697,
+      "cocok": true,
+      "keterangan": "dibandingkan dengan 'Jumlah PAD' pada halaman Realisasi Per-Akun (kolom anggaran)"
+    },
+    {
+      "pemeriksaan": "Jumlah semua urusan dibandingkan total belanja",
+      "hasil": {
+        "2026": {
+          "jumlah_semua_urusan": 148570599863480,
+          "total_belanja": 74285299931740,
+          "rasio": 2.0
+        },
+        "2025": {
+          "jumlah_semua_urusan": 171958351677964,
+          "total_belanja": 85979175838982,
+          "rasio": 2.0
+        }
+      },
+      "cocok": false,
+      "temuan": "Jumlah semua urusan persis 2 kali total belanja pada kedua tahun. Urusan 1.01 Pendidikan 2026 (36.348.041.712.714) juga persis 2 kali anggaran belanja Dinas Pendidikan di tabel Realisasi Per-SKPD (18.174.020.856.357), dan 1.02 Kesehatan (20.838.608.476.212) persis 2 kali Dinas Kesehatan (10.419.304.238.106). Kemungkinan besar angka per-urusan di dashboard terhitung dobel. Penyebabnya belum dipastikan."
+    }
+  ]
+}
