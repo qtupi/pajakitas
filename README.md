@@ -76,6 +76,31 @@ Buka browser di alamat: `http://localhost:3000`
 
 ---
 
+## 📊 Status & Progres Pengembangan (Progress Milestones)
+
+Platform **paJAK-Kita** saat ini berada pada tahap **Fase 1 (Core Release — 100% Siap & Fungsional)**, mencakup seluruh halaman utama, visualisasi data, glosarium, serta fitur interaktif warga. Berikut rekapitulasi progres pengerjaan:
+
+### ✅ Fitur yang Telah Selesai (Completed Milestones)
+
+| Modul / Komponen | Status | Deskripsi Hasil Pengerjaan |
+| :--- | :---: | :--- |
+| **Beranda & Executive Summary** | `100% Selesai` | Full-bleed hero slideshow dengan kontrol, eye-tracking Maskot Ondi, ringkasan 2 pilar (Penerimaan & Belanja), Minimalist Ledger List "Tentang Data", serta Editorial Onform Footer dengan Giant Kinetic Typography `paJAK-Kita`. |
+| **Pilar 1 — Penerimaan Pajak Daerah** | `100% Selesai` | Dashboard metrik penerimaan, rincian 12 jenis pajak daerah (PKB, BBNKB, PBB-P2, BPHTB, PBJT, dll), visualisasi tren musiman kas daerah (Dataset 09), serta analisis rasio kepatuhan wajib pajak (Dataset 11). |
+| **Pilar 2 — Belanja APBD & SKPD** | `100% Selesai` | Pagu belanja vs serapan riil, breakdown 4 kelompok belanja, simulasi interaktif Waffle Grid 10×10 ("Jika Belanja Rp100"), serta tabel alokasi anggaran dinas teknis pelayanan masyarakat. |
+| **Glosarium 158 Istilah Keuangan** | `100% Selesai` | Kamus transparansi lengkap 158 istilah resmi, live search instan, filter multi-kategori, A–Z alphabet jump bar, serta interactive quick list box dengan efek smooth highlight. |
+| **Pembuat Kartu Insight Warga** | `100% Selesai` | Generator kartu edukasi rasio 3:4 berbasis HTML5 Canvas, ekspor PNG siap bagikan ke media sosial, 100% diproses privat di peramban pengguna (*zero tracking/storage*). |
+| **Desain Sistem & Responsivitas** | `100% Selesai` | Tipografi Plus Jakarta Sans & Playfair Display, palet warna Warm Alabaster, Betawi Gold, Carmine Red, fluid typography, tata letak responsif desktop & mobile, bebas scroll horizontal/internal. |
+| **Integrasi Data Engine** | `100% Selesai` | Integrasi 11 dataset resmi Satu Data Jakarta (`ws.jakarta.go.id`), modul parser lokal JSON (`dataEngine.js`), serta mekanisme *fallback* offline yang tangguh. |
+
+### ⏳ Rencana Pengembangan Selanjutnya (Upcoming Roadmap)
+
+- [ ] **Visualisasi Sebaran Wilayah Spasial:** Peta interaktif 5 Kota Administrasi dan 1 Kabupaten Kepulauan Seribu (sebaran realisasi PBB-P2 & PKB per wilayah).
+- [ ] **Eksplorasi Sub-Objek Pajak Mendalam:** Pengeboran rincian detail sub-kategori PBJT (tarif, batas omzet, dan tren per jenis usaha).
+- [ ] **Fitur Komparasi Multi-Tahun:** Perbandingan time-series multi-tahun tren fiskal APBD DKI Jakarta secara dinamis (2022–2026).
+- [ ] **Pemberitahuan Otomatis Sinkronisasi Data:** Mekanisme notifikasi otomatis saat BPKD DKI merilis pembaruan laporan realisasi triwulanan baru.
+
+---
+
 ## 📁 Struktur Repositori
 
 ```text
