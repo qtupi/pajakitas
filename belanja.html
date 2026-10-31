@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F8F1E7">
-  <meta name="description" content="Eksplorasi lengkap alokasi belanja APBD Jakarta 2026, realisasi 43 unit SKPD, diagram waffle Rp100, jenis belanja modal dan operasi, serta perbandingan dinas.">
+  <meta name="description" content="Alokasi belanja APBD Jakarta 2026: total anggaran, belanja terpakai, simulasi waffle Rp100, dan rincian alokasi per dinas dan instansi.">
 
-  <title>Belanja APBD &amp; OPD Jakarta — paJAK-Kita</title>
+  <title>Belanja APBD Jakarta — paJAK-Kita</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon-pajakkita.png">
@@ -36,77 +36,9 @@
 
       <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
         <a class="nav-link" href="index.html">Beranda</a>
-
-        <!-- Dropdown: Penerimaan Pajak -->
-        <div class="nav-dropdown" id="dropdownPajak">
-          <button class="nav-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true">
-            <span>Penerimaan Pajak</span>
-            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="dropdown-menu" role="menu">
-            <div class="dropdown-header">Eksplorasi Penerimaan</div>
-            <a href="penerimaan.html" class="dropdown-item dropdown-highlight" role="menuitem">
-              <span class="dropdown-item-title">Buka Halaman Penerimaan Pajak →</span>
-              <span class="dropdown-item-desc">Target, realisasi 6 akun &amp; peran pajak</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Dropdown: Belanja APBD (Active) -->
-        <div class="nav-dropdown" id="dropdownApbd">
-          <button class="nav-dropdown-btn active" type="button" aria-expanded="false" aria-haspopup="true">
-            <span>Belanja APBD</span>
-            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="dropdown-menu" role="menu">
-            <div class="dropdown-header">Navigasi Halaman Belanja</div>
-            <a href="#kpi-belanja-row" class="dropdown-item" role="menuitem">
-              <span class="dropdown-item-title">KPI Penyerapan APBD</span>
-              <span class="dropdown-item-desc">Pagu, realisasi &amp; tingkat serapan</span>
-            </a>
-            <a href="#sakelar-belanja-container" class="dropdown-item" role="menuitem">
-              <span class="dropdown-item-title">Dipakai Untuk Apa?</span>
-              <span class="dropdown-item-desc">Batang SKPD vs Mawar Urusan (V4)</span>
-            </a>
-            <a href="#waffle-section" class="dropdown-item" role="menuitem">
-              <span class="dropdown-item-title">Jika Belanja Rp100 (Waffle)</span>
-              <span class="dropdown-item-desc">Grid 10x10 proporsi belanja dinas</span>
-            </a>
-            <a href="#unit-explorer" class="dropdown-item" role="menuitem">
-              <span class="dropdown-item-title">Penjelajah 43 SKPD</span>
-              <span class="dropdown-item-desc">Tabel lengkap, filter &amp; modal rincian</span>
-            </a>
-            <a href="#card-v3" class="dropdown-item" role="menuitem">
-              <span class="dropdown-item-title">Jenis Belanja Daerah (V3)</span>
-              <span class="dropdown-item-desc">Operasi, Modal, BTT &amp; Transfer</span>
-            </a>
-            <a href="#card-v5" class="dropdown-item" role="menuitem">
-              <span class="dropdown-item-title">Tren Anggaran 2022-2026 (V5)</span>
-              <span class="dropdown-item-desc">Deret belanja vs pendapatan 5 tahun</span>
-            </a>
-            <a href="#dinas" class="dropdown-item" role="menuitem">
-              <span class="dropdown-item-title">Transparansi Tingkat Dinas</span>
-              <span class="dropdown-item-desc">Pendidikan, Kesehatan &amp; Bina Marga</span>
-            </a>
-          </div>
-        </div>
-
+        <a class="nav-link" href="penerimaan.html">Penerimaan Pajak</a>
+        <a class="nav-link active" href="belanja.html">Belanja APBD</a>
         <a class="nav-link" href="index.html#kamus">Kamus Pajak</a>
-
-        <!-- Tombol Pencarian Cepat (Ctrl+K) -->
-        <button type="button" class="quick-search-trigger" id="quick-search-trigger" aria-label="Pencarian cepat (Ctrl+K)">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <span class="search-label">Cari dinas/akun...</span>
-          <kbd class="search-shortcut">Ctrl K</kbd>
-        </button>
-
         <a class="nav-cta" href="index.html#kartu">Buat Kartu Insight <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -118,21 +50,19 @@
       <nav aria-label="Breadcrumb" style="font-size: 0.8125rem; color: var(--color-muted);">
         <a href="index.html" style="color: var(--color-ink); text-decoration: underline;">Beranda</a>
         <span style="margin: 0 6px;">/</span>
-        <span style="font-weight: 700; color: var(--color-primary);">Belanja APBD &amp; OPD Jakarta</span>
+        <span style="font-weight: 700; color: var(--color-primary);">Belanja APBD Jakarta</span>
       </nav>
     </div>
 
-    <!-- =========================================================================
-         SECTION: BELANJA APBD JAKARTA
-         ========================================================================= -->
-    <section class="data-section container" id="apbd" style="padding-top: 16px;">
+    <!-- Section: Belanja APBD Jakarta -->
+    <section class="data-section container" id="belanja" style="padding-top: 16px;">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">ALOKASI BELANJA PUBLIK</p>
-          <h2>Belanja APBD &amp; <span>OPD Jakarta</span></h2>
+          <p class="eyebrow">TOPIK 2 • ALOKASI LAYANAN WARGA</p>
+          <h2>Belanja <span>APBD Jakarta</span></h2>
         </div>
         <p class="section-intro">
-          Anggaran belanja APBD Jakarta dialokasikan untuk membiayai operasional layanan publik, pembangunan infrastruktur modal, bantuan sosial, dan pelayanan dasar warga melalui 43 unit organisasi perangkat daerah.
+          Anggaran belanja APBD Jakarta dialokasikan melalui dinas dan instansi untuk pelayanan dasar masyarakat, pembangunan infrastruktur, fasilitas kesehatan, dan pendidikan.
         </p>
       </div>
 
@@ -141,603 +71,171 @@
         <span class="badge-info">Basis <strong>APBD 2026</strong></span>
         <span class="badge-separator" aria-hidden="true">•</span>
         <span class="badge-tag-realisasi">[REALISASI]</span>
-        <span class="badge-info">Realisasi per <strong>25 Oktober 2026</strong></span>
+        <span class="badge-info">Per <strong>25 Oktober 2026</strong></span>
         <span class="badge-separator" aria-hidden="true">•</span>
         <span class="badge-source">Sumber: <em>Dashboard Keuangan Daerah BPKD Provinsi DKI Jakarta</em></span>
       </div>
 
-      <!-- 1. Baris KPI Belanja & Pendapatan (Count-up Animasi) -->
-      <div class="kpi-row" id="kpi-belanja-row" style="margin-top: 20px;">
-        <div class="kpi-card" style="border-left: 4px solid var(--color-gold);">
-          <div class="kpi-label">Anggaran Belanja 2026</div>
-          <div class="kpi-value tabular-nums" id="kpi-belanja-anggaran">Rp74,29 T</div>
-          <div class="kpi-sub">Total penetapan belanja APBD</div>
-        </div>
-        <div class="kpi-card" style="border-left: 4px solid var(--viz-5);">
-          <div class="kpi-label">Realisasi Belanja</div>
-          <div class="kpi-value tabular-nums" id="kpi-belanja-realisasi" style="color: var(--viz-5);">Rp44,47 T</div>
-          <div class="kpi-sub">Realisasi per 25 Oktober 2026</div>
-        </div>
-        <div class="kpi-card" style="border-left: 4px solid var(--viz-1);">
-          <div class="kpi-label">Serapan Belanja</div>
-          <div class="kpi-value tabular-nums" id="kpi-belanja-serapan">59,86%</div>
-          <div class="kpi-sub">Persentase serapan belanja kumulatif</div>
-        </div>
-        <div class="kpi-card" style="border-left: 4px solid var(--viz-3);">
-          <div class="kpi-label">Realisasi Pendapatan / Target</div>
-          <div class="kpi-value tabular-nums" id="kpi-pendapatan-capaian">63,55%</div>
-          <div class="kpi-sub">Capaian pendapatan terhadap target</div>
-        </div>
-      </div>
+      <!-- Ringkasan Total Belanja: Anggaran, Terpakai, Persen -->
+      <article class="chart-card-wrapper" style="margin-top: 20px; padding: 24px;">
+        <span class="info-modal-code">TOTAL KESELURUHAN APBD 2026</span>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-ink); margin: 6px 0 16px 0;">
+          Total Anggaran dan Belanja Terpakai
+        </h3>
 
-      <!-- 2. "Seberapa jauh anggaran terserap?": Cincin Progres & Bullet Chart 9 Jenis Belanja -->
-      <article class="chart-card-wrapper" id="card-serapan-belanja" style="margin-top: 24px;">
-        <header class="chart-card-header">
-          <div class="chart-header-top">
-            <div class="chart-titles">
-              <div class="eyebrow" style="color:var(--color-primary);">PROGRES PENYERAPAN APBD</div>
-              <h3 class="chart-question">Seberapa jauh anggaran terserap?</h3>
-              <p class="chart-subtitle">Cincin progres total belanja daerah dan bullet chart per jenis belanja terhadap posisi tanggal data.</p>
-            </div>
-            <div class="chart-actions">
-              <button type="button" class="chart-help-btn" data-help-key="bullet_chart_jenis_belanja" aria-label="Cara membaca grafik ini">
-                <span class="help-btn-badge">
-                  <img src="assets/maskot-ondi/ondi-01-berdiri.png" alt="" aria-hidden="true">
-                  <span>Cara Baca</span>
-                </span>
-              </button>
-            </div>
+        <div class="exec-metrics-row">
+          <div class="exec-metric-col">
+            <span class="exec-metric-label">Total Anggaran Belanja</span>
+            <span class="exec-metric-val tabular-nums" id="stat-belanja-anggaran" title="Total Pagu Belanja: Rp74.285.299.931.740">Rp74,29 T</span>
           </div>
-        </header>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 24px;">
-          <!-- Kolom Kiri: Cincin Progres Total Belanja -->
-          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 16px; background: var(--color-surface-card); border-radius: 8px; border: 1px solid var(--color-border-subtle);">
-            <div class="progress-ring-card" style="padding: 0; background: transparent; border: none; box-shadow: none;">
-              <svg class="progress-ring-svg" viewBox="0 0 100 100" aria-hidden="true" style="width: 140px; height: 140px;">
-                <circle class="progress-ring-track" cx="50" cy="50" r="45" fill="none" stroke="#EAE4DC" stroke-width="10"></circle>
-                <circle class="progress-ring-fill" id="progress-ring-belanja-val" cx="50" cy="50" r="45" fill="none" stroke-width="10" stroke-linecap="round" style="stroke: var(--viz-5);"></circle>
-              </svg>
-              <div class="progress-ring-center">
-                <span class="progress-ring-percent tabular-nums" id="progress-ring-belanja-text" style="font-size: 1.5rem;">59,9%</span>
-                <span class="progress-ring-label">Total Belanja</span>
-              </div>
-            </div>
-            <div class="posisi-tanggal-pill">Posisi tanggal data: Memuat...</div>
+          <div class="exec-metric-col">
+            <span class="exec-metric-label">Total Belanja Terpakai</span>
+            <span class="exec-metric-val tabular-nums highlight-belanja" id="stat-belanja-terpakai" title="Belanja Terpakai (realisasi): Rp44.467.474.197.668">Rp44,47 T</span>
           </div>
+          <div class="exec-metric-col">
+            <span class="exec-metric-label">Persen Terpakai</span>
+            <span class="exec-metric-val tabular-nums highlight-belanja" id="stat-belanja-persen">59,9%</span>
+          </div>
+        </div>
+      </article>
 
-          <!-- Kolom Kanan: Bullet Chart 9 Jenis Belanja -->
+      <!-- Waffle Chart 10x10: "Jika Belanja Rp100" (Top 6 Dinas dan Instansi) -->
+      <article class="chart-card-wrapper" id="waffle-section" style="margin-top: 24px; padding: 24px;">
+        <header class="chart-card-header" style="margin-bottom: 16px;">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px; flex-wrap: wrap; gap: 6px;">
-              <span style="font-size:0.875rem; font-weight:700; color:var(--color-ink);">Realisasi per Jenis Belanja</span>
-              <span style="font-size:0.75rem; color:var(--color-muted);">Trek: Anggaran • Batang: Realisasi (--viz-5)</span>
-            </div>
-            <div class="bullet-chart-group" id="bullet-chart-belanja-list">
-              <!-- Dimuat dinamis oleh realisasi.js -->
-            </div>
-          </div>
-        </div>
-
-        <footer class="chart-footer">
-          <div class="trust-source-badge" role="note">
-            <span class="badge-tag-realisasi">[REALISASI]</span>
-            <span class="badge-info">Realisasi per <strong>25 Oktober 2026</strong></span>
-            <span class="badge-separator" aria-hidden="true">•</span>
-            <span class="badge-source">Sumber: <em>Dashboard Keuangan Daerah BPKD Provinsi DKI Jakarta</em></span>
-          </div>
-        </footer>
-      </article>
-
-      <!-- 3. Sakelar "Dipakai untuk apa?": Batang SKPD vs Mawar V4 -->
-      <article class="chart-card-wrapper" id="sakelar-belanja-container" style="margin-top: 24px;">
-        <header class="chart-card-header">
-          <div class="chart-header-top">
-            <div class="chart-titles">
-              <div class="eyebrow" style="color:var(--color-primary);">KOMPOSISI BELANJA</div>
-              <h3 class="chart-question" id="sakelar-belanja-title">Dipakai untuk apa anggaran belanja Jakarta?</h3>
-              <p class="chart-subtitle" id="sakelar-belanja-subtitle">Pilih sudut pandang: Berdasarkan unit pelaksana (SKPD) atau urusan pemerintahan (V4).</p>
-            </div>
-            <div class="chart-controls">
-              <div class="chart-pill-group" role="group" aria-label="Sudut Pandang Belanja">
-                <button type="button" class="chart-pill-btn active" id="btn-view-skpd">Per Unit Pelaksana (SKPD)</button>
-                <button type="button" class="chart-pill-btn" id="btn-view-urusan">Per Urusan (Mawar V4)</button>
-              </div>
-            </div>
-          </div>
-          <div class="chart-actions">
-            <!-- Filter Top N untuk View SKPD -->
-            <div id="skpd-limit-control" class="chart-pill-group" role="group" aria-label="Jumlah SKPD Ditampilkan" style="margin-right:auto;">
-              <span style="font-size:0.75rem; color:var(--color-muted); align-self:center; margin-right:4px;">Tampilkan:</span>
-              <button type="button" class="chart-pill-btn active" data-limit="10">Top 10</button>
-              <button type="button" class="chart-pill-btn" data-limit="20">Top 20</button>
-              <button type="button" class="chart-pill-btn" data-limit="43">Semua (43)</button>
-            </div>
-
-            <button type="button" class="chart-help-btn" data-help-key="belanja_urusan_v4" aria-label="Cara membaca grafik ini">
-              <span class="help-btn-badge">
-                <img src="assets/maskot-ondi/ondi-01-berdiri.png" alt="" aria-hidden="true">
-                <span>Cara Baca</span>
-              </span>
-            </button>
-            <button type="button" class="chart-action-btn" id="btn-export-sakelar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              Unduh gambar
-            </button>
-          </div>
-        </header>
-
-        <!-- View 1: Bar Chart Horisontal SKPD -->
-        <div id="view-skpd-container" class="chart-canvas-container" style="min-height: 480px;">
-          <div class="chart-mount" id="chart-skpd-mount" style="min-height: 480px;" role="img" aria-label="Diagram batang perbandingan anggaran dan realisasi SKPD"></div>
-        </div>
-
-        <!-- View 2: Mawar Polar Rose V4 (Urusan) -->
-        <div id="view-urusan-container" class="chart-canvas-container" style="display:none; min-height: 480px;">
-          <div class="chart-skeleton" id="chart-v4-skeleton">Memuat grafik porsi urusan...</div>
-          <div class="chart-mount" id="chart-v4" style="min-height: 480px;" role="img" aria-label="Grafik rose polar area porsi belanja urusan pemerintahan"></div>
-        </div>
-
-        <div class="chart-table-container" id="chart-v4-table" hidden style="display:none;"></div>
-
-        <footer class="chart-footer">
-          <div class="trust-source-badge" role="note">
-            <span class="badge-tag-realisasi">[REALISASI]</span>
-            <span class="badge-info">Realisasi per <strong>25 Oktober 2026</strong></span>
-            <span class="badge-separator" aria-hidden="true">•</span>
-            <span class="badge-source">Dashboard BPKD DKI Jakarta</span>
-          </div>
-        </footer>
-      </article>
-
-      <!-- 4. "Jika belanja APBD Jakarta Rp100" (Waffle Chart 10x10) -->
-      <article class="chart-card-wrapper" id="waffle-section" style="margin-top: 24px;">
-        <header class="chart-card-header">
-          <div class="chart-header-top">
-            <div class="chart-titles">
-              <div class="eyebrow" style="color:var(--color-primary);">INTUISI ANGGARAN WARGA</div>
-              <h3 class="chart-question">Jika belanja APBD Jakarta Rp100</h3>
-              <p class="chart-subtitle">Simulasi proporsi setiap Rp100 belanja APBD yang dialokasikan ke masing-masing unit kerja.</p>
-            </div>
-            <div class="chart-actions">
-              <button type="button" class="chart-help-btn" data-help-key="waffle_chart_rp100" aria-label="Cara membaca grafik ini">
-                <span class="help-btn-badge">
-                  <img src="assets/maskot-ondi/ondi-01-berdiri.png" alt="" aria-hidden="true">
-                  <span>Cara Baca</span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </header>
-
-        <div class="waffle-wrapper">
-          <!-- Grid 10x10 Waffle -->
-          <div class="waffle-container" id="waffle-chart-grid" role="img" aria-label="Waffle chart 10x10 proporsi belanja per unit SKPD"></div>
-
-          <!-- Kolom Kanan: Kalimat Dinamis & Legenda -->
-          <div class="waffle-content-col">
-            <div class="waffle-sentence-box" id="waffle-sentence-box">
-              Dari setiap <strong>Rp100</strong> anggaran belanja APBD Jakarta 2026, sekitar <strong>Rp25</strong> dialokasikan untuk <strong>Dinas Pendidikan</strong>.
-            </div>
-
-            <!-- Legend Waffle -->
-            <div class="waffle-legend" id="waffle-legend-box"></div>
-
-            <div class="trust-note" style="margin-top: 8px; font-size: 0.8125rem;">
-              <span class="trust-icon">ⓘ</span>
-              <span><strong>Catatan Metodologi:</strong> Ini adalah porsi alokasi anggaran belanja APBD Jakarta 2026, <em>BUKAN</em> klaim bahwa pajak seseorang mengalir langsung ke unit tersebut.</span>
-            </div>
-          </div>
-        </div>
-
-        <footer class="chart-footer">
-          <div class="trust-source-badge" role="note">
-            <span class="badge-tag-anggaran">[ANGGARAN]</span>
-            <span class="badge-info">Basis <strong>APBD 2026</strong></span>
-            <span class="badge-separator" aria-hidden="true">•</span>
-            <span class="badge-source">BPKD Provinsi DKI Jakarta</span>
-          </div>
-        </footer>
-      </article>
-
-      <!-- 5. Penjelajah Unit Pelaksana (Tabel 43 SKPD Sortable, Searchable, Filterable) -->
-      <article class="unit-explorer-card" id="unit-explorer" style="margin-top: 24px;">
-        <header class="chart-card-header">
-          <div class="chart-header-top">
-            <div class="chart-titles">
-              <div class="eyebrow" style="color:var(--color-primary);">TABEL LENGKAP UNIT DAERAH</div>
-              <h3 class="chart-question">Penjelajah Unit Pelaksana APBD</h3>
-              <p class="chart-subtitle">Telusuri anggaran, realisasi, dan serapan belanja 43 SKPD Provinsi DKI Jakarta.</p>
-            </div>
-          </div>
-        </header>
-
-        <div class="unit-explorer-controls">
-          <input
-            type="search"
-            class="unit-search-input"
-            id="unit-search-input"
-            placeholder="Cari nama dinas / badan / wilayah..."
-            aria-label="Cari unit pelaksana"
-          />
-          <div class="unit-filter-group" role="group" aria-label="Filter kategori unit">
-            <button type="button" class="unit-filter-btn active" data-category="all">Semua (43)</button>
-            <button type="button" class="unit-filter-btn" data-category="dinas">Dinas</button>
-            <button type="button" class="unit-filter-btn" data-category="badan">Badan</button>
-            <button type="button" class="unit-filter-btn" data-category="kota_kabupaten">Kota / Kab.</button>
-            <button type="button" class="unit-filter-btn" data-category="sekretariat">Lainnya</button>
-          </div>
-        </div>
-
-        <div class="unit-table-container">
-          <table class="unit-table" aria-label="Tabel realisasi dan serapan belanja unit SKPD DKI Jakarta 2026">
-            <thead>
-              <tr>
-                <th scope="col" style="width: 48px;">No</th>
-                <th scope="col" class="sortable" data-sort="nama">
-                  Nama Unit SKPD <span class="sort-indicator">↕</span>
-                </th>
-                <th scope="col" class="sortable text-right" data-sort="anggaran">
-                  Anggaran Belanja <span class="sort-indicator">↕</span>
-                </th>
-                <th scope="col" class="sortable text-right" data-sort="realisasi">
-                  Realisasi Belanja <span class="sort-indicator">↕</span>
-                </th>
-                <th scope="col" class="sortable text-right" data-sort="serapan" style="width: 220px;">
-                  Serapan (%) <span class="sort-indicator">↕</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody id="unit-table-body">
-              <!-- Baris tabel di-generate oleh realisasi.js -->
-            </tbody>
-          </table>
-        </div>
-
-        <footer class="chart-footer">
-          <div class="trust-source-badge" role="note">
-            <span class="badge-tag-realisasi">[REALISASI]</span>
-            <span class="badge-info">Realisasi per <strong>25 Oktober 2026</strong></span>
-            <span class="badge-separator" aria-hidden="true">•</span>
-            <span class="badge-source">Sumber: <em>Dashboard Keuangan Daerah BPKD Provinsi DKI Jakarta</em></span>
-          </div>
-        </footer>
-      </article>
-
-      <!-- V3 Donut Drill-Down Belanja Daerah -->
-      <article class="chart-card-wrapper" id="card-v3" style="margin-top: 24px;">
-        <header class="chart-card-header">
-          <div class="chart-header-top">
-            <div class="chart-titles">
-              <h3 class="chart-question">Belanja daerah dipakai untuk jenis apa?</h3>
-              <p class="chart-subtitle">Komposisi 4 kelompok belanja. Klik salah satu segmen untuk melihat rincian akun belanja.</p>
-            </div>
-          </div>
-          <div id="chart-v3-drill-bar" class="chart-drilldown-bar" style="display:none;">
-            <span id="chart-v3-drill-title" style="font-weight:700; font-size:0.8125rem; color:var(--color-primary);">Rincian Akun</span>
-            <button type="button" class="drilldown-btn" id="chart-v3-back-btn">
-              ← Kembali ke Ringkasan
-            </button>
-          </div>
-          <div class="chart-actions">
-            <button type="button" class="chart-action-btn" data-table-toggle="chart-v3" aria-expanded="false">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3h18v18H3V3zm0 6h18M3 15h18M9 3v18M15 3v18"/></svg>
-              Lihat sebagai tabel
-            </button>
-            <button type="button" class="chart-action-btn" data-export="chart-v3">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              Unduh gambar
-            </button>
-          </div>
-        </header>
-
-        <div class="chart-canvas-container">
-          <div class="chart-skeleton" id="chart-v3-skeleton">Memuat grafik kelompok belanja...</div>
-          <div class="chart-mount" id="chart-v3" role="img" aria-label="Grafik donat kelompok belanja APBD dengan drill-down"></div>
-        </div>
-
-        <div class="chart-table-container" id="chart-v3-table" hidden style="display:none;"></div>
-
-        <footer class="chart-footer">
-          <div class="trust-source-badge" role="note">
-            <span class="badge-tag-anggaran">[ANGGARAN]</span>
-            <span class="badge-info">Basis <strong>APBD 2026</strong></span>
-            <span class="badge-separator" aria-hidden="true">•</span>
-            <span class="badge-source">Sumber: <em>Dashboard Keuangan Daerah BPKD Provinsi DKI Jakarta</em></span>
-          </div>
-        </footer>
-      </article>
-
-      <!-- Stat Cards Belanja Operasi & Modal -->
-      <div class="data-stat-grid" style="margin-top: 24px;">
-        <div class="data-stat-card highlight">
-          <div class="data-stat-label">Total Belanja APBD 2026</div>
-          <div class="data-stat-value tabular-nums" title="Nilai penuh: Rp74.285.299.931.740">Rp74,29 T</div>
-          <p class="data-stat-desc">
-            Anggaran penetapan belanja APBD Provinsi DKI Jakarta tahun 2026.
-          </p>
-        </div>
-
-        <div class="data-stat-card gold-border">
-          <div class="data-stat-label">Realisasi Belanja APBD 2026</div>
-          <div class="data-stat-value tabular-nums" style="color: var(--viz-5);" title="Nilai penuh: Rp44.467.474.197.668">Rp44,47 T</div>
-          <p class="data-stat-desc">
-            Tingkat serapan belanja kumulatif mencapai <strong>59,86%</strong> dari total pagu penetapan per 25 Oktober 2026.
-          </p>
-        </div>
-      </div>
-
-      <div class="data-stat-grid" style="margin-top: 16px;">
-        <div class="data-stat-card">
-          <div class="data-stat-label">Belanja Operasi (85,1% dari belanja)</div>
-          <div class="data-stat-value tabular-nums" title="Rp63.216.703.737.755">Rp63,22 T</div>
-          <ul class="data-breakdown-list">
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Belanja Pegawai</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp21.431.736.563.104">Rp21,43 T</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Belanja Barang dan Jasa</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp29.000.142.954.078">Rp29,00 T</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Belanja Subsidi</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp5.277.927.322.600">Rp5,28 T</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Belanja Bantuan Sosial</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp4.581.666.540.583">Rp4,58 T</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Belanja Hibah</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp2.801.230.357.390">Rp2,80 T</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Belanja Bunga</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp120.400.000.000">Rp120 M</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="data-stat-card">
-          <div class="data-stat-label">Belanja Modal (13,7% dari belanja)</div>
-          <div class="data-stat-value tabular-nums" title="Rp10.169.932.193.352">Rp10,17 T</div>
-          <ul class="data-breakdown-list">
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Jalan, Jaringan, dan Irigasi</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp5.357.208.391.634">Rp5,36 T</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Peralatan dan Mesin</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp1.967.569.878.710">Rp1,97 T</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Gedung dan Bangunan</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp1.899.083.568.597">Rp1,90 T</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Tanah</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp745.231.989.077">Rp745 M</span>
-            </li>
-            <li class="data-breakdown-item">
-              <span class="data-breakdown-name">Aset Tetap &amp; Lainnya</span>
-              <span class="data-breakdown-val tabular-nums" title="Rp200.835.366.334">Rp201 M</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Lima Urusan Terbesar -->
-      <div class="data-stat-card" style="margin-top: 16px;">
-        <div class="data-stat-label">Lima Urusan Pemerintahan Terbesar (Porsi Proporsi Terverifikasi)</div>
-        <p class="data-stat-desc" style="margin-bottom: 12px;">
-          <em>Catatan metodologi: Proporsi persentase di bawah telah diverifikasi seragam dan aman digunakan sesuai data BPKD.</em>
-        </p>
-        <ul class="data-breakdown-list">
-          <li class="data-breakdown-item">
-            <span class="data-breakdown-name">1.01 Urusan Pendidikan (Wajib Pelayanan Dasar)</span>
-            <span class="data-breakdown-val tabular-nums">24,47%</span>
-          </li>
-          <li class="data-breakdown-item">
-            <span class="data-breakdown-name">1.02 Urusan Kesehatan (Wajib Pelayanan Dasar)</span>
-            <span class="data-breakdown-val tabular-nums">14,03%</span>
-          </li>
-          <li class="data-breakdown-item">
-            <span class="data-breakdown-name">1.03 Pekerjaan Umum dan Penataan Ruang (Wajib Pelayanan Dasar)</span>
-            <span class="data-breakdown-val tabular-nums">12,40%</span>
-          </li>
-          <li class="data-breakdown-item">
-            <span class="data-breakdown-name">2.15 Urusan Perhubungan (Wajib Non-Pelayanan Dasar)</span>
-            <span class="data-breakdown-val tabular-nums">9,13%</span>
-          </li>
-          <li class="data-breakdown-item">
-            <span class="data-breakdown-name">2.11 Urusan Lingkungan Hidup (Wajib Non-Pelayanan Dasar)</span>
-            <span class="data-breakdown-val tabular-nums">5,57%</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- V5: Area Chart (Tren Anggaran 2022-2026) -->
-      <article class="chart-card-wrapper" id="card-v5" style="margin-top: 24px;">
-        <header class="chart-card-header">
-          <div class="chart-header-top">
-            <div class="chart-titles">
-              <h3 class="chart-question">Bagaimana anggaran Jakarta bergerak 2022 sampai 2026?</h3>
-              <p class="chart-subtitle">Perjalanan deret penetapan anggaran belanja dan pendapatan selama 5 tahun anggaran.</p>
-            </div>
-            <div class="chart-controls">
-              <div class="chart-pill-group" role="group" aria-label="Pilihan Basis Tren Anggaran">
-                <button type="button" class="chart-pill-btn active" data-chart="v5" data-basis="apbd">APBD</button>
-                <button type="button" class="chart-pill-btn" data-chart="v5" data-basis="apbdp">APBDP</button>
-              </div>
-            </div>
-          </div>
-          <div class="chart-actions">
-            <button type="button" class="chart-action-btn" data-table-toggle="chart-v5" aria-expanded="false">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3h18v18H3V3zm0 6h18M3 15h18M9 3v18M15 3v18"/></svg>
-              Lihat sebagai tabel
-            </button>
-            <button type="button" class="chart-action-btn" data-export="chart-v5">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              Unduh gambar
-            </button>
-          </div>
-        </header>
-
-        <div class="chart-canvas-container">
-          <div class="chart-skeleton" id="chart-v5-skeleton">Memuat grafik tren anggaran...</div>
-          <div class="chart-mount" id="chart-v5" role="img" aria-label="Grafik area tren belanja dan pendapatan Jakarta 2022-2026"></div>
-        </div>
-
-        <div class="chart-table-container" id="chart-v5-table" hidden style="display:none;"></div>
-
-        <footer class="chart-footer">
-          <div class="trust-source-badge" role="note">
-            <span class="badge-tag-anggaran">[ANGGARAN]</span>
-            <span class="badge-info">Basis <strong>Deret 2022-2026</strong></span>
-            <span class="badge-separator" aria-hidden="true">•</span>
-            <span class="badge-source">Sumber: <em>Dashboard Keuangan Daerah BPKD Provinsi DKI Jakarta</em></span>
-          </div>
-        </footer>
-      </article>
-    </section>
-
-    <!-- =========================================================================
-         SECTION: HALAMAN DINAS / SKPD
-         ========================================================================= -->
-    <section class="data-section container" id="dinas" style="padding-top: 16px;">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">TRANSPARANSI TINGKAT DINAS</p>
-          <h2>Alokasi Belanja &amp; <span>Realisasi Per SKPD</span></h2>
-        </div>
-        <p class="section-intro">
-          Informasi anggaran belanja, realisasi kumulatif, dan pembandingan untuk dinas-dinas pelaksana program utama di Provinsi DKI Jakarta.
-        </p>
-      </div>
-
-      <!-- Navigasi Tab Dinas -->
-      <div class="dinas-tabs-nav" role="tablist" aria-label="Pilihan Dinas">
-        <button type="button" class="dinas-tab-btn active" role="tab" aria-selected="true" data-dinas="pendidikan">
-          Dinas Pendidikan
-        </button>
-        <button type="button" class="dinas-tab-btn" role="tab" aria-selected="false" data-dinas="kesehatan">
-          Dinas Kesehatan
-        </button>
-        <button type="button" class="dinas-tab-btn" role="tab" aria-selected="false" data-dinas="binamarga-sda">
-          Bina Marga &amp; Sumber Daya Air (Gabungan)
-        </button>
-      </div>
-
-      <!-- Wadah Konten Template Halaman Dinas -->
-      <div id="dinas-page-content" class="chart-card-wrapper" style="padding: 24px;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
-          <div>
-            <span class="info-modal-code" id="dinas-page-badge">SKPD TUNGGAL · PERINGKAT #1</span>
-            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--color-ink); margin: 6px 0 4px 0;" id="dinas-page-title">
-              Dinas Pendidikan
+            <span class="info-modal-code">SIMULASI PROPORSI BELANJA</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-ink); margin: 4px 0 4px 0;">
+              Jika Belanja APBD Jakarta Rp100
             </h3>
-            <p style="font-size: 0.875rem; color: var(--color-muted); max-width: 720px; line-height: 1.5;" id="dinas-page-desc">
-              Memuat deskripsi dinas...
+            <p style="font-size: 0.875rem; color: var(--color-muted); margin: 0;">
+              Gambaran alokasi setiap Rp100 anggaran belanja DKI Jakarta pada 6 dinas dan instansi terbesar. Arahkan kursor ke kotak atau legenda untuk melihat proporsinya.
             </p>
           </div>
-          <div class="trust-source-badge" role="note" style="margin:0;">
-            <span class="badge-tag-realisasi">[REALISASI]</span>
-            <span class="badge-info">Per <strong>25 Oktober 2026</strong></span>
-            <span class="badge-separator" aria-hidden="true">•</span>
-            <span class="badge-source">BPKD DKI Jakarta</span>
-          </div>
-        </div>
+        </header>
 
-        <!-- KPI Row Dinas -->
-        <div class="kpi-row" style="margin-bottom: 24px;">
-          <div class="kpi-card" style="border-left: 4px solid var(--color-gold);">
-            <div class="kpi-label">Anggaran Belanja</div>
-            <div class="kpi-value tabular-nums" id="dinas-kpi-anggaran">...</div>
-            <div class="kpi-sub" id="dinas-kpi-rank">#1 dari 43 Unit</div>
-          </div>
-          <div class="kpi-card" style="border-left: 4px solid var(--viz-5);">
-            <div class="kpi-label">Realisasi Belanja</div>
-            <div class="kpi-value tabular-nums" id="dinas-kpi-realisasi" style="color: var(--viz-5);">...</div>
-            <div class="kpi-sub">Kumulatif per 25 Okt 2026</div>
-          </div>
-          <div class="kpi-card" style="border-left: 4px solid var(--viz-1);">
-            <div class="kpi-label">Tingkat Serapan</div>
-            <div class="kpi-value tabular-nums" id="dinas-kpi-serapan">...</div>
-            <div class="kpi-sub">Dari alokasi pagu belanja</div>
-          </div>
-          <div class="kpi-card" style="border-left: 4px solid var(--viz-3);">
-            <div class="kpi-label">Porsi Total Belanja APBD</div>
-            <div class="kpi-value tabular-nums" id="dinas-kpi-porsi">...</div>
-            <div class="kpi-sub">Dari total APBD Rp74,29 T</div>
-          </div>
-        </div>
-
-        <!-- Box Pendapatan Unit Bila Bukan Nol -->
-        <div id="dinas-revenue-box" class="kpi-card" style="display:none; margin-bottom: 24px; background: var(--color-surface-card); border-left: 4px solid var(--color-ink-light);">
-          <div class="kpi-label">Pendapatan Unit (Retribusi &amp; Lain-lain)</div>
-          <div class="kpi-value tabular-nums" id="dinas-revenue-val">...</div>
-          <div class="kpi-sub">Realisasi / Anggaran Pendapatan yang dihimpun unit ini</div>
-        </div>
-
-        <!-- Pembandingan Dengan Unit Lain -->
-        <div class="dinas-compare-section">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
-            <div>
-              <h4 style="font-size:1.0625rem; font-weight:700; color:var(--color-ink); margin:0;">Bandingkan dengan Unit Lain</h4>
-              <p style="font-size:0.8125rem; color:var(--color-muted); margin:2px 0 0;">Pilih unit SKPD lain untuk membandingkan anggaran, realisasi, dan serapan berdampingan.</p>
-            </div>
-            <div class="select-wrapper" style="min-width: 280px;">
-              <select id="dinas-compare-select" class="card-config-select" aria-label="Bandingkan dengan unit lain">
-                <option value="">Pilih unit SKPD untuk dibandingkan...</option>
-              </select>
-            </div>
+        <div class="waffle-wrapper" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center;">
+          <div class="waffle-container" id="waffle-container" aria-label="Grid Waffle Alokasi Belanja Rp100">
+            <!-- 100 kotak diisi oleh js/realisasi.js -->
           </div>
 
-          <div class="dinas-compare-grid">
-            <!-- Kolom Unit Utama -->
-            <div class="dinas-compare-box primary">
-              <span class="info-modal-code">UNIT UTAMA</span>
-              <h4 style="font-size:1.1rem; font-weight:800; color:var(--color-ink); margin:6px 0 14px 0;" id="dinas-compare-primary-title">Unit Terpilih</h4>
-              <div style="display:flex; flex-direction:column; gap:10px;">
-                <div>
-                  <div style="font-size:0.75rem; color:var(--color-muted); font-weight:700;">ANGGARAN BELANJA</div>
-                  <div style="font-size:1.25rem; font-weight:800; color:var(--color-ink);" id="dinas-compare-prim-ang">...</div>
-                </div>
-                <div>
-                  <div style="font-size:0.75rem; color:var(--color-muted); font-weight:700;">REALISASI BELANJA</div>
-                  <div style="font-size:1.25rem; font-weight:800; color:var(--color-ink);" id="dinas-compare-prim-real">...</div>
-                </div>
-                <div>
-                  <div style="font-size:0.75rem; color:var(--color-muted); font-weight:700;">TINGKAT SERAPAN</div>
-                  <div style="font-size:1.25rem; font-weight:800; color:var(--color-ink);" id="dinas-compare-prim-serapan">...</div>
-                </div>
-              </div>
+          <div class="waffle-content-col" style="flex: 1; min-width: 280px;">
+            <div class="waffle-sentence-box" id="waffle-sentence-box">
+              <!-- Kalimat dinamis diisi oleh js/realisasi.js -->
             </div>
 
-            <!-- Kolom Unit Pembanding -->
-            <div id="dinas-compare-target-col">
-              <div style="text-align:center; padding:32px; color:var(--color-muted); background:var(--color-surface-warm); border-radius:8px; border:1px dashed var(--color-border-subtle);">
-                Pilih salah satu unit SKPD di dropdown atas untuk melihat perbandingan berdampingan.
-              </div>
+            <div class="waffle-legend" id="waffle-legend" style="margin-top: 12px;">
+              <!-- Legenda dinamis diisi oleh js/realisasi.js -->
             </div>
+
+            <p class="waffle-sentence-disclaimer" style="margin-top: 12px;">
+              * Angka pembulatan per Rp100 untuk memudahkan warga memahami proporsi relatif belanja dinas dan instansi.
+            </p>
           </div>
         </div>
+      </article>
 
-        <!-- Rincian Program: Status Kosong Jujur dengan Maskot Ondi -->
-        <div class="empty-state-card" style="margin-top: 24px;">
-          <img src="assets/maskot-ondi/ondi-06-peringatan-informasi.png" alt="Maskot Ondi memberi penjelasan" aria-hidden="true">
+      <!-- Daftar Per-Dinas: Top 10 dengan Bullet Bar & Tombol "Lihat Semua" -->
+      <article class="chart-card-wrapper" style="margin-top: 24px; padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
           <div>
-            <div class="empty-state-title">Data program belum tersedia</div>
-            <p class="empty-state-text">
-              Rincian program, kegiatan, dan sub-kegiatan dinas belum termuat dalam berkas data anggaran BPKD ini. Platform paJAK-Kita tidak mengarang deskripsi atau daftar kegiatan demi transparansi dan akurasi data publik.
+            <span class="info-modal-code">RINCIAN PER DINAS DAN INSTANSI</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-ink); margin: 4px 0 4px 0;">
+              Alokasi &amp; Penyerapan per Dinas dan Instansi
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-muted); margin: 0;">
+              Menampilkan 10 dinas dan instansi teratas berdasarkan pagu anggaran belanja. Garis vertikal emas menandai posisi data per 25 Oktober 2026. Klik baris mana saja untuk melihat detailnya di bawah.
             </p>
-            <div class="trust-source-badge" role="note" style="margin-top: 8px;">
-              <span class="badge-tag-anggaran">[MENUNGGU PUBLIKASI]</span>
-              <span class="badge-info">Status: <strong>Data belum tersedia</strong></span>
+          </div>
+        </div>
+
+        <!-- Wadah List Bullet Bar Per-dinas -->
+        <div id="dinas-bullet-list" style="margin-top: 16px;">
+          <!-- Diisi otomatis oleh js/realisasi.js -->
+        </div>
+
+        <!-- Tombol Ekspansi "Lihat Semua Dinas dan Instansi" -->
+        <div style="text-align: center; margin-top: 20px;">
+          <button type="button" id="btn-toggle-all-dinas" class="button button-secondary" style="font-size: 0.875rem; padding: 10px 24px;">
+            Lihat semua dinas dan instansi (43) ↓
+          </button>
+        </div>
+      </article>
+
+      <!-- Detail Halaman Dinas: HANYA Anggaran, Terpakai, Persen -->
+      <article class="chart-card-wrapper" id="dinas" style="margin-top: 24px; padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+          <div>
+            <span class="info-modal-code">DETAIL DINAS DAN INSTANSI</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-ink); margin: 4px 0 4px 0;">
+              Informasi Dinas Terpilih
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-muted); margin: 0;">
+              Pilih dinas dan instansi lewat tab di bawah atau gunakan menu pilihan lengkap.
+            </p>
+          </div>
+
+          <!-- Dropdown Pemilih Lengkap 43 Dinas dan Instansi -->
+          <div class="select-wrapper" style="min-width: 260px;">
+            <select id="dinas-picker-select" class="card-config-select" aria-label="Pilih dinas dan instansi">
+              <!-- Diisi oleh js/realisasi.js -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Tab Pemilih Cepat -->
+        <div class="dinas-tabs-nav" role="tablist" aria-label="Pilihan Cepat Dinas">
+          <button type="button" class="dinas-tab-btn active" role="tab" aria-selected="true" data-dinas="pendidikan">
+            Dinas Pendidikan
+          </button>
+          <button type="button" class="dinas-tab-btn" role="tab" aria-selected="false" data-dinas="kesehatan">
+            Dinas Kesehatan
+          </button>
+          <button type="button" class="dinas-tab-btn" role="tab" aria-selected="false" data-dinas="binamarga-sda">
+            Bina Marga &amp; SDA (Gabungan)
+          </button>
+        </div>
+
+        <!-- Wadah Konten Detail Dinas (HANYA: Anggaran, Terpakai, Persen) -->
+        <div id="dinas-page-content" style="margin-top: 20px;">
+          <h4 style="font-size: 1.35rem; font-weight: 800; color: var(--color-ink); margin: 0 0 4px 0;" id="dinas-page-title">
+            Dinas Pendidikan
+          </h4>
+          <p style="font-size: 0.875rem; color: var(--color-muted); line-height: 1.5; margin: 0 0 18px 0;" id="dinas-page-desc">
+            Mengelola anggaran belanja operasional sekolah negeri, bantuan operasional pendidikan, dan sarana belajar.
+          </p>
+
+          <!-- Tiga Angka Kunci Saja -->
+          <div class="exec-metrics-row">
+            <div class="exec-metric-col">
+              <span class="exec-metric-label">Anggaran Belanja</span>
+              <span class="exec-metric-val tabular-nums" id="dinas-kpi-anggaran">...</span>
+            </div>
+            <div class="exec-metric-col">
+              <span class="exec-metric-label">Belanja Terpakai</span>
+              <span class="exec-metric-val tabular-nums highlight-belanja" id="dinas-kpi-realisasi">...</span>
+            </div>
+            <div class="exec-metric-col">
+              <span class="exec-metric-label">Persen Terpakai</span>
+              <span class="exec-metric-val tabular-nums highlight-belanja" id="dinas-kpi-serapan">...</span>
+            </div>
+          </div>
+
+          <!-- Status Jujur Program Dinas: Data Belum Tersedia -->
+          <div class="empty-state-card" style="margin-top: 20px;">
+            <img src="assets/maskot-ondi/ondi-06-peringatan-informasi.png" alt="Maskot Ondi memberi penjelasan" aria-hidden="true">
+            <div>
+              <div class="empty-state-title">Data program belum tersedia</div>
+              <p class="empty-state-text">
+                Rincian program, kegiatan, dan sub-kegiatan dinas dan instansi belum termuat dalam berkas data terbuka BPKD ini. paJAK-Kita tidak mengarang rincian kegiatan demi kepatuhan kejujuran data publik.
+              </p>
+              <div class="trust-source-badge" role="note" style="margin-top: 8px;">
+                <span class="badge-tag-anggaran">[MENUNGGU PUBLIKASI]</span>
+                <span class="badge-info">Status: <strong>Data belum tersedia</strong></span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </section>
   </main>
 
@@ -753,52 +251,19 @@
         <a href="penerimaan.html">Penerimaan Pajak</a>
         <a href="belanja.html">Belanja APBD</a>
         <a href="index.html#kamus">Kamus Pajak</a>
+        <a href="index.html#tentang-data">Tentang Data</a>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <span>paJAK-Kita · WIA MIA 2026</span>
-      <span>Dibuat untuk membantu warga memahami data publik.</span>
+      <span>Dibuat untuk membantu warga memahami data publik Jakarta.</span>
     </div>
   </footer>
 
-  <!-- Modal Containers: Detail Unit & Bantuan Baca -->
-  <div id="unit-modal-container"></div>
-  <div id="help-modal-container"></div>
-  <div id="info-modal-container"></div>
-
-  <!-- Modal Pencarian Cepat (Ctrl+K) -->
-  <div id="quick-search-backdrop" class="quick-search-backdrop" style="display:none;" role="dialog" aria-modal="true" aria-label="Pencarian Cepat paJAK-Kita">
-    <div class="quick-search-modal">
-      <div class="quick-search-header">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input
-          type="search"
-          id="quick-search-input"
-          class="quick-search-input"
-          placeholder="Ketik nama dinas, akun pendapatan/belanja, atau halaman..."
-          autocomplete="off"
-        />
-        <button type="button" id="quick-search-close" class="quick-search-close" aria-label="Tutup pencarian">✕</button>
-      </div>
-      <div id="quick-search-results" class="quick-search-results">
-        <!-- Hasil pencarian dinamis -->
-      </div>
-      <div class="quick-search-footer">
-        <span>Gunakan tombol <kbd>↑</kbd> <kbd>↓</kbd> untuk memilih, <kbd>Enter</kbd> untuk navigasi, <kbd>Esc</kbd> untuk menutup</span>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/html2canvas.min.js"></script>
-  <script src="js/echarts.min.js"></script>
   <script type="module" src="js/dataClient.js"></script>
   <script type="module" src="js/format.js"></script>
   <script src="js/main.js"></script>
-  <script type="module" src="js/charts.js"></script>
   <script type="module" src="js/realisasi.js"></script>
 </body>
 </html>

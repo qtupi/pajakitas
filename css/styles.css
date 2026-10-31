@@ -2729,3 +2729,19 @@ h2 { margin-bottom: 0; font-size: clamp(28px, 3vw, 38px); line-height: 1.2; lett
   line-height: 1.6;
   margin: 0;
 }
+
+/* Interaksi Baris Dinas dan Instansi */
+.dinas-bullet-row {
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.dinas-bullet-row:hover {
+  background: var(--color-surface-warm, #F4ECE1) !important;
+  transform: translateX(4px);
+}
+
+.dinas-bullet-row.is-selected {
+  border-color: var(--color-primary, #BA1A1A) !important;
+  background: #FFFBF5 !important;
+  box-shadow: 0 2px 8px rgba(186, 26, 26, 0.08);
+}
