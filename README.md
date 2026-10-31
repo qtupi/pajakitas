@@ -94,9 +94,9 @@ Platform **paJAK-Kita** saat ini berada pada tahap **Fase 1 (Core Release — 10
 
 ### ⏳ Rencana Pengembangan Selanjutnya (Upcoming Roadmap)
 
+- [ ] **Pemanfaatan & Integrasi Menyeluruh Aset Maskot Ondi:** Menampilkan variasi ekspresi dan pose Maskot Ondi secara lebih masif di berbagai titik interaksi warga (seperti *callout insight*, panduan kontekstual fiskal, *empty state*, dan kartu infografis) memanfaatkan seluruh koleksi aset maskot yang sudah tersedia agar pengalaman pengguna lebih hidup dan bersahabat.
+- [ ] **Pembersihan & Perapihan File Proyek (*Asset & Code Cleanup*):** Melakukan audit komprehensif untuk merapikan struktur direktori dan menghapus file/aset yang sudah tidak terpakai agar ukuran repositori tetap ramping, bersih, dan terawat.
 - [ ] **Visualisasi Sebaran Wilayah Spasial:** Peta interaktif 5 Kota Administrasi dan 1 Kabupaten Kepulauan Seribu (sebaran realisasi PBB-P2 & PKB per wilayah).
-- [ ] **Eksplorasi Sub-Objek Pajak Mendalam:** Pengeboran rincian detail sub-kategori PBJT (tarif, batas omzet, dan tren per jenis usaha).
-- [ ] **Fitur Komparasi Multi-Tahun:** Perbandingan time-series multi-tahun tren fiskal APBD DKI Jakarta secara dinamis (2022–2026).
 - [ ] **Pemberitahuan Otomatis Sinkronisasi Data:** Mekanisme notifikasi otomatis saat BPKD DKI merilis pembaruan laporan realisasi triwulanan baru.
 
 ---
