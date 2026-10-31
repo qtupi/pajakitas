@@ -2,6 +2,10 @@
 
 Platform *civic-tech* independen untuk transparansi aliran pajak daerah dan alokasi belanja APBD Provinsi DKI Jakarta. Dirancang dengan pendekatan **Editorial Modern Betawi** agar data fiskal publik yang kompleks dapat dipahami oleh setiap warga secara terbuka, jujur, dan berdaya.
 
+<p align="center">
+  <img src="assets/landing-page-hero-section.png" alt="paJAK-Kita - Landing Page Hero Section" width="100%" />
+</p>
+
 ---
 
 ## 🛠️ Tech Stack
@@ -45,6 +49,11 @@ Buka browser di alamat: `http://localhost:3000`
 ## 🏛️ Arsitektur Halaman & Fitur Unggulan
 
 ### 1. Beranda — Executive Summary (`index.html`)
+
+<p align="center">
+  <img src="assets/landing-page-ondi.png" alt="paJAK-Kita - Maskot Ondi Interaktif & Ringkasan Eksekutif" width="100%" />
+</p>
+
 - **Full-Bleed Hero Slideshow:** Slideshow pemandangan Jakarta (*Ken Burns Effect*, *Crossfade*, kontrol *Play/Pause*, indikator slide, dan tipografi pembuka).
 - **Maskot Ondi Interaktif:** Maskot ondel-ondel Betawi ramah warga dengan pupil mata yang bergerak mengikuti kursor mouse (*real-time eye-tracking*).
 - **Ringkasan Eksekutif (2 Pilar Utama):**
@@ -127,6 +136,8 @@ paJAK-Kita/
 │   ├── pajak-kita-data-anggaran.json         # Data pagu anggaran APBD DKI Jakarta
 │   └── pajak-kita-data-realisasi.json        # Data realisasi serapan dan pendapatan
 ├── assets/
+│   ├── landing-page-hero-section.png        # Tangkapan layar visual hero section beranda
+│   ├── landing-page-ondi.png                # Tangkapan layar maskot Ondi & ringkasan eksekutif
 │   ├── logo-pajakkita-monas-grafik.svg       # Logo resmi paJAK-Kita
 │   ├── maskot-ondi/                         # Aset ilustrasi SVG/PNG Maskot Ondi
 │   ├── motifs/                              # Motif ornamen gigi balang Betawi
