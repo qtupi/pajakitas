@@ -70,33 +70,53 @@ export class HeroSlideshow {
 
   renderSlideElements() {
     this.slideElements = [];
-    this.slidesWrapper.innerHTML = '';
+    const existingImgs = Array.from(this.slidesWrapper.querySelectorAll('.hero-slide-img'));
 
-    this.slides.forEach((slide, idx) => {
-      const img = document.createElement('img');
-      img.className = `hero-slide-img ${idx === 0 ? 'is-active' : ''}`;
-      img.style.objectPosition = slide.objectPosition || 'center';
-      img.alt = '';
-      img.setAttribute('aria-hidden', 'true');
-
-      if (idx === 0) {
+    if (existingImgs.length === this.slides.length) {
+      // Gunakan elemen gambar yang sudah ada di markup HTML
+      this.slideElements = existingImgs;
+      this.slideElements.forEach((img, idx) => {
+        const slide = this.slides[idx];
+        if (!img.getAttribute('src')) {
+          img.src = slide.src;
+        }
+        img.style.objectPosition = slide.objectPosition || 'center';
+        if (idx === 0) {
+          img.classList.add('is-active');
+          img.style.zIndex = '2';
+          img.style.opacity = '1';
+          img.style.transform = `scale(${HERO_SETTINGS.kenBurnsScaleStart})`;
+        } else {
+          img.classList.remove('is-active');
+          img.style.zIndex = '1';
+          img.style.opacity = '0';
+        }
+      });
+    } else {
+      // Buat elemen baru jika belum ada di HTML
+      this.slidesWrapper.innerHTML = '';
+      this.slides.forEach((slide, idx) => {
+        const img = document.createElement('img');
+        img.className = `hero-slide-img ${idx === 0 ? 'is-active' : ''}`;
+        img.style.objectPosition = slide.objectPosition || 'center';
+        img.alt = slide.label || '';
+        img.setAttribute('aria-hidden', 'true');
         img.src = slide.src;
-        img.setAttribute('fetchpriority', 'high');
-        img.style.opacity = '1';
-        img.style.transform = `scale(${HERO_SETTINGS.kenBurnsScaleStart})`;
-      } else {
-        img.dataset.src = slide.src;
-        img.style.opacity = '0';
-        img.loading = 'lazy';
-      }
 
-      this.slidesWrapper.appendChild(img);
-      this.slideElements.push(img);
-    });
+        if (idx === 0) {
+          img.setAttribute('fetchpriority', 'high');
+          img.style.opacity = '1';
+          img.style.transform = `scale(${HERO_SETTINGS.kenBurnsScaleStart})`;
+        } else if (idx === 1) {
+          img.style.opacity = '0';
+        } else {
+          img.style.opacity = '0';
+          img.loading = 'lazy';
+        }
 
-    // Preload slide kedua segera
-    if (this.slideElements[1] && this.slideElements[1].dataset.src) {
-      this.slideElements[1].src = this.slideElements[1].dataset.src;
+        this.slidesWrapper.appendChild(img);
+        this.slideElements.push(img);
+      });
     }
   }
 
@@ -176,31 +196,33 @@ export class HeroSlideshow {
   }
 
   setupInteractivity() {
-    // Jeda saat mouse hover
-    this.container.addEventListener('mouseenter', () => {
-      if (this.isPlaying) {
-        this.pauseInternal();
-      }
-    });
+    const controls = this.container.querySelector('.hero-slideshow-controls');
+    if (controls) {
+      // Jeda hanya saat kontrol slideshow di-hover atau difokuskan secara langsung
+      controls.addEventListener('mouseenter', () => {
+        if (this.isPlaying) {
+          this.pauseInternal();
+        }
+      });
 
-    this.container.addEventListener('mouseleave', () => {
-      if (this.isPlaying) {
-        this.resumeInternal();
-      }
-    });
+      controls.addEventListener('mouseleave', () => {
+        if (this.isPlaying) {
+          this.resumeInternal();
+        }
+      });
 
-    // Jeda saat keyboard focus di dalam hero
-    this.container.addEventListener('focusin', () => {
-      if (this.isPlaying) {
-        this.pauseInternal();
-      }
-    });
+      controls.addEventListener('focusin', () => {
+        if (this.isPlaying) {
+          this.pauseInternal();
+        }
+      });
 
-    this.container.addEventListener('focusout', (e) => {
-      if (!this.container.contains(e.relatedTarget) && this.isPlaying) {
-        this.resumeInternal();
-      }
-    });
+      controls.addEventListener('focusout', (e) => {
+        if (!controls.contains(e.relatedTarget) && this.isPlaying) {
+          this.resumeInternal();
+        }
+      });
+    }
 
     // Jeda saat tab browser diminimalkan / tidak aktif
     document.addEventListener('visibilitychange', () => {
@@ -260,34 +282,25 @@ export class HeroSlideshow {
   startSlide(index) {
     this.currentIndex = index;
     const currentImg = this.slideElements[index];
-
-    // Pastikan sumber gambar dimuat
-    if (currentImg.dataset.src && !currentImg.src) {
-      currentImg.src = currentImg.dataset.src;
+    if (currentImg && !currentImg.getAttribute('src')) {
+      currentImg.src = this.slides[index].src;
     }
 
     // Preload gambar berikutnya
     const nextIdx = (index + 1) % this.totalSlides;
     const nextImg = this.slideElements[nextIdx];
-    if (nextImg && nextImg.dataset.src && !nextImg.src) {
-      nextImg.src = nextImg.dataset.src;
+    if (nextImg && !nextImg.getAttribute('src')) {
+      nextImg.src = this.slides[nextIdx].src;
     }
 
     // Aktifkan transisi opacity & Ken Burns zoom
     this.slideElements.forEach((img, idx) => {
       if (idx === index) {
-        img.classList.add('is-active');
-        img.style.opacity = '1';
-        img.style.transform = `scale(${HERO_SETTINGS.kenBurnsScaleStart})`;
-        // Mulai transisi scale ke 1.0 over slideDuration
-        window.requestAnimationFrame(() => {
-          img.style.transition = `opacity ${this.fadeDuration}ms ease-in-out, transform ${this.slideDuration}ms cubic-bezier(0.25, 1, 0.5, 1)`;
-          img.style.transform = `scale(${HERO_SETTINGS.kenBurnsScaleEnd})`;
-        });
+        img.classList.add('active', 'is-active');
+        img.style.zIndex = '2';
       } else {
-        img.classList.remove('is-active');
-        img.style.opacity = '0';
-        img.style.transition = `opacity ${this.fadeDuration}ms ease-in-out`;
+        img.classList.remove('active', 'is-active');
+        img.style.zIndex = '1';
       }
     });
 
@@ -340,6 +353,7 @@ export class HeroSlideshow {
   goToSlide(index) {
     clearTimeout(this.timerId);
     cancelAnimationFrame(this.rafProgressId);
+    this.isPausedByInteraction = false;
     this.startSlide(index);
   }
 
@@ -369,6 +383,7 @@ export class HeroSlideshow {
   }
 
   resumeInternal() {
+    if (!this.isPlaying) return;
     this.isPausedByInteraction = false;
     this.slideStartTime = performance.now();
     const remainingTime = Math.max(this.slideDuration - this.elapsedBeforePause, 200);

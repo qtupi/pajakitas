@@ -1,57 +1,126 @@
-# paJAK-Kita — Platform Transparansi Pajak Daerah & APBD Jakarta
+# paJAK-Kita 🏛️
 
-**paJAK-Kita** adalah platform berbasis web untuk membantu warga memahami penerimaan pajak daerah dan alokasi belanja APBD Provinsi DKI Jakarta secara transparan, mudah diakses, dan berakar pada data publik resmi.
-
----
-
-## 🏛️ Arsitektur Halaman
-
-1. **Beranda (`index.html`) — Executive Summary:**
-   - **Hero Section:** Pengantar interaktif dengan maskot Ondi dan banner status data terkini (*Freshness Banner*).
-   - **Kartu Ringkasan Eksekutif (Executive Summary Cards):**
-     - **Pilar Penerimaan Pajak:** Target Rp49,90 T, Realisasi Rp40,27 T, Capaian 74,43%, progress bar tipis rapi, dan tombol CTA ke analisis lengkap.
-     - **Pilar Belanja APBD:** Pagu Rp74,29 T, Realisasi Rp44,47 T, Serapan 59,86%, 3 sektor terbesar (Pendidikan 24,47%, Kesehatan 14,03%, Infrastruktur PU & Tata Air 12,40%), dan tombol CTA ke eksplorasi belanja.
-   - **Pembuat Kartu Insight (Rasio 3:4):** Generator kartu fakta warga dengan privasi terjamin 100% diproses di browser klien (ekspor PNG).
-   - **Kamus Pajak:** Glosarium istilah perpajakan awam berlandaskan peraturan perundang-undangan.
-   - **Transparansi & Metodologi:** Landasan hukum UU No. 1/2022 (HKPD), Perda APBD DKI Jakarta, dan Dashboard BPKD.
-
-2. **Halaman Khusus Penerimaan Pajak (`penerimaan.html`):**
-   - KPI Capaian & Cincin Progres Realisasi Pajak Daerah.
-   - Bullet Chart 6 Akun Pendapatan Daerah.
-   - Grafik Donut Separuh (V1: *Dari Mana Uang Jakarta Berasal?*).
-   - Grafik Cincin Ganda (V2: *Peran Pajak Daerah*).
-   - Grafik Batang Divergen (V6: *Perubahan Anggaran 2025 vs 2026*).
-   - Status Kosong Informatif (V7 & V8).
-
-3. **Halaman Khusus Belanja APBD & OPD (`belanja.html`):**
-   - KPI Count-up & Cincin Progres Penyerapan Total Belanja.
-   - Bullet Chart 9 Jenis Belanja Daerah.
-   - Sakelar Komposisi Belanja: Diagram Batang 43 SKPD vs Diagram Mawar Urusan (V4).
-   - Diagram Waffle 10x10 (*Jika Belanja APBD Jakarta Rp100*).
-   - Penjelajah 43 Unit SKPD (Tabel pencarian, pengurutan, filter kategori, dan modal detail).
-   - Grafik Donut Drill-Down (V3: *Kelompok Jenis Belanja Operasi, Modal, BTT, Transfer*).
-   - Grafik Area Deret Waktu (V5: *Tren Anggaran APBD 2022-2026*).
-   - Halaman Dinas Prioritas (Dinas Pendidikan, Kesehatan, Bina Marga & Sumber Daya Air).
+Platform *civic-tech* independen untuk transparansi aliran pajak daerah dan alokasi belanja APBD Provinsi DKI Jakarta. Dirancang dengan pendekatan **Editorial Modern Betawi** agar data fiskal publik yang kompleks dapat dipahami oleh setiap warga secara terbuka, jujur, dan berdaya.
 
 ---
 
-## 🚀 Cara Menjalankan Proyek Secara Lokal
+## 🛠️ Tech Stack
 
-### Menggunakan Python (yang sudah terpasang di sistem):
+- **Frontend Core:** Vanilla HTML5 Semantic, Modern CSS3 (CSS Variables, Flexbox, CSS Grid), JavaScript (ES6+ Vanilla Modules — *Zero runtime framework overhead*).
+- **Tooling & Build:** [Vite](https://vitejs.dev/) & Python SimpleHTTP Server.
+- **Tipografi & Desain:** Plus Jakarta Sans, Playfair Display, Palet Warna *Warm Alabaster* (`#F8F1E7`), *Betawi Gold* (`#E0A526`), *Carmine Red* (`#BA1A1A`), dan *Deep Charcoal* (`#0D1117`).
+- **Animasi & Interaktivitas:** Motion / CSS Transitions, HTML5 Canvas (generator kartu ekspor PNG privat), dan SVG Dinamis Interaktif (*Eye-tracking pupil* Maskot Ondi).
+- **Data & Integrasi:** API Gateway Satu Data Jakarta (`ws.jakarta.go.id`), Dashboard BPKD DKI Jakarta, dan SMART Planning & Budgeting Pemprov DKI Jakarta dengan *Local Fallback JSON Engine*.
+
+---
+
+## 🚀 Panduan Menjalankan Project (Local Development)
+
+### 1. Clone repositori:
+```bash
+git clone https://github.com/raihanputra7/pajakita.git
+cd PaJAK-Kita
+```
+
+### 2. Instal dependensi:
+```bash
+npm install
+```
+
+### 3. Jalankan server lokal:
+**Opsi A — Menggunakan Vite Dev Server:**
+```bash
+npm run dev
+```
+Buka browser di alamat: `http://localhost:5173`
+
+**Opsi B — Menggunakan Python SimpleHTTP Server:**
 ```bash
 python -m http.server 3000
 ```
-Buka peramban di: **`http://localhost:3000`**
+Buka browser di alamat: `http://localhost:3000`
 
-### Menjalankan Pengujian Unit:
-```bash
-npm test
+---
+
+## 🏛️ Arsitektur Halaman & Fitur Unggulan
+
+### 1. Beranda — Executive Summary (`index.html`)
+- **Full-Bleed Hero Slideshow:** Slideshow pemandangan Jakarta (*Ken Burns Effect*, *Crossfade*, kontrol *Play/Pause*, indikator slide, dan tipografi pembuka).
+- **Maskot Ondi Interaktif:** Maskot ondel-ondel Betawi ramah warga dengan pupil mata yang bergerak mengikuti kursor mouse (*real-time eye-tracking*).
+- **Ringkasan Eksekutif (2 Pilar Utama):**
+  - *Pilar 01 — Penerimaan Pajak:* Target anggaran, realisasi terkumpul, persentase capaian, komparasi pajak vs retribusi, dan kepatuhan wajib pajak.
+  - *Pilar 02 — Belanja APBD:* Pagu anggaran belanja, realisasi serapan, 4 kelompok belanja, dan highlight 3 sektor utama (Pendidikan, Kesehatan, Infrastruktur).
+- **Pembuat Kartu Insight Warga (Rasio 3:4):** Generator kartu fakta pajak daerah berbasis *HTML5 Canvas* yang diproses **100% privat di peramban pengguna** tanpa ada data yang diunggah ke server.
+- **Kamus Ringkas Terkurasi:** 7 kartu istilah kunci perpajakan + 1 kartu ajakan CTA khusus menuju glosarium lengkap.
+- **Minimalist Ledger List (Tentang Data):** Tata letak asimetris 2 kolom gaya studio editorial dengan rincian sumber resmi, horizon periode 2022–2026, metodologi kalkulasi terbuka, dan kejujuran anomali data.
+- **Editorial Onform Footer:** Footer gelap elegan dengan navigasi terstruktur dan *Giant Typography* `paJAK-Kita`.
+
+### 2. Pilar 1: Penerimaan Pajak Daerah (`penerimaan.html`)
+- **Dashboard Metrik Penerimaan:** KPI target anggaran, realisasi terkumpul, dan sisa target tahun berjalan.
+- **Rincian 12 Jenis Pajak Daerah:** Menampilkan breakdown PKB, BBNKB, PBB-P2, BPHTB, PBJT (Makanan & Minuman, Tenaga Listrik, Perhotelan, Parkir, Kesenian & Hiburan), Pajak Reklame, PAT, dan Pajak Bahan Bakar.
+- **Tren Musiman Bulanan (Dataset 09):** Visualisasi siklus puncak penerimaan kas daerah Jakarta (Mei–Juni untuk diskon PKB/BBNKB dan Agustus–September untuk jatuh tempo massal PBB-P2).
+- **Sebaran Kepatuhan Wajib Pajak (Dataset 11):** Analisis pertumbuhan wajib pajak terdaftar dan rasio kepatuhan.
+
+### 3. Pilar 2: Belanja APBD DKI Jakarta (`belanja.html`)
+- **Dashboard Alokasi Belanja:** Pagu belanja kota, realisasi terserap, dan persentase penyerapan riil.
+- **4 Kelompok Belanja Daerah:** Belanja Operasi, Belanja Modal, Belanja Tidak Terduga (BTT), dan Belanja Transfer.
+- **Simulasi Interaktif Waffle Grid 10x10 ("Jika Belanja Rp100"):** Memetakan setiap seratus rupiah dana belanja APBD ke sektor riil layanan masyarakat.
+- **Alokasi Dinas & Instansi Teknis (SKPD):** Tabel alokasi anggaran dinas-dinas pelayanan dasar warga (Dinas Pendidikan, Dinas Kesehatan, Dinas Bina Marga, Dinas SDA, dll).
+
+### 4. Glosarium & Kamus Transparansi (`kamus.html`)
+- **158 Istilah Resmi:** Glosarium komprehensif bersumber dari dokumen resmi *SMART Planning & Budgeting* Pemprov DKI Jakarta dan regulasi UU HKPD.
+- **Live Search Instan:** Pencarian *client-side* berkecepatan tinggi menyaring singkatan, nama panjang, maupun isi definisi secara *real-time*.
+- **Quick Alphabet Jump (A–Z Bar):** Barisan tombol alfabet interaktif untuk melompat langsung ke kelompok huruf tertentu.
+- **Interactive Quick List Box (Mini Index):** Indeks daftar istilah aktif yang jika diklik akan langsung menggulir (*smooth scroll*) ke kartu terkait dengan efek highlight visual.
+- **Filter Kategori:** Memfilter istilah berdasarkan kelompok (Administrasi Perpajakan, Belanja, Anggaran & Keuangan Daerah, Regulasi, dll).
+
+---
+
+## 📁 Struktur Repositori
+
+```text
+paJAK-Kita/
+├── index.html                   # Halaman utama (Executive Summary & Generator Kartu)
+├── penerimaan.html              # Halaman analisis lengkap Penerimaan Pajak Daerah
+├── belanja.html                 # Halaman analisis alokasi Belanja APBD & SKPD
+├── kamus.html                   # Halaman Glosarium 158 Istilah Keuangan Daerah
+├── css/
+│   ├── styles.css               # Desain sistem editorial Betawi modern & responsif
+│   ├── card-fonts.css           # Konfigurasi self-hosted Google Fonts
+│   └── card-generator.css       # Styling khusus pembuat kartu insight warga
+├── js/
+│   ├── main.js                  # Controller utama, navigasi dropdown & eye-tracking Ondi
+│   ├── dataEngine.js            # Engine integrasi 11 dataset resmi Satu Data Jakarta
+│   ├── penerimaan.js            # Controller interaktif halaman Penerimaan Pajak
+│   ├── belanja.js               # Controller interaktif halaman Belanja APBD & Waffle Grid
+│   ├── kamus.js                 # Controller real-time search & filter glosarium
+│   ├── cardGenerator.js         # Canvas generator kartu fakta warga rasio 3:4
+│   ├── heroSlideshow.js         # Pengendali otomatis slideshow latar belakang hero
+│   └── heroConfig.js            # Konfigurasi data gambar slideshow
+├── data/ & public/data/
+│   ├── glosarium-pajak-keuangan-daerah.json  # 158 entri istilah dan definisi resmi
+│   ├── pajak-kita-data-anggaran.json         # Data pagu anggaran APBD DKI Jakarta
+│   └── pajak-kita-data-realisasi.json        # Data realisasi serapan dan pendapatan
+├── assets/
+│   ├── logo-pajakkita-monas-grafik.svg       # Logo resmi paJAK-Kita
+│   ├── maskot-ondi/                         # Aset ilustrasi SVG/PNG Maskot Ondi
+│   ├── motifs/                              # Motif ornamen gigi balang Betawi
+│   └── hero-*.jpg                           # Aset fotografi pemandangan Jakarta
+└── package.json                 # Konfigurasi dependensi dan scripts npm
 ```
 
 ---
 
-## 🔒 Jaminan Privasi & Kejujuran Data
+## 🔒 Jaminan Privasi & Integritas Data
 
-1. **Zero Data Tracking:** Tidak ada pelacak atau penyimpanan nama warga di server. Pembuatan kartu insight dilakukan secara lokal via canvas.
-2. **Kepatuhan Narasi:** Pemisahan tegas antara pilar penerimaan dan pilar belanja sesuai prinsip Rekening Kas Umum Daerah (*single pool fund*).
-3. **Data Terverifikasi:** Seluruh angka bersumber resmi dari Dashboard Keuangan Daerah BPKD Provinsi DKI Jakarta posisi 25 Oktober 2026.
+1. **100% Client-Side Privacy:** Pembuatan kartu insight warga diproses seluruhnya secara lokal di peramban menggunakan Canvas API. Tidak ada nama, data domisili, atau preferensi warga yang dikirimkan atau disimpan di server mana pun.
+2. **Kepatuhan Prinsip Single Pool Fund:** Menjaga kejujuran pemisahan antara pilar penerimaan dan pilar belanja sesuai standar akuntansi Rekening Kas Umum Daerah (RKUD). Pajak warga masuk ke kas umum daerah sebelum dialokasikan bersama sumber pendapatan lainnya.
+3. **Data Resmi & Terverifikasi:** Seluruh angka bersumber dari portal resmi Satu Data Jakarta (`ws.jakarta.go.id`) dan Dashboard BPKD Provinsi DKI Jakarta posisi data resmi 2026.
+
+---
+
+## 👥 Kontributor & Lisensi
+
+Proyek ini dikembangkan secara independen sebagai wujud partisipasi *civic-tech* terbuka untuk membantu masyarakat luas memahami anggaran dan keuangan daerah secara setara dan transparan.
+
+© 2026 **paJAK-Kita** • Inisiatif Civic-Tech Terbuka untuk Warga Jakarta.
