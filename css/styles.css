@@ -69,7 +69,7 @@ button, input, select { font: inherit; }
 .skip-link:focus { left: 8px; }
 
 /* ==========================================================================
-   2. MODERN COMPACT NAVBAR DENGAN CHEVRON DROPDOWN (VELT STYLE)
+   2. MODERN SMART NAVBAR (TRANSPARAN DI ATAS HERO -> SOLID SCROLLED)
    ========================================================================== */
 .site-header {
   position: fixed;
@@ -77,17 +77,28 @@ button, input, select { font: inherit; }
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 60px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.85);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+  height: 68px;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+  will-change: transform;
 }
 
+/* State Scrolled (> 24px): solid --color-cream, teks ink, blur, shadow */
 .site-header.is-scrolled {
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: rgba(248, 241, 231, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(31, 26, 23, 0.05);
+}
+
+/* State Hidden saat scroll down */
+.site-header.is-hidden {
+  transform: translateY(-100%);
 }
 
 .nav-wrap {
@@ -95,12 +106,13 @@ button, input, select { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
 
 .brand {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .brand img {
@@ -108,161 +120,244 @@ button, input, select { font: inherit; }
   max-height: 36px;
   width: auto;
   object-fit: contain;
+  transition: filter 0.25s ease;
 }
 
+/* Logo di atas hero transparan: putih kontras */
+.site-header:not(.is-scrolled) .brand img {
+  filter: brightness(0) invert(1);
+}
+
+/* Main Navigation Menu */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  font-size: 0.875rem;
+  gap: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-muted);
-}
-
-.nav-link {
-  color: var(--color-muted);
-  text-decoration: none;
-  padding: 6px 4px;
-  transition: color 0.15s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--color-primary);
-  font-weight: 600;
 }
 
 /* Dropdown Container */
-.nav-dropdown {
+.nav-dropdown-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
 }
 
-.nav-dropdown-btn {
+.nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   background: transparent;
   border: none;
-  padding: 6px 4px;
+  padding: 8px 10px;
   font: inherit;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
   cursor: pointer;
-  transition: color 0.15s ease;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
-.nav-dropdown-btn:hover {
+.site-header.is-scrolled .nav-dropdown-trigger {
+  color: var(--color-ink);
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-wrapper.is-open .nav-dropdown-trigger {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.site-header.is-scrolled .nav-dropdown-trigger:hover,
+.site-header.is-scrolled .nav-dropdown-wrapper.is-open .nav-dropdown-trigger {
   color: var(--color-primary);
+  background: rgba(185, 28, 28, 0.05);
 }
 
 .chevron-icon {
-  transition: transform 0.25s cubic-bezier(0, 0, 0.58, 1);
+  width: 14px;
+  height: 14px;
   stroke: currentColor;
+  stroke-width: 2.2;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   flex-shrink: 0;
 }
 
-.nav-dropdown:hover .chevron-icon,
-.nav-dropdown.is-open .chevron-icon {
+.nav-dropdown-wrapper.is-open .chevron-icon {
   transform: rotate(180deg);
-  color: var(--color-primary);
 }
 
-.nav-dropdown:hover .nav-dropdown-btn,
-.nav-dropdown.is-open .nav-dropdown-btn {
-  color: var(--color-primary);
-}
-
-/* Dropdown Menu Glassmorphism Card */
-.dropdown-menu {
+/* Dropdown Panel */
+.nav-dropdown-panel {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%) translateY(8px);
-  min-width: 275px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  min-width: 320px;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--color-border);
-  border-radius: 14px;
-  padding: 8px;
-  box-shadow: 0 16px 36px -4px rgba(31, 26, 23, 0.12), 0 0 0 1px rgba(31, 26, 23, 0.03);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 20px 48px -8px rgba(31, 26, 23, 0.18), 0 0 0 1px rgba(31, 26, 23, 0.04);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s cubic-bezier(0, 0, 0.58, 1), transform 0.2s cubic-bezier(0, 0, 0.58, 1), visibility 0.2s;
+  transition: opacity 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              visibility 0.22s;
   z-index: 1010;
 }
 
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown.is-open .dropdown-menu {
+.nav-dropdown-wrapper.is-open .nav-dropdown-panel {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
 }
 
-.dropdown-header {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-muted);
-  padding: 6px 10px 4px;
+/* Dropdown Grid Layout (misal untuk Penerimaan dengan side card) */
+.nav-dropdown-panel.has-sidecard {
+  min-width: 520px;
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 12px;
+  align-items: stretch;
 }
 
-.dropdown-item {
+.dropdown-items-group {
   display: flex;
   flex-direction: column;
-  padding: 8px 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--color-ink);
-  transition: background 0.15s ease, color 0.15s ease;
+  gap: 4px;
 }
 
-.dropdown-item:hover {
+.dropdown-item-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.dropdown-item-link:hover {
   background: rgba(185, 28, 28, 0.06);
+  transform: translateX(2px);
+}
+
+.dropdown-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--color-surface-warm);
   color: var(--color-primary);
+  display: inline-grid;
+  place-items: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.dropdown-item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .dropdown-item-title {
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 700;
   line-height: 1.3;
+  color: var(--color-ink);
+}
+
+.dropdown-item-link:hover .dropdown-item-title {
+  color: var(--color-primary);
+}
+
+.badge-coming-soon {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: rgba(107, 97, 89, 0.12);
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .dropdown-item-desc {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-top: 3px;
+  line-height: 1.35;
+}
+
+/* Side Card: Data Terbaru di dalam Dropdown Penerimaan */
+.dropdown-side-card {
+  background: linear-gradient(135deg, var(--color-gold-soft) 0%, var(--color-surface-warm) 100%);
+  border: 1px solid rgba(229, 168, 35, 0.35);
+  border-radius: 12px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dropdown-side-card-tag {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-side-card-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+}
+
+.dropdown-side-card-date {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  line-height: 1.25;
+  margin: 8px 0 4px;
+}
+
+.dropdown-side-card-source {
   font-size: 0.72rem;
   color: var(--color-muted);
-  margin-top: 2px;
+  line-height: 1.3;
 }
 
-.dropdown-divider {
-  height: 1px;
-  background: var(--color-border);
-  margin: 6px 4px;
-}
-
-.dropdown-highlight {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  padding: 6px 10px;
-  text-align: left;
-}
-
-/* Tombol CTA Pill Marun */
+/* Tombol CTA Header: Buat Kartu Insight */
 .nav-cta {
   background: var(--color-primary);
   color: var(--color-surface) !important;
   font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.5rem 1.15rem;
+  font-weight: 700;
+  padding: 0.55rem 1.25rem;
   border-radius: 9999px;
-  box-shadow: 0 2px 8px rgba(185, 28, 28, 0.22);
+  box-shadow: 0 4px 14px rgba(185, 28, 28, 0.3);
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -274,428 +369,567 @@ button, input, select { font: inherit; }
 .nav-cta:hover {
   background: var(--color-primary-strong);
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(185, 28, 28, 0.3);
-  color: var(--color-surface) !important;
+  box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4);
 }
 
-/* Mobile Hamburger Toggle */
+/* Mobile Toggle */
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 40px;
-  height: 40px;
-  background: white;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
   cursor: pointer;
   padding: 0;
+  transition: background 0.2s ease;
+}
+
+.site-header.is-scrolled .menu-toggle {
+  background: var(--color-surface);
+  border-color: var(--color-border);
 }
 
 .menu-bar {
   width: 20px;
   height: 2px;
-  background: var(--color-text);
+  background: #ffffff;
   border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
 }
 
-.menu-toggle.is-active .menu-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.menu-toggle.is-active .menu-bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.is-active .menu-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.site-header.is-scrolled .menu-bar {
+  background: var(--color-ink);
 }
 
 /* ==========================================================================
-   1. VIEWPORT-LOCKED HERO SIZING (100dvh NO-CROP & NO SCROLLBAR)
+   MOBILE NAVIGATION FULLSCREEN SHEET DENGAN ACCORDION
    ========================================================================== */
-.hero-viewport-locked {
-  position: relative;
-  min-height: 100dvh;
-  height: 100dvh;
-  overflow: hidden;
+.mobile-nav-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: var(--color-cream);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-top: 60px; /* Offset pas setinggi navbar */
-  background: var(--color-background);
-  box-sizing: border-box;
-}
-
-/* ==========================================================================
-   3. BACKGROUND ARTISTIK & DINAMIS (DOT MATRIX, AMBIENT GLOW, WATERMARK BETAWI)
-   ========================================================================== */
-.hero-bg-art {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
+  padding: 24px;
+  opacity: 0;
   pointer-events: none;
-  z-index: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow-y: auto;
 }
 
-/* Dot Grid Matrix halus */
-.hero-bg-dots {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 65%;
-  height: 90%;
-  background-image: radial-gradient(rgba(185, 28, 28, 0.12) 1.2px, transparent 1.2px);
-  background-size: 22px 22px;
-  mask-image: radial-gradient(ellipse at 30% 25%, black 25%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at 30% 25%, black 25%, transparent 75%);
+.mobile-nav-sheet.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
-/* Ambient Soft Glow Cream/Surface */
-.hero-glow-sky {
-  position: absolute;
-  top: -60px;
-  left: 10%;
-  width: 440px;
-  height: 440px;
-  border-radius: 50%;
+body.nav-locked {
+  overflow: hidden;
+}
+
+.mobile-nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-nav-close {
   background: var(--color-surface);
-  filter: blur(80px);
-  opacity: 0.45;
-}
-
-/* Ambient Soft Glow Kuning Keemasan Betawi */
-.hero-glow-gold {
-  position: absolute;
-  top: 12%;
-  right: 18%;
-  width: 400px;
-  height: 400px;
+  border: 1px solid var(--color-border);
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: var(--color-gold-soft);
-  filter: blur(80px);
-  opacity: 0.55;
-}
-
-/* Watermark ornamen Betawi di sudut kanan atas */
-.hero-betawi-watermark {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 340px;
-  height: 340px;
-  background-image: url('../assets/motifs/kain-betawi-tile.svg');
-  background-size: 160px;
-  background-repeat: repeat;
-  opacity: 0.08;
-  mask-image: radial-gradient(circle at 80% 20%, black 25%, transparent 75%);
-  -webkit-mask-image: radial-gradient(circle at 80% 20%, black 25%, transparent 75%);
-}
-
-/* ==========================================================================
-   HERO CONTENT GRID & PROPORTIONS
-   ========================================================================== */
-.hero {
-  flex: 1;
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  align-items: center;
-  gap: 32px;
-  padding-top: 0;
-  padding-bottom: 0;
-  min-height: 0; /* Mencegah overflow flexbox */
-  max-height: calc(100dvh - 60px - 40px);
-  z-index: 1;
+  place-items: center;
+  font-size: 20px;
+  color: var(--color-ink);
+  cursor: pointer;
 }
 
-.hero-copy {
-  padding: 0;
-}
-
-.eyebrow {
-  margin: 0 0 12px;
-  color: var(--color-primary);
-  font-size: 11.5px;
-  line-height: 1.4;
-  letter-spacing: .12em;
-  font-weight: 800;
-}
-
-.hero .eyebrow {
+.mobile-accordion-list {
   display: flex;
-  align-items: center;
-  gap: 9px;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
 }
 
-.eyebrow-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-gold);
-  box-shadow: 0 0 0 4px rgba(229,173,39,.17);
+.mobile-accordion-item {
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
 }
 
-h1, h2, h3, p { margin-top: 0; }
-
-.hero h1 {
-  margin-bottom: 14px;
-  font-size: clamp(30px, 3.8vw, 48px);
-  line-height: 1.1;
-  letter-spacing: -.04em;
-  font-weight: 800;
+.mobile-accordion-item.is-open {
+  border-color: var(--color-primary);
 }
 
-h1 span, h2 span { color: var(--color-primary); }
-
-.hero-description {
-  max-width: 530px;
-  color: var(--color-muted);
-  font-size: clamp(14px, 1.1vw, 16px);
-  line-height: 1.65;
-  margin-bottom: 22px;
-}
-
-.hero-actions {
+.mobile-accordion-header {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.mobile-accordion-header .chevron-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.mobile-accordion-item.is-open .mobile-accordion-header .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.mobile-accordion-content {
+  display: none;
+  padding: 0 16px 16px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-accordion-item.is-open .mobile-accordion-content {
+  display: flex;
+}
+
+.mobile-nav-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 44px;
-  padding: 10px 18px;
-  border: 1px solid transparent;
-  border-radius: var(--radius-button);
-  font-size: 13.5px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
-}
-
-.button-primary {
-  background: var(--color-primary);
-  color: white;
-}
-
-.button-primary:hover {
-  background: var(--color-primary-dark);
-  transform: translateY(-1px);
-}
-
-.button-secondary {
-  background: white;
-  border-color: var(--color-border);
-  color: var(--color-text);
-}
-
-.button-secondary:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  transform: translateY(-1px);
-}
-
-.trust-note {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 18px;
-  color: var(--color-muted);
-  font-size: 12px;
-  max-width: 480px;
-}
-
-.trust-icon {
-  display: inline-grid;
-  place-items: center;
-  flex: 0 0 20px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--color-soft-green);
-  color: var(--color-green);
-  font-weight: 800;
-  font-size: 11px;
-}
-
 /* ==========================================================================
-   FOKUS VISUAL HERO: MASKOT ONDI & KONTEMPORER FRAMING
+   FULL-BLEED HERO BACKGROUND SLIDESHOW (100svh)
    ========================================================================== */
-.hero-art {
+.hero-viewport-100 {
   position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  max-height: 440px;
-  isolation: isolate;
-  min-height: 0;
+  align-items: flex-end;
+  padding-bottom: max(3.5rem, 6svh);
+  background: #0b111e;
+  box-sizing: border-box;
 }
 
-/* Background Framing Lembut Khas Betawi Kontemporer */
-.hero-frame-wrapper {
+/* Stacked Slide Images */
+.hero-slides-wrapper {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.hero-frame-bg {
-  width: min(390px, 86%);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at 45% 42%, var(--color-surface) 0%, var(--color-gold-soft) 55%, var(--color-surface-warm) 100%);
-  box-shadow: 0 24px 54px -12px rgba(229, 168, 35, 0.15),
-              0 0 0 1px rgba(229, 168, 35, 0.22),
-              inset 0 2px 6px rgba(255, 255, 255, 0.95);
-  transition: transform 0.3s ease;
-}
-
-.hero-orbit {
-  position: absolute;
+  width: 100%;
+  height: 100%;
   z-index: 0;
-  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b111e 0%, #172033 100%);
 }
 
-.orbit-one {
-  width: min(430px, 94%);
-  aspect-ratio: 1;
-  background: rgba(242, 232, 218, 0.45);
-  border: 1px solid rgba(229, 168, 35, 0.16);
+.hero-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.2s ease-in-out;
+  will-change: opacity, transform;
+  pointer-events: none;
 }
 
-.orbit-two {
-  width: min(340px, 76%);
-  aspect-ratio: 1;
-  border: 1.5px dashed rgba(185, 28, 28, 0.3);
+.hero-slide-img.is-active {
+  opacity: 1;
 }
 
-/* Maskot Ondi Mandiri (Tanpa Monas di Hero) */
-.hero-ondi {
+/* Dark Bottom Gradient Overlay (Kontras White Text >= 4.5:1) */
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 17, 30, 0.45) 0%,
+    rgba(11, 17, 30, 0.22) 28%,
+    rgba(11, 17, 30, 0.68) 64%,
+    rgba(11, 17, 30, 0.94) 100%
+  );
+}
+
+/* Hero Content Grid & Flex Alignment */
+.hero-content-wrap {
   position: relative;
-  z-index: 3;
-  width: auto;
-  max-width: min(330px, 80%);
-  height: min(370px, 84%);
-  object-fit: contain;
-  filter: drop-shadow(0 18px 24px rgba(33, 31, 29, 0.14));
-  animation: floatOndi 4s ease-in-out infinite;
-  transform-origin: center bottom;
-  will-change: transform;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
 }
 
-/* Animasi CSS Floating Halus Khusus Maskot Ondi */
-@keyframes floatOndi {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.hero-left-content {
+  max-width: 740px;
 }
 
-.hero-sticker {
-  position: absolute;
-  top: 16px;
-  right: 4%;
-  transform: rotate(8deg);
-  padding: 10px 14px;
-  border: 2px solid var(--color-primary);
-  background: var(--color-surface);
-  color: var(--color-primary);
-  border-radius: 8px;
-  text-align: center;
-  font-size: 9.5px;
-  line-height: 1.3;
+/* Headline H1: Plus Jakarta Sans 800, clamp(3rem, 8vw, 7rem), line-height 0.95 */
+.hero-headline {
+  font-family: var(--font-family-base);
+  font-weight: 800;
+  font-size: clamp(2.85rem, 7.5vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  margin: 0 0 1.25rem;
+}
+
+.hero-headline-line {
+  display: inline-block;
+}
+
+.hero-headline i {
+  font-style: italic;
+  font-weight: 800;
+}
+
+.hero-subline {
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 520px;
+}
+
+/* Hero Right: Dark Glass Card & White Button */
+.hero-right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.hero-card-glass {
+  background: rgba(18, 24, 38, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  padding: 16px 18px;
+  color: #ffffff;
+  max-width: 310px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.38);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.22s ease,
+              background 0.22s ease;
+}
+
+.hero-card-glass:hover {
+  background: rgba(22, 30, 48, 0.82);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.hero-card-glass-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-badge-new {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  line-height: 1.4;
+}
+
+.hero-card-arrow {
+  color: var(--color-gold);
+  font-size: 0.95rem;
   font-weight: 700;
-  box-shadow: 3px 3px 0 var(--color-gold);
-  z-index: 4;
 }
 
-.hero-sticker b {
-  font-size: 14px;
+.hero-card-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 0;
 }
 
-.hero-caption {
+.hero-card-desc {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* White Pill Button: Jelajahi Data */
+.hero-btn-explore {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.65rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.24);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.hero-btn-explore:hover {
+  background: #fdfaf7;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+}
+
+/* Bottom Center Indicators & Pause/Play */
+.hero-slideshow-controls {
   position: absolute;
-  bottom: 12px;
-  left: 2%;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-indicators-list {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  background: white;
-  box-shadow: var(--shadow-soft);
-  font-size: 11.5px;
-  font-weight: 600;
-  z-index: 4;
 }
 
-.caption-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--color-green);
+.hero-indicator-btn {
+  width: 40px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.hero-indicator-btn .hero-indicator-fill {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+
+.hero-indicator-btn:hover .hero-indicator-fill {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.hero-control-btn {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-control-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.05);
 }
 
 /* ==========================================================================
-   4. PREMIUM SITE RHYTHM (STAGGERED ANIMATION CURVE)
-   Kurva: cubic-bezier(0, 0, 0.58, 1) | Durasi: 800ms / 1000ms
+   KENALAN DENGAN ONDI SECTION (Tepat Setelah Hero)
    ========================================================================== */
-@keyframes editorialFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(24px);
+.ondi-intro-section {
+  padding: 80px 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.ondi-intro-container {
+  max-width: 1040px;
+}
+
+.ondi-intro-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  align-items: center;
+  gap: 56px;
+}
+
+.ondi-intro-media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.ondi-halo-ring {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-gold-soft) 0%, rgba(251, 241, 214, 0.2) 70%, transparent 100%);
+  border: 1.5px dashed rgba(229, 168, 35, 0.4);
+  z-index: 0;
+  animation: ondiHaloPulse 6s ease-in-out infinite;
+}
+
+@keyframes ondiHaloPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+  50% { transform: scale(1.04) rotate(180deg); opacity: 1; }
+}
+
+.ondi-avatar-img {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  max-width: 250px;
+  height: auto;
+  filter: drop-shadow(0 14px 28px rgba(31, 26, 23, 0.12));
+  animation: floatOndiGentle 4s ease-in-out infinite;
+}
+
+@keyframes floatOndiGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.ondi-intro-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.ondi-eyebrow {
+  margin-bottom: 10px;
+}
+
+.ondi-headline {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: var(--color-ink);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.ondi-lead {
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+
+.ondi-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.ondi-link-pill {
+  min-height: 46px;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+}
+
+/* Micro interaction arrow nudge */
+.arrow-icon {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  .menu-toggle {
+    display: flex;
+  }
+  .hero-viewport-100 {
+    min-height: 600px;
+    padding-bottom: 4.5rem;
+  }
+  .hero-content-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .hero-right-content {
+    align-items: flex-start;
+  }
+  .ondi-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+  .ondi-intro-content {
+    align-items: center;
+  }
+  .ondi-actions {
+    justify-content: center;
   }
 }
 
-@keyframes editorialArtScaleUp {
-  0% {
-    opacity: 0;
-    transform: scale(0.94) translateY(24px);
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-img,
+  .ondi-halo-ring,
+  .ondi-avatar-img,
+  .motif-pattern {
+    animation: none !important;
+    transition: none !important;
   }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
+  .hero-slideshow-controls {
+    display: none !important;
   }
-}
-
-/* 1. Badge muncul pertama (delay 50ms) */
-.hero-stagger-1 {
-  animation: editorialFadeUp 800ms cubic-bezier(0, 0, 0.58, 1) 50ms both;
-}
-
-/* 2. Headline muncul kedua (delay 150ms) */
-.hero-stagger-2 {
-  animation: editorialFadeUp 800ms cubic-bezier(0, 0, 0.58, 1) 150ms both;
-}
-
-/* 3. Paragraf deskripsi muncul ketiga (delay 350ms) */
-.hero-stagger-3 {
-  animation: editorialFadeUp 800ms cubic-bezier(0, 0, 0.58, 1) 350ms both;
-}
-
-/* 4. Action buttons & trust note muncul keempat (delay 550ms) */
-.hero-stagger-4 {
-  animation: editorialFadeUp 800ms cubic-bezier(0, 0, 0.58, 1) 550ms both;
-}
-
-/* 5. Ilustrasi Monas & Maskot Ondi scale-up & fade-in (delay 250ms, durasi 1000ms) */
-.hero-art-stagger {
-  animation: editorialArtScaleUp 1000ms cubic-bezier(0, 0, 0.58, 1) 250ms both;
 }
 
 /* ==========================================================================
@@ -709,7 +943,7 @@ h1 span, h2 span { color: var(--color-primary); }
   width: 100%; 
   height: 40px; 
   flex-shrink: 0;
-  margin-top: auto;
+  margin-top: 0;
   z-index: 5;
 }
 

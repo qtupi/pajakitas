@@ -23,95 +23,372 @@
 <body>
   <a class="skip-link" href="#main">Lewati ke konten</a>
 
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container nav-wrap">
       <a class="brand" href="#beranda" aria-label="paJAK-Kita, beranda">
-        <img src="assets/logo-pajakkita-monas-grafik.svg" alt="Logo paJAK-Kita Monas Grafik">
+        <img src="assets/logo-pajakkita-monas-grafik.svg" alt="Logo paJAK-Kita: Monas dan Grafik Batang">
       </a>
 
+      <!-- Center Items dengan Dropdown Berisi Icon Panah Bawah Berputar -->
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <!-- Dropdown 1: Penerimaan Pajak -->
+        <div class="nav-dropdown-wrapper">
+          <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Penerimaan Pajak</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-panel has-sidecard" role="menu">
+            <div class="dropdown-items-group">
+              <a class="dropdown-item-link" href="#penerimaan" role="menuitem">
+                <div class="dropdown-item-icon">📊</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Ringkasan Pajak Daerah</span>
+                  </div>
+                  <span class="dropdown-item-desc">Target anggaran, realisasi terkumpul, dan porsi capaian</span>
+                </div>
+              </a>
+
+              <a class="dropdown-item-link" href="#penerimaan" role="menuitem">
+                <div class="dropdown-item-icon">🏷️</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Per Jenis Pajak</span>
+                    <span class="badge-coming-soon">Segera hadir</span>
+                  </div>
+                  <span class="dropdown-item-desc">Rincian pajak restoran, PBB-P2, BPHTB, PKB, dan lainnya</span>
+                </div>
+              </a>
+
+              <a class="dropdown-item-link" href="#penerimaan" role="menuitem">
+                <div class="dropdown-item-icon">🗺️</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Per Wilayah</span>
+                    <span class="badge-coming-soon">Segera hadir</span>
+                  </div>
+                  <span class="dropdown-item-desc">Sebaran penerimaan pajak 5 kota administrasi & 1 kabupaten</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Side Card: Data Terbaru -->
+            <div class="dropdown-side-card" id="nav-data-date-card">
+              <div>
+                <span class="dropdown-side-card-tag">Data terbaru</span>
+                <div class="dropdown-side-card-date" id="nav-data-date-val">25 Oktober 2026</div>
+              </div>
+              <div class="dropdown-side-card-source">Realisasi resmi BPKD Provinsi DKI Jakarta</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown 2: Belanja APBD -->
+        <div class="nav-dropdown-wrapper">
+          <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Belanja APBD</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-panel" role="menu">
+            <div class="dropdown-items-group">
+              <a class="dropdown-item-link" href="#belanja" role="menuitem">
+                <div class="dropdown-item-icon">🏛️</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Ringkasan Belanja</span>
+                  </div>
+                  <span class="dropdown-item-desc">Total pagu anggaran belanja dan realisasi terpakai</span>
+                </div>
+              </a>
+
+              <a class="dropdown-item-link" href="#belanja" role="menuitem">
+                <div class="dropdown-item-icon">🏢</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Per Dinas dan Instansi</span>
+                  </div>
+                  <span class="dropdown-item-desc">Alokasi anggaran dinas teknis dan badan daerah</span>
+                </div>
+              </a>
+
+              <a class="dropdown-item-link" href="#belanja" role="menuitem">
+                <div class="dropdown-item-icon">🪙</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Jika Belanja Rp100</span>
+                  </div>
+                  <span class="dropdown-item-desc">Simulasi pembagian setiap seratus rupiah belanja APBD</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown 3: Pelajari -->
+        <div class="nav-dropdown-wrapper">
+          <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Pelajari</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-panel" role="menu">
+            <div class="dropdown-items-group">
+              <a class="dropdown-item-link" href="#tentang-data" role="menuitem">
+                <div class="dropdown-item-icon">💡</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Tentang paJAK-Kita</span>
+                  </div>
+                  <span class="dropdown-item-desc">Inisiatif independen memahami keterbukaan anggaran daerah</span>
+                </div>
+              </a>
+
+              <a class="dropdown-item-link" href="#tentang-data" role="menuitem">
+                <div class="dropdown-item-icon">🔍</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Cara Kami Menyajikan Data</span>
+                  </div>
+                  <span class="dropdown-item-desc">Prinsip kejujuran data dan metodologi perhitungan</span>
+                </div>
+              </a>
+
+              <a class="dropdown-item-link" href="#kamus" role="menuitem">
+                <div class="dropdown-item-icon">📖</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Kamus Pajak</span>
+                    <span class="badge-coming-soon">Segera hadir</span>
+                  </div>
+                  <span class="dropdown-item-desc">Glosarium istilah keuangan daerah yang mudah dipahami</span>
+                </div>
+              </a>
+
+              <a class="dropdown-item-link" href="#kenalan-ondi" role="menuitem">
+                <div class="dropdown-item-icon">👋</div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-head">
+                    <span class="dropdown-item-title">Kenalan dengan Ondi</span>
+                  </div>
+                  <span class="dropdown-item-desc">Temui maskot pemandu data paJAK-Kita</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right: CTA Buat Kartu Insight -->
+      <a class="nav-cta" href="#kartu">
+        <span>Buat Kartu Insight</span>
+        <span class="arrow-icon" aria-hidden="true">↗</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
       <button class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false">
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
       </button>
-
-      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
-        <a class="nav-link active" href="#beranda">Beranda</a>
-        <a class="nav-link" href="#penerimaan">Penerimaan Pajak</a>
-        <a class="nav-link" href="#belanja">Belanja APBD</a>
-        <a class="nav-link" href="#kamus">Kamus Pajak</a>
-        <a class="nav-cta" href="#kartu">Buat Kartu Insight <span aria-hidden="true">↗</span></a>
-      </nav>
     </div>
   </header>
 
-  <main id="main">
-    <!-- Viewport-Locked Hero Sizing -->
-    <div class="hero-viewport-locked">
-      <!-- Background Artistik -->
-      <div class="hero-bg-art" aria-hidden="true">
-        <div class="hero-bg-dots"></div>
-        <div class="hero-glow-sky"></div>
-        <div class="hero-glow-gold"></div>
-        <div class="hero-betawi-watermark"></div>
+  <!-- Fullscreen Mobile Navigation Sheet -->
+  <aside class="mobile-nav-sheet" id="mobileNavSheet" aria-label="Menu navigasi mobile">
+    <div class="mobile-nav-top">
+      <a class="brand" href="#beranda">
+        <img src="assets/logo-pajakkita-monas-grafik.svg" alt="Logo paJAK-Kita">
+      </a>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Tutup menu navigasi">✕</button>
+    </div>
+
+    <div class="mobile-accordion-list">
+      <!-- Accordion Penerimaan Pajak -->
+      <div class="mobile-accordion-item">
+        <button class="mobile-accordion-header" aria-expanded="false">
+          <span>Penerimaan Pajak</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a class="dropdown-item-link" href="#penerimaan">
+            <div class="dropdown-item-title">Ringkasan Pajak Daerah</div>
+          </a>
+          <a class="dropdown-item-link" href="#penerimaan">
+            <div class="dropdown-item-title">Per Jenis Pajak <span class="badge-coming-soon">Segera hadir</span></div>
+          </a>
+          <a class="dropdown-item-link" href="#penerimaan">
+            <div class="dropdown-item-title">Per Wilayah <span class="badge-coming-soon">Segera hadir</span></div>
+          </a>
+        </div>
       </div>
 
-      <!-- Hero Section Content -->
-      <section class="hero container" id="beranda">
-        <div class="hero-copy">
-          <div class="eyebrow hero-stagger-1">
-            <span class="eyebrow-dot"></span>
-            DATA RESMI APBD JAKARTA 2026
-          </div>
-
-          <h1 class="hero-stagger-2">Kenali pajaknya.<br><span>Pahami anggarannya.</span></h1>
-
-          <p class="hero-description hero-stagger-3">
-            paJAK-Kita membantu warga memahami dua topik utama keuangan daerah: penerimaan pajak daerah yang terkumpul dan alokasi belanja APBD per dinas dan instansi.
-          </p>
-
-          <div class="hero-actions hero-stagger-4">
-            <a class="button button-primary" href="#penerimaan">Penerimaan Pajak <span aria-hidden="true">↓</span></a>
-            <a class="button button-secondary" href="#belanja">Belanja APBD <span aria-hidden="true">↓</span></a>
-          </div>
-
-          <div class="trust-note hero-stagger-4">
-            <span class="trust-icon">✓</span>
-            <span>Data resmi bersumber dari BPKD Provinsi DKI Jakarta per 25 Oktober 2026.</span>
-          </div>
+      <!-- Accordion Belanja APBD -->
+      <div class="mobile-accordion-item">
+        <button class="mobile-accordion-header" aria-expanded="false">
+          <span>Belanja APBD</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a class="dropdown-item-link" href="#belanja">
+            <div class="dropdown-item-title">Ringkasan Belanja</div>
+          </a>
+          <a class="dropdown-item-link" href="#belanja">
+            <div class="dropdown-item-title">Per Dinas dan Instansi</div>
+          </a>
+          <a class="dropdown-item-link" href="#belanja">
+            <div class="dropdown-item-title">Jika Belanja Rp100</div>
+          </a>
         </div>
+      </div>
 
-        <div class="hero-art hero-art-stagger">
-          <div class="hero-frame-wrapper" aria-hidden="true">
-            <div class="hero-frame-bg"></div>
-            <div class="hero-orbit orbit-one"></div>
-            <div class="hero-orbit orbit-two"></div>
-          </div>
-
-          <img
-            class="hero-ondi"
-            src="assets/maskot-ondi/ondi-02-menyambut.svg"
-            alt="Ondi, maskot resmi paJAK-Kita, menyambut pengunjung"
-          >
-
-          <div class="hero-sticker">DATA PUBLIK<br><b>APBD 2026</b></div>
-
-          <div class="hero-caption">
-            <span class="caption-dot"></span>
-            Kenalan dulu dengan Ondi!
-          </div>
+      <!-- Accordion Pelajari -->
+      <div class="mobile-accordion-item">
+        <button class="mobile-accordion-header" aria-expanded="false">
+          <span>Pelajari</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a class="dropdown-item-link" href="#tentang-data">
+            <div class="dropdown-item-title">Tentang paJAK-Kita</div>
+          </a>
+          <a class="dropdown-item-link" href="#tentang-data">
+            <div class="dropdown-item-title">Cara Kami Menyajikan Data</div>
+          </a>
+          <a class="dropdown-item-link" href="#kamus">
+            <div class="dropdown-item-title">Kamus Pajak <span class="badge-coming-soon">Segera hadir</span></div>
+          </a>
+          <a class="dropdown-item-link" href="#kenalan-ondi">
+            <div class="dropdown-item-title">Kenalan dengan Ondi</div>
+          </a>
         </div>
-      </section>
-
-      <!-- Garis Motif Gigi Balang Betawi -->
-      <div class="motif-band" role="img" aria-label="Motif kain Betawi sebagai pemisah visual">
-        <div 
-          class="motif-pattern" 
-          style="background-image: url('assets/motifs/kain-betawi-strip.svg');"
-          aria-hidden="true"
-        ></div>
       </div>
     </div>
+
+    <div class="mobile-nav-footer">
+      <a class="button button-primary" href="#kartu">Buat Kartu Insight ↗</a>
+    </div>
+  </aside>
+
+  <main id="main">
+    <!-- =========================================================================
+         FULL-BLEED HERO BACKGROUND SLIDESHOW (100svh)
+         ========================================================================= -->
+    <section class="hero-viewport-100" id="beranda" aria-label="Latar Belakang dan Pembuka">
+      <!-- Slideshow Background Container (Ken Burns & Crossfade) -->
+      <div class="hero-slides-wrapper" aria-hidden="true"></div>
+
+      <!-- Dark Bottom Gradient Overlay (Kontras White Text >= 4.5:1) -->
+      <div class="hero-dark-overlay" aria-hidden="true"></div>
+
+      <!-- Hero Content Wrap -->
+      <div class="container hero-content-wrap">
+        <!-- Bottom Left: Headline & Subline -->
+        <div class="hero-left-content">
+          <h1 class="hero-headline">
+            <span class="hero-headline-line">Kenali pajaknya.</span><br>
+            <span class="hero-headline-line">Pahami <i>anggarannya.</i></span>
+          </h1>
+          <p class="hero-subline">Pajak daerah dan belanja APBD Jakarta, dijelaskan dengan sederhana.</p>
+        </div>
+
+        <!-- Bottom Right: Dark Glass Card & White Button -->
+        <div class="hero-right-content">
+          <a class="hero-card-glass hover-lift" href="#kartu">
+            <div class="hero-card-glass-header">
+              <span class="hero-badge-new">Baru</span>
+              <span class="hero-card-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3 class="hero-card-title">Buat kartu insight dengan namamu</h3>
+            <p class="hero-card-desc">Bagikan data pajak & anggaran versi personalmu ke media sosial.</p>
+          </a>
+
+          <a class="hero-btn-explore hover-nudge-arrow" href="#penerimaan">
+            <span>Jelajahi Data</span>
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 3l5 5-5 5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Center: Indicators & Pause/Play Button -->
+      <div class="hero-slideshow-controls" aria-label="Kontrol slideshow gambar">
+        <div class="hero-indicators-list" role="tablist" aria-label="Pilihan gambar latar"></div>
+        <button type="button" class="hero-control-btn" id="hero-slideshow-toggle" aria-label="Jeda tayangan slide" aria-pressed="false">
+          <svg class="icon-pause" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="5" y="4" width="4" height="16" rx="1"/>
+            <rect x="15" y="4" width="4" height="16" rx="1"/>
+          </svg>
+          <svg class="icon-play" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display: none;">
+            <polygon points="6,4 20,12 6,20"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Garis Motif Gigi Balang Betawi Pemisah Visual -->
+    <div class="motif-band" role="img" aria-label="Motif kain Betawi sebagai pemisah visual">
+      <div 
+        class="motif-pattern" 
+        style="background-image: url('assets/motifs/kain-betawi-strip.svg');"
+        aria-hidden="true"
+      ></div>
+    </div>
+
+    <!-- =========================================================================
+         KENALAN DENGAN ONDI (Section tepat setelah hero)
+         ========================================================================= -->
+    <section class="ondi-intro-section motion-reveal" id="kenalan-ondi" aria-label="Kenalan dengan Ondi">
+      <div class="container ondi-intro-container">
+        <div class="ondi-intro-grid">
+          <!-- Kolom 1: Maskot Ondi Animasi -->
+          <div class="ondi-intro-media">
+            <div class="ondi-halo-ring" aria-hidden="true"></div>
+            <img
+              class="ondi-avatar-img"
+              src="assets/maskot-ondi/ondi-02-menyambut.svg"
+              alt="Ondi, maskot resmi paJAK-Kita, tersenyum menyambut pengunjung"
+              width="260"
+              height="280"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Kolom 2: Penjelasan & 2 Tautan -->
+          <div class="ondi-intro-content">
+            <div class="eyebrow ondi-eyebrow">
+              <span class="eyebrow-dot"></span>
+              KENALAN DENGAN MASKOT
+            </div>
+            <h2 class="ondi-headline">Halo, aku Ondi.</h2>
+            <p class="ondi-lead">
+              Halo, aku Ondi. Aku menemani kamu memahami pajak daerah dan anggaran Jakarta.
+            </p>
+            <div class="ondi-actions">
+              <a class="button button-primary ondi-link-pill" href="#penerimaan">
+                <span>Penerimaan Pajak</span>
+                <span class="arrow-icon" aria-hidden="true">↓</span>
+              </a>
+              <a class="button button-secondary ondi-link-pill" href="#belanja">
+                <span>Belanja APBD</span>
+                <span class="arrow-icon" aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FreshnessBanner: Status Keterkinian Data Resmi -->
     <aside class="trust-freshness-banner" role="status" aria-label="Status Keterkinian Data">
@@ -645,10 +922,9 @@
     </div>
   </footer>
 
+  <script src="js/motion.js"></script>
   <script src="js/html2canvas.min.js"></script>
-  <script type="module" src="js/dataClient.js"></script>
-  <script type="module" src="js/format.js"></script>
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
   <script type="module" src="js/cardGenerator.js"></script>
   <script type="module" src="js/realisasi.js"></script>
 </body>
