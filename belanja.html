@@ -86,15 +86,15 @@
         <div class="exec-metrics-row">
           <div class="exec-metric-col">
             <span class="exec-metric-label">Total Anggaran Belanja</span>
-            <span class="exec-metric-val tabular-nums" id="stat-belanja-anggaran" title="Total Pagu Belanja: Rp74.285.299.931.740">Rp74,29 T</span>
+            <span class="exec-metric-val tabular-nums" id="stat-belanja-anggaran">—</span>
           </div>
           <div class="exec-metric-col">
             <span class="exec-metric-label">Total Belanja Terpakai</span>
-            <span class="exec-metric-val tabular-nums highlight-belanja" id="stat-belanja-terpakai" title="Belanja Terpakai (realisasi): Rp44.467.474.197.668">Rp44,47 T</span>
+            <span class="exec-metric-val tabular-nums highlight-belanja" id="stat-belanja-terpakai">—</span>
           </div>
           <div class="exec-metric-col">
             <span class="exec-metric-label">Persen Terpakai</span>
-            <span class="exec-metric-val tabular-nums highlight-belanja" id="stat-belanja-persen">59,9%</span>
+            <span class="exec-metric-val tabular-nums highlight-belanja" id="stat-belanja-persen">—</span>
           </div>
         </div>
       </article>
@@ -114,17 +114,17 @@
         </header>
 
         <div class="waffle-wrapper" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center;">
-          <div class="waffle-container" id="waffle-container" aria-label="Grid Waffle Alokasi Belanja Rp100">
-            <!-- 100 kotak diisi oleh js/realisasi.js -->
+          <div class="waffle-container" id="waffle-container" aria-label="Grid Waffle Alokasi Belanja Rp100" style="display: flex; align-items: center; justify-content: center; color: var(--color-muted); font-size: 0.875rem; text-align: center;">
+            Kotak simulasi siap dimuat
           </div>
 
           <div class="waffle-content-col" style="flex: 1; min-width: 280px;">
             <div class="waffle-sentence-box" id="waffle-sentence-box">
-              <!-- Kalimat dinamis diisi oleh js/realisasi.js -->
+              Kalimat simulasi belanja per Rp100 siap dimuat.
             </div>
 
             <div class="waffle-legend" id="waffle-legend" style="margin-top: 12px;">
-              <!-- Legenda dinamis diisi oleh js/realisasi.js -->
+              <!-- Legenda dinamis -->
             </div>
 
             <p class="waffle-sentence-disclaimer" style="margin-top: 12px;">
@@ -143,14 +143,14 @@
               Alokasi &amp; Penyerapan per Dinas dan Instansi
             </h3>
             <p style="font-size: 0.875rem; color: var(--color-muted); margin: 0;">
-              Menampilkan 10 dinas dan instansi teratas berdasarkan pagu anggaran belanja. Garis vertikal emas menandai posisi data per 25 Oktober 2026. Klik baris mana saja untuk melihat detailnya di bawah.
+              Menampilkan dinas dan instansi berdasarkan pagu anggaran belanja.
             </p>
           </div>
         </div>
 
         <!-- Wadah List Bullet Bar Per-dinas -->
-        <div id="dinas-bullet-list" style="margin-top: 16px;">
-          <!-- Diisi otomatis oleh js/realisasi.js -->
+        <div id="dinas-bullet-list" style="margin-top: 16px; padding: 24px; text-align: center; color: var(--color-muted); background: var(--color-surface-warm); border-radius: 8px;">
+          Daftar alokasi belanja dinas dan instansi siap dimuat dari awal.
         </div>
 
         <!-- Tombol Ekspansi "Lihat Semua Dinas dan Instansi" -->
@@ -177,7 +177,7 @@
           <!-- Dropdown Pemilih Lengkap 43 Dinas dan Instansi -->
           <div class="select-wrapper" style="min-width: 260px;">
             <select id="dinas-picker-select" class="card-config-select" aria-label="Pilih dinas dan instansi">
-              <!-- Diisi oleh js/realisasi.js -->
+              <option value="">Pilih dinas dan instansi...</option>
             </select>
           </div>
         </div>
@@ -201,22 +201,22 @@
             Dinas Pendidikan
           </h4>
           <p style="font-size: 0.875rem; color: var(--color-muted); line-height: 1.5; margin: 0 0 18px 0;" id="dinas-page-desc">
-            Mengelola anggaran belanja operasional sekolah negeri, bantuan operasional pendidikan, dan sarana belajar.
+            Pilih dinas dan instansi untuk melihat rincian anggaran belanja.
           </p>
 
           <!-- Tiga Angka Kunci Saja -->
           <div class="exec-metrics-row">
             <div class="exec-metric-col">
               <span class="exec-metric-label">Anggaran Belanja</span>
-              <span class="exec-metric-val tabular-nums" id="dinas-kpi-anggaran">...</span>
+              <span class="exec-metric-val tabular-nums" id="dinas-kpi-anggaran">—</span>
             </div>
             <div class="exec-metric-col">
               <span class="exec-metric-label">Belanja Terpakai</span>
-              <span class="exec-metric-val tabular-nums highlight-belanja" id="dinas-kpi-realisasi">...</span>
+              <span class="exec-metric-val tabular-nums highlight-belanja" id="dinas-kpi-realisasi">—</span>
             </div>
             <div class="exec-metric-col">
               <span class="exec-metric-label">Persen Terpakai</span>
-              <span class="exec-metric-val tabular-nums highlight-belanja" id="dinas-kpi-serapan">...</span>
+              <span class="exec-metric-val tabular-nums highlight-belanja" id="dinas-kpi-serapan">—</span>
             </div>
           </div>
 
